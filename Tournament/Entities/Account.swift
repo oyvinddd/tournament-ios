@@ -11,6 +11,8 @@ struct Account: Codable, Identifiable {
     
     var id: UUID
     
+    var tournamentId: UUID?
+    
     var username: String
     
     var created: Date
@@ -20,4 +22,6 @@ struct Account: Codable, Identifiable {
     var refreshToken: String?
     
     var authenticated: Bool { accessToken != nil }
+    
+    var hasTournament: Bool { tournamentId != nil }
 }

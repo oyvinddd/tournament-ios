@@ -16,10 +16,18 @@ struct TournamentView: View {
         
         VStack {
             
-            if let tournament = viewModel.tournament {
+            switch viewModel.state {
+            case .loading:
+                
+                Text("Loading...")
+                    .font(Font.system(size: 82, weight: .bold, design: .rounded))
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
+            case .success(let tournament):
                 
                 // header
                 TournamentHeaderView(title: tournament.title)
+                    .padding(.horizontal, 16)
                 
                 // scoreboard
                 List {
@@ -32,9 +40,12 @@ struct TournamentView: View {
                 }
                 .padding(.horizontal, 16)
                 .listStyle(.plain)
+                
+            case .failure(let error):
+                ErrorView(error)
             }
         }
-        .background(.red)
+        .background(.clear)
         //.ignoresSafeArea(.all)
         .sheet(isPresented: $showInviteDialog) {
             InvitePlayer()

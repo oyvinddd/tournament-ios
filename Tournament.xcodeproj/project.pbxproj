@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E69A49E2BDC16C7005DC14F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69A49D2BDC16C7005DC14F /* ErrorView.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420522BDBBB2A00383D1D /* MainView.swift */; };
 		8EF420552BDBBB2B00383D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420542BDBBB2B00383D1D /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E69A49D2BDC16C7005DC14F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
 		8EF420522BDBBB2A00383D1D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E69A49C2BDC16B7005DC14F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8E69A49D2BDC16C7005DC14F /* ErrorView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		8EF420442BDBBB2A00383D1D = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		8EF4205F2BDBBB8E00383D1D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8E69A49C2BDC16B7005DC14F /* Shared */,
 				8EF4209B2BDBEF4D00383D1D /* JoinTournament */,
 				8EF420932BDBE89B00383D1D /* CreateTournament */,
 				8EF420892BDBE3B400383D1D /* SignIn */,
@@ -387,6 +398,7 @@
 				8EF4209E2BDBEF6500383D1D /* JoinTournamentView.swift in Sources */,
 				8EF4207B2BDBC5FD00383D1D /* PlayerView.swift in Sources */,
 				8EF420642BDBBC4B00383D1D /* CameraView.swift in Sources */,
+				8E69A49E2BDC16C7005DC14F /* ErrorView.swift in Sources */,
 				8EF420682BDBBD2600383D1D /* PlaceholderView.swift in Sources */,
 				8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */,
 				8EF420762BDBC3D300383D1D /* Tournament.swift in Sources */,

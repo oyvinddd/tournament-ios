@@ -7,16 +7,25 @@
 
 import Foundation
 
-@MainActor final class TournamentViewModel: ObservableObject, TournamentServiceInjectable {
+enum TournamentState {
     
-    @Published var tournament: Tournament?
+    case loading
+    
+    case success(Tournament)
+    
+    case failure(Error)
+}
+
+@MainActor final class TournamentViewModel: ObservableObject, AccountServiceInjectable, TournamentServiceInjectable {
+    
+    @Published var state: TournamentState = .loading
     
     func getTournament() {
         Task {
             do {
-                tournament = try await tournamentService.getTournament()
+                state = .success(try await tournamentService.getTournament())
             } catch let error {
-                print(error)
+                state = .failure(error)
             }
         }
     }

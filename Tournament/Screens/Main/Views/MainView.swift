@@ -31,7 +31,7 @@ struct MainView: View {
             }
             .scrollTargetBehavior(.viewAligned)
             .scrollIndicators(.hidden)
-            .background(.gray)
+            .background(Color.General.background)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         //.ignoresSafeArea(.all)

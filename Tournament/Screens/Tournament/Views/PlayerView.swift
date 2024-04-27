@@ -41,6 +41,7 @@ struct PlayerView: View {
                 .font(Font.system(size: 22, weight: .bold, design: .rounded))
                 .frame(alignment: .trailing)
         }
-        .padding(.all, 8)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
 }

@@ -26,7 +26,7 @@ struct SignInView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.background)
+        .background(Color.General.background)
     }
     
     private func googleButtonTapped() {

@@ -28,7 +28,7 @@ final class MockedAccountService: AccountService {
 
     static let shared = MockedAccountService()
     
-    var account: Account?
+    var account: Account? = Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "test_access_token", refreshToken: "test_refresh_token")
     
     var authenticated: Bool { account?.authenticated ?? false }
     
