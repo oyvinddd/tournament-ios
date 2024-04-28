@@ -14,9 +14,19 @@ struct SettingsView: View {
     var body: some View {
         
         VStack {
-            Text("Hello, World!")
+            Text("Settings")
+                .font(Font.system(size: 28, weight: .bold, design: .rounded))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(Color.Text.normal)
+            
+            Button("Sign Out", action: signOutButtonTapped)
+                .frame(maxWidth: .infinity)
+                .foregroundStyle(.red)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal, 16)
         .background(.white)
     }
+    
+    private func signOutButtonTapped() {}
 }
