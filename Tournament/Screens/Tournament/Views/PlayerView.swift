@@ -47,6 +47,7 @@ struct PlayerView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(Color.Text.subtitle)
             }
+            .padding(.leading, 8)
             
             Spacer()
             

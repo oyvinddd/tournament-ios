@@ -35,6 +35,7 @@ struct TournamentView: View {
                 // header
                 TournamentHeaderView(title: tournament.title)
                     .padding(.horizontal, 16)
+                    .padding(.bottom, -8) // what?
                 
                 // scoreboard
                 List {
@@ -48,8 +49,9 @@ struct TournamentView: View {
                             .listRowSeparator(.hidden)
                     }
                 }
+                .contentMargins(.bottom, 56, for: .scrollContent)
                 .padding(.horizontal, 16)
-                
+                .padding(.top, 0)
                 .listStyle(.plain)
                 .refreshable {
                     viewModel.getTournament()

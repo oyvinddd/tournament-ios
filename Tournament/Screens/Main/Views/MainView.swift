@@ -34,7 +34,7 @@ struct MainView: View {
             .background(Color.General.background)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        //.ignoresSafeArea(.all)
+        .ignoresSafeArea(.all, edges: .bottom)
         .background(.white)
         .sheet(isPresented: $viewModel.showSignIn) {
             SignInView()

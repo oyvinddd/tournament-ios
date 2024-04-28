@@ -32,10 +32,10 @@ struct AccountView: View {
             
             ZStack {
                 Text("🤩")
-                    .font(Font.system(size: 72))
+                    .font(Font.system(size: 64))
                     .padding(.all, 8)
             }
-            .background(Ellipse().fill(.red))
+            .background(Circle().fill(.red))
             .padding(.bottom, 8)
             
             Text("Hello, \(account.username)!")
