@@ -20,10 +20,12 @@ struct TournamentView: View {
             case .loading:
                 
                 Text("Loading...")
-                    .font(Font.system(size: 82, weight: .bold, design: .rounded))
+                    .font(Font.system(size: 32, weight: .bold, design: .rounded))
                     .frame(maxWidth: .infinity, alignment: .center)
                 
             case .success(let tournament):
+                
+                let scoreboard = tournament.scoreboard.sorted(by: { $0.score > $1.score })
                 
                 // header
                 TournamentHeaderView(title: tournament.title)
@@ -32,14 +34,23 @@ struct TournamentView: View {
                 // scoreboard
                 List {
                     
-                    ForEach(tournament.scoreboard) { player in
-                        PlayerView(player: player)
+                    ForEach(scoreboard.indices, id: \.self) { index in
+                        
+                        let isFirst = index == 0
+                        let isLast = index == scoreboard.count - 1
+                        
+                        PlayerView(player: scoreboard[index], isFirst: isFirst, isLast: isLast)
+                            //.listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                             .listRowInsets(EdgeInsets())
                             .listRowSeparator(.hidden)
                     }
                 }
                 .padding(.horizontal, 16)
+                
                 .listStyle(.plain)
+                .refreshable {
+                    viewModel.getTournament()
+                }
                 
             case .failure(let error):
                 ErrorView(error)

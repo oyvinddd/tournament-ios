@@ -15,15 +15,15 @@ struct TournamentHeaderView: View {
         
         HStack {
             
-            VStack(spacing: 4) {
+            VStack(spacing: 6) {
                 
                 Text(title)
                     .font(Font.system(size: 22, weight: .bold, design: .rounded))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color.Text.normal)
                 
-                Text("22 players")
-                    .font(Font.system(size: 18, weight: .bold, design: .rounded))
+                Text("22 players • 5 days until reset")
+                    .font(Font.system(size: 16, weight: .bold, design: .rounded))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(.gray)
             }
