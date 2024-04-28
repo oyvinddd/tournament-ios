@@ -10,8 +10,16 @@ import SwiftUI
 struct PlayerView: View {
     
     var player: Player
+    var placement: Int
     var isFirst: Bool
     var isLast: Bool
+    
+    init(_ player: Player, placement: Int, isFirst: Bool, isLast: Bool) {
+        self.player = player
+        self.placement = placement
+        self.isFirst = isFirst
+        self.isLast = isLast
+    }
     
     private let cornerRadius: Double = 8
     
@@ -44,9 +52,9 @@ struct PlayerView: View {
             
             Spacer()
             
-            Text("#1")
-                .font(Font.system(size: 22, weight: .bold, design: .rounded))
-                .frame(alignment: .trailing)
+            Text(placementString())
+                .font(Font.system(size: 18, weight: .bold, design: .rounded))
+                .frame(width: 30, alignment: .center)
                 .padding(.trailing, 8)
         }
         .frame(maxHeight: .infinity)
@@ -60,5 +68,18 @@ struct PlayerView: View {
                 topTrailingRadius: isFirst ? cornerRadius : 0
             )
         )
+    }
+    
+    private func placementString() -> String {
+        if placement == 0 {
+            return "🥇"
+        }
+        if placement == 1 {
+            return "🥈"
+        }
+        if placement == 2 {
+            return "🥉"
+        }
+        return "\(placement + 1)"
     }
 }

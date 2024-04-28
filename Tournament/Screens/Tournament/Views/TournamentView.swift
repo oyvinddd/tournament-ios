@@ -39,8 +39,7 @@ struct TournamentView: View {
                         let isFirst = index == 0
                         let isLast = index == scoreboard.count - 1
                         
-                        PlayerView(player: scoreboard[index], isFirst: isFirst, isLast: isLast)
-                            //.listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                        PlayerView(scoreboard[index], placement: index, isFirst: isFirst, isLast: isLast)
                             .listRowInsets(EdgeInsets())
                             .listRowSeparator(.hidden)
                     }
