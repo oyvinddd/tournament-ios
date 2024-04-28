@@ -21,7 +21,7 @@ struct MainView: View {
                 
                 LazyHStack(spacing: 0) {
                     
-                    BluetoothView()
+                    RegisterMatchView()
                         .containerRelativeFrame(.horizontal)
                     
                     TournamentView()
