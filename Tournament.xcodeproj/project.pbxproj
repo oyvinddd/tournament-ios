@@ -44,6 +44,7 @@
 		8E03B0BD2BDE3BF00057AAF9 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		8E03B0C02BDE43070057AAF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		8E03B0C52BDEB40B0057AAF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E69A49D2BDC16C7005DC14F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 		8EF420442BDBBB2A00383D1D = {
 			isa = PBXGroup;
 			children = (
+				8E03B0C52BDEB40B0057AAF9 /* README.md */,
 				8EF420A42BDBF4D000383D1D /* .gitignore */,
 				8EF4204F2BDBBB2A00383D1D /* Tournament */,
 				8EF4204E2BDBBB2A00383D1D /* Products */,
