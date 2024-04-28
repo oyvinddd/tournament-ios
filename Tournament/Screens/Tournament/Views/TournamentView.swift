@@ -10,11 +10,16 @@ import SwiftUI
 struct TournamentView: View {
     
     @ObservedObject var viewModel = TournamentViewModel()
+    @State var showSettingsDialog = false
     @State var showInviteDialog = false
     
     var body: some View {
         
         VStack {
+            
+            if let account = viewModel.account {
+                AccountView(account: account, buttonAction: settingsButtonTapped)
+            }
             
             switch viewModel.state {
             case .loading:
@@ -36,10 +41,9 @@ struct TournamentView: View {
                     
                     ForEach(scoreboard.indices, id: \.self) { index in
                         
-                        let isFirst = index == 0
                         let isLast = index == scoreboard.count - 1
                         
-                        PlayerView(scoreboard[index], placement: index, isFirst: isFirst, isLast: isLast)
+                        PlayerView(scoreboard[index], placement: index, isLast: isLast)
                             .listRowInsets(EdgeInsets())
                             .listRowSeparator(.hidden)
                     }
@@ -56,7 +60,10 @@ struct TournamentView: View {
             }
         }
         .background(.clear)
-        //.ignoresSafeArea(.all)
+        .sheet(isPresented: $showSettingsDialog) {
+            SettingsView()
+                .presentationDetents([.medium])
+        }
         .sheet(isPresented: $showInviteDialog) {
             InvitePlayer()
                 .presentationDetents([.medium])
@@ -64,5 +71,9 @@ struct TournamentView: View {
         .onAppear {
             viewModel.getTournament()
         }
+    }
+    
+    private func settingsButtonTapped() {
+        showSettingsDialog = true
     }
 }

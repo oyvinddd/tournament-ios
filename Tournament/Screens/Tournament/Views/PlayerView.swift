@@ -11,13 +11,11 @@ struct PlayerView: View {
     
     var player: Player
     var placement: Int
-    var isFirst: Bool
     var isLast: Bool
     
-    init(_ player: Player, placement: Int, isFirst: Bool, isLast: Bool) {
+    init(_ player: Player, placement: Int, isLast: Bool) {
         self.player = player
         self.placement = placement
-        self.isFirst = isFirst
         self.isLast = isLast
     }
     
@@ -34,8 +32,8 @@ struct PlayerView: View {
                     .padding(.all, 8)
             }
             .background(Ellipse().fill(.red))
-            .padding(.leading, 8)
-            .padding(.top, isFirst ? cornerRadius * 2 : 8)
+            .padding(.leading, 16)
+            .padding(.top, 8)
             .padding(.bottom, isLast ? cornerRadius * 2 : 8)
             
             VStack(spacing: 2) {
@@ -62,10 +60,8 @@ struct PlayerView: View {
         .background(.white)
         .clipShape(
             .rect(
-                topLeadingRadius: isFirst ? cornerRadius : 0,
                 bottomLeadingRadius: isLast ? cornerRadius : 0,
-                bottomTrailingRadius: isLast ? cornerRadius : 0,
-                topTrailingRadius: isFirst ? cornerRadius : 0
+                bottomTrailingRadius: isLast ? cornerRadius : 0
             )
         )
     }

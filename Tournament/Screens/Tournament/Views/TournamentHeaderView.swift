@@ -38,7 +38,7 @@ struct TournamentHeaderView: View {
         }
         .padding(.all, 16)
         .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        .clipShape(.rect(topLeadingRadius: 8, topTrailingRadius: 8))
     }
     
     private func settingsButtonTapped() {
