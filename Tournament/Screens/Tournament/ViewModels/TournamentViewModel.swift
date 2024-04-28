@@ -34,4 +34,19 @@ enum TournamentState {
             }
         }
     }
+    
+    func leaveTournament() {
+        Task {
+            
+            do {
+                
+                try await tournamentService.leaveTournament()
+                
+            } catch let error {
+                
+            }
+            
+            // if we reach this part we have successfully left
+        }
+    }
 }

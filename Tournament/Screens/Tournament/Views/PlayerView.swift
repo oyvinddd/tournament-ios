@@ -77,6 +77,6 @@ struct PlayerView: View {
         if placement == 2 {
             return "🥉"
         }
-        return "\(placement + 1)"
+        return "\(placement + 1)th"
     }
 }

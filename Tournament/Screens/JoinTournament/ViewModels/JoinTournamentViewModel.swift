@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor final class JoinTournamentViewModel: ObservableObject, TournamentServiceInjectable {
     
-    func joinTournament(using code: Int) {
+    func joinTournament(using code: String) {
         
         Task {
             
@@ -19,7 +19,7 @@ import Foundation
                 
             }
             
-            // if we reach this part, we have joined successfully
+            // if we reach this part we have joined successfully
         }
     }
 }

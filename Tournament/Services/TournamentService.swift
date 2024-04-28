@@ -19,7 +19,9 @@ protocol TournamentService {
     
     func getTournament() async throws -> Tournament
     
-    func joinTournament(code: Int) async throws
+    func joinTournament(code: String) async throws
+    
+    func leaveTournament() async throws
 }
 
 final class MockedTournamentService: TournamentService, DataFactoryInjectable {
@@ -28,7 +30,9 @@ final class MockedTournamentService: TournamentService, DataFactoryInjectable {
         return dataFactory.tournament
     }
     
-    func joinTournament(code: Int) async throws {
-        
+    func joinTournament(code: String) async throws {
+    }
+    
+    func leaveTournament() async throws {
     }
 }

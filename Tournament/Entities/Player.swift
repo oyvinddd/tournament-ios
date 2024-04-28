@@ -14,4 +14,8 @@ struct Player: Codable, Identifiable {
     var username: String
     
     var score: Int
+    
+    var matchesPlayed: Int
+    
+    var lastSeen: Date
 }
