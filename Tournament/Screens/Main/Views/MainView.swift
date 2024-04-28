@@ -21,7 +21,7 @@ struct MainView: View {
                 
                 LazyHStack(spacing: 0) {
                     
-                    PlaceholderView()
+                    BluetoothView()
                         .containerRelativeFrame(.horizontal)
                     
                     TournamentView()
@@ -32,6 +32,14 @@ struct MainView: View {
             .scrollTargetBehavior(.viewAligned)
             .scrollIndicators(.hidden)
             .background(Color.General.background)
+            
+            VStack {
+                Spacer()
+                
+                MainMenuView()
+                    .frame(height: 50, alignment: .center)
+                    .padding(.bottom, 32)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea(.all, edges: .bottom)

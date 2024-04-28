@@ -43,7 +43,7 @@ enum TournamentState {
                 try await tournamentService.leaveTournament()
                 
             } catch let error {
-                
+                print(error)
             }
             
             // if we reach this part we have successfully left

@@ -24,9 +24,12 @@ protocol TournamentService {
     func leaveTournament() async throws
 }
 
-final class MockedTournamentService: TournamentService, DataFactoryInjectable {
+final class MockedTournamentService: TournamentService, AccountServiceInjectable, DataFactoryInjectable {
 
     func getTournament() async throws -> Tournament {
+        guard accountService.account?.hasTournament ?? false else {
+            throw APIError.noTournament
+        }
         return dataFactory.tournament
     }
     

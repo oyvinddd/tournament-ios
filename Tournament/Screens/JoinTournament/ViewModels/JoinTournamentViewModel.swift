@@ -16,7 +16,7 @@ import Foundation
             do {
                 try await tournamentService.joinTournament(code: code)
             } catch let error {
-                
+                print(error)
             }
             
             // if we reach this part we have joined successfully

@@ -17,18 +17,42 @@ struct ErrorView: View {
     
     var body: some View {
         
-        VStack(spacing: 4) {
+        VStack {
             
-            Text("Error!")
-                .font(Font.system(size: 32, weight: .bold, design: .rounded))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundStyle(.black)
+            HStack {
+                Spacer()
+                
+                Image(systemName: "flame")
+                    .renderingMode(.template)
+                    .font(Font.system(size: 56))
+                
+                Spacer()
+            }
+            .padding(.top, 16)
+            .padding(.bottom, 8)
+            
+            Text("Oops! There was an error...")
+                .font(Font.system(size: 20, weight: .bold, design: .rounded))
+                .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(Color.Text.normal)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 2)
             
             Text(error.localizedDescription)
-                .font(Font.system(size: 20, weight: .medium, design: .rounded))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundStyle(.gray)
+                .font(Font.system(size: 17, weight: .medium, design: .rounded))
+                .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(Color.Text.subtitle)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 16)
+            
+            if (error as? APIError) == .noTournament {
+                
+                // todo: ...
+            }
         }
         .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }

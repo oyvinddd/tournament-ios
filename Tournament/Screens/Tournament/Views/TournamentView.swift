@@ -58,7 +58,13 @@ struct TournamentView: View {
                 }
                 
             case .failure(let error):
+                
+                Spacer()
+                
                 ErrorView(error)
+                    .padding(.horizontal, 16)
+                
+                Spacer()
             }
         }
         .background(.clear)

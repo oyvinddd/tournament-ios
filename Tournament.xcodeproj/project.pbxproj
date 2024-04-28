@@ -10,6 +10,10 @@
 		8E03B0BE2BDE3BF00057AAF9 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0BD2BDE3BF00057AAF9 /* AccountView.swift */; };
 		8E03B0C12BDE43070057AAF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C02BDE43070057AAF9 /* SettingsView.swift */; };
 		8E03B0C42BDE44690057AAF9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */; };
+		8E03B0CA2BDEBCEA0057AAF9 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C92BDEBCEA0057AAF9 /* BluetoothViewController.swift */; };
+		8E03B0CD2BDEC4700057AAF9 /* BluetoothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0CC2BDEC4700057AAF9 /* BluetoothView.swift */; };
+		8E03B0CF2BDEC8B70057AAF9 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0CE2BDEC8B70057AAF9 /* MainMenuView.swift */; };
+		8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D12BDEDB760057AAF9 /* APIError.swift */; };
 		8E69A49E2BDC16C7005DC14F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69A49D2BDC16C7005DC14F /* ErrorView.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420522BDBBB2A00383D1D /* MainView.swift */; };
@@ -45,6 +49,11 @@
 		8E03B0C02BDE43070057AAF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8E03B0C52BDEB40B0057AAF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8E03B0C72BDEBC170057AAF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8E03B0C92BDEBCEA0057AAF9 /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
+		8E03B0CC2BDEC4700057AAF9 /* BluetoothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothView.swift; sourceTree = "<group>"; };
+		8E03B0CE2BDEC8B70057AAF9 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		8E03B0D12BDEDB760057AAF9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		8E69A49D2BDC16C7005DC14F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
@@ -105,6 +114,31 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		8E03B0C82BDEBCC30057AAF9 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				8E03B0CB2BDEC4590057AAF9 /* Views */,
+				8E03B0C92BDEBCEA0057AAF9 /* BluetoothViewController.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		8E03B0CB2BDEC4590057AAF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E03B0CC2BDEC4700057AAF9 /* BluetoothView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8E03B0D02BDEDB650057AAF9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8E03B0D12BDEDB760057AAF9 /* APIError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		8E69A49C2BDC16B7005DC14F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +168,8 @@
 		8EF4204F2BDBBB2A00383D1D /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				8E03B0C72BDEBC170057AAF9 /* Info.plist */,
+				8E03B0D02BDEDB650057AAF9 /* Networking */,
 				8EF420902BDBE44000383D1D /* Extensions */,
 				8EF4206B2BDBC16100383D1D /* Entities */,
 				8EF4205F2BDBBB8E00383D1D /* Screens */,
@@ -168,6 +204,7 @@
 		8EF4205F2BDBBB8E00383D1D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8E03B0C82BDEBCC30057AAF9 /* Bluetooth */,
 				8E03B0BF2BDE42F60057AAF9 /* Settings */,
 				8E69A49C2BDC16B7005DC14F /* Shared */,
 				8EF4209B2BDBEF4D00383D1D /* JoinTournament */,
@@ -306,6 +343,7 @@
 			children = (
 				8EF420522BDBBB2A00383D1D /* MainView.swift */,
 				8EF420672BDBBD2600383D1D /* PlaceholderView.swift */,
+				8E03B0CE2BDEC8B70057AAF9 /* MainMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -416,6 +454,7 @@
 			files = (
 				8EF4208B2BDBE3C700383D1D /* SignInView.swift in Sources */,
 				8EF420742BDBC24900383D1D /* ServiceFactory.swift in Sources */,
+				8E03B0CF2BDEC8B70057AAF9 /* MainMenuView.swift in Sources */,
 				8EF4206A2BDBBF5C00383D1D /* AppDelegate.swift in Sources */,
 				8EF420A02BDBEFF100383D1D /* DigitInputView.swift in Sources */,
 				8EF420A32BDBF36D00383D1D /* JoinTournamentViewModel.swift in Sources */,
@@ -434,6 +473,7 @@
 				8EF4206D2BDBC16C00383D1D /* Player.swift in Sources */,
 				8EF420662BDBBCB500383D1D /* TournamentView.swift in Sources */,
 				8EF420722BDBC20E00383D1D /* TournamentService.swift in Sources */,
+				8E03B0CD2BDEC4700057AAF9 /* BluetoothView.swift in Sources */,
 				8EF420782BDBC4A900383D1D /* TournamentViewModel.swift in Sources */,
 				8EF420882BDBE2E800383D1D /* Account.swift in Sources */,
 				8E03B0C12BDE43070057AAF9 /* SettingsView.swift in Sources */,
@@ -441,8 +481,10 @@
 				8EF420842BDBE03D00383D1D /* TournamentHeaderView.swift in Sources */,
 				8EF420862BDBE22600383D1D /* AccountService.swift in Sources */,
 				8EF420702BDBC1B500383D1D /* DataFactory.swift in Sources */,
+				8E03B0CA2BDEBCEA0057AAF9 /* BluetoothViewController.swift in Sources */,
 				8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */,
 				8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */,
+				8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +621,10 @@
 				DEVELOPMENT_TEAM = 2SMFLM66R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tournament/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "The app needs bluetooth for discovering opponents";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "The app needs to contact other devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -614,7 +659,10 @@
 				DEVELOPMENT_TEAM = 2SMFLM66R9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tournament/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "The app needs bluetooth for discovering opponents";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "The app needs to contact other devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
