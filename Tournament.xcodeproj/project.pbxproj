@@ -23,12 +23,12 @@
 		8E03B0E62BE15DF00057AAF9 /* TournamentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0E52BE15DF00057AAF9 /* TournamentRequest.swift */; };
 		8E03B0E82BE1690D0057AAF9 /* MatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0E72BE1690D0057AAF9 /* MatchRequest.swift */; };
 		8E03B0EB2BE16EA80057AAF9 /* JoinRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0EA2BE16EA80057AAF9 /* JoinRequest.swift */; };
+		8E03B0ED2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0EC2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift */; };
 		8E69A49E2BDC16C7005DC14F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69A49D2BDC16C7005DC14F /* ErrorView.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420522BDBBB2A00383D1D /* MainView.swift */; };
 		8EF420552BDBBB2B00383D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420542BDBBB2B00383D1D /* Assets.xcassets */; };
 		8EF420582BDBBB2C00383D1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420572BDBBB2C00383D1D /* Preview Assets.xcassets */; };
-		8EF420642BDBBC4B00383D1D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420632BDBBC4B00383D1D /* CameraView.swift */; };
 		8EF420662BDBBCB500383D1D /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420652BDBBCB500383D1D /* TournamentView.swift */; };
 		8EF420682BDBBD2600383D1D /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420672BDBBD2600383D1D /* PlaceholderView.swift */; };
 		8EF4206A2BDBBF5C00383D1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420692BDBBF5C00383D1D /* AppDelegate.swift */; };
@@ -39,7 +39,6 @@
 		8EF420762BDBC3D300383D1D /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420752BDBC3D300383D1D /* Tournament.swift */; };
 		8EF420782BDBC4A900383D1D /* TournamentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420772BDBC4A900383D1D /* TournamentViewModel.swift */; };
 		8EF4207B2BDBC5FD00383D1D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4207A2BDBC5FD00383D1D /* PlayerView.swift */; };
-		8EF420822BDBDB4600383D1D /* InvitePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420812BDBDB4600383D1D /* InvitePlayer.swift */; };
 		8EF420842BDBE03D00383D1D /* TournamentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420832BDBE03D00383D1D /* TournamentHeaderView.swift */; };
 		8EF420862BDBE22600383D1D /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420852BDBE22600383D1D /* AccountService.swift */; };
 		8EF420882BDBE2E800383D1D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420872BDBE2E800383D1D /* Account.swift */; };
@@ -72,13 +71,13 @@
 		8E03B0E52BE15DF00057AAF9 /* TournamentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentRequest.swift; sourceTree = "<group>"; };
 		8E03B0E72BE1690D0057AAF9 /* MatchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRequest.swift; sourceTree = "<group>"; };
 		8E03B0EA2BE16EA80057AAF9 /* JoinRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRequest.swift; sourceTree = "<group>"; };
+		8E03B0EC2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRegisterMatchView.swift; sourceTree = "<group>"; };
 		8E69A49D2BDC16C7005DC14F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
 		8EF420522BDBBB2A00383D1D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8EF420542BDBBB2B00383D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EF420572BDBBB2C00383D1D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8EF420632BDBBC4B00383D1D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		8EF420652BDBBCB500383D1D /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
 		8EF420672BDBBD2600383D1D /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		8EF420692BDBBF5C00383D1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +88,6 @@
 		8EF420752BDBC3D300383D1D /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		8EF420772BDBC4A900383D1D /* TournamentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentViewModel.swift; sourceTree = "<group>"; };
 		8EF4207A2BDBC5FD00383D1D /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		8EF420812BDBDB4600383D1D /* InvitePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePlayer.swift; sourceTree = "<group>"; };
 		8EF420832BDBE03D00383D1D /* TournamentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentHeaderView.swift; sourceTree = "<group>"; };
 		8EF420852BDBE22600383D1D /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		8EF420872BDBE2E800383D1D /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -146,6 +144,7 @@
 			children = (
 				8E03B0D32BDEE94A0057AAF9 /* DiscoveredPlayerView.swift */,
 				8E03B0D72BDEEC1C0057AAF9 /* RegisterMatchView.swift */,
+				8E03B0EC2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,9 +259,7 @@
 				8EF4209B2BDBEF4D00383D1D /* JoinTournament */,
 				8EF420932BDBE89B00383D1D /* CreateTournament */,
 				8EF420892BDBE3B400383D1D /* SignIn */,
-				8EF4207E2BDBDB2600383D1D /* Invite */,
 				8EF420622BDBBC1D00383D1D /* Tournament */,
-				8EF420612BDBBBA200383D1D /* Camera */,
 				8EF420602BDBBB9D00383D1D /* Main */,
 			);
 			path = Screens;
@@ -275,14 +272,6 @@
 				8EF420972BDBEC2600383D1D /* Views */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		8EF420612BDBBBA200383D1D /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				8EF420632BDBBC4B00383D1D /* CameraView.swift */,
-			);
-			path = Camera;
 			sourceTree = "<group>";
 		};
 		8EF420622BDBBC1D00383D1D /* Tournament */ = {
@@ -322,22 +311,6 @@
 				8EF420772BDBC4A900383D1D /* TournamentViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		8EF4207E2BDBDB2600383D1D /* Invite */ = {
-			isa = PBXGroup;
-			children = (
-				8EF420802BDBDB3200383D1D /* Views */,
-			);
-			path = Invite;
-			sourceTree = "<group>";
-		};
-		8EF420802BDBDB3200383D1D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8EF420812BDBDB4600383D1D /* InvitePlayer.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		8EF420892BDBE3B400383D1D /* SignIn */ = {
@@ -523,7 +496,6 @@
 				8E03B0E62BE15DF00057AAF9 /* TournamentRequest.swift in Sources */,
 				8EF4209E2BDBEF6500383D1D /* JoinTournamentView.swift in Sources */,
 				8EF4207B2BDBC5FD00383D1D /* PlayerView.swift in Sources */,
-				8EF420642BDBBC4B00383D1D /* CameraView.swift in Sources */,
 				8E69A49E2BDC16C7005DC14F /* ErrorView.swift in Sources */,
 				8EF420682BDBBD2600383D1D /* PlaceholderView.swift in Sources */,
 				8E03B0E22BE15A440057AAF9 /* AppSettings.swift in Sources */,
@@ -532,12 +504,12 @@
 				8E03B0C42BDE44690057AAF9 /* SettingsViewModel.swift in Sources */,
 				8EF4206D2BDBC16C00383D1D /* Player.swift in Sources */,
 				8EF420662BDBBCB500383D1D /* TournamentView.swift in Sources */,
+				8E03B0ED2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift in Sources */,
 				8EF420722BDBC20E00383D1D /* TournamentService.swift in Sources */,
 				8EF420782BDBC4A900383D1D /* TournamentViewModel.swift in Sources */,
 				8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */,
 				8EF420882BDBE2E800383D1D /* Account.swift in Sources */,
 				8E03B0C12BDE43070057AAF9 /* SettingsView.swift in Sources */,
-				8EF420822BDBDB4600383D1D /* InvitePlayer.swift in Sources */,
 				8EF420842BDBE03D00383D1D /* TournamentHeaderView.swift in Sources */,
 				8EF420862BDBE22600383D1D /* AccountService.swift in Sources */,
 				8E03B0EB2BE16EA80057AAF9 /* JoinRequest.swift in Sources */,
@@ -690,7 +662,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,7 +699,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

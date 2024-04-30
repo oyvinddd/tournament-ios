@@ -10,6 +10,9 @@ import SwiftUI
 struct RegisterMatchView: View {
     
     @ObservedObject var viewModel = RegisterMatchViewModel()
+    @State var showConfirmDialog = false
+    
+    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
     
     var body: some View {
         ZStack {
@@ -20,8 +23,16 @@ struct RegisterMatchView: View {
                 score: 1200,
                 matchesPlayed: 12,
                 lastSeen: Date.now))
+            .onTapGesture {
+                feedbackGenerator.impactOccurred()
+                showConfirmDialog.toggle()
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.yellow)
+        .background(.clear)
+        .sheet(isPresented: $showConfirmDialog) {
+            ConfirmRegisterMatchView()
+                .presentationDetents([.medium])
+        }
     }
 }

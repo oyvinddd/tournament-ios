@@ -15,8 +15,6 @@ struct MainView: View {
         
         ZStack {
             
-            CameraView()
-            
             ScrollView(.horizontal) {
                 
                 LazyHStack(spacing: 0) {

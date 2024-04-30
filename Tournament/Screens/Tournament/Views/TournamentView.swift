@@ -11,7 +11,6 @@ struct TournamentView: View {
     
     @ObservedObject var viewModel = TournamentViewModel()
     @State var showSettingsDialog = false
-    @State var showInviteDialog = false
     
     var body: some View {
         
@@ -70,10 +69,6 @@ struct TournamentView: View {
         .background(.clear)
         .sheet(isPresented: $showSettingsDialog) {
             SettingsView()
-                .presentationDetents([.medium])
-        }
-        .sheet(isPresented: $showInviteDialog) {
-            InvitePlayer()
                 .presentationDetents([.medium])
         }
         .onAppear {
