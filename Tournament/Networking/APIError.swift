@@ -12,4 +12,8 @@ enum APIError: Error {
     case unauthorized
     
     case noTournament
+    
+    case invalidResponse
+    
+    case decodingFailed
 }

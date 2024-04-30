@@ -21,6 +21,8 @@ protocol AccountService {
     
     var authenticated: Bool { get }
     
+    var accessToken: String? { get }
+    
     func refreshAccount(_ account: Account)
 }
 
@@ -29,6 +31,8 @@ final class MockedAccountService: AccountService {
     static let shared = MockedAccountService()
     
     var account: Account? = Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "test_access_token", refreshToken: "test_refresh_token")
+    
+    var accessToken: String? { account?.accessToken }
     
     var authenticated: Bool { account?.authenticated ?? false }
     

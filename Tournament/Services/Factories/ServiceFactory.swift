@@ -12,6 +12,7 @@ protocol ServiceFactoryProtocol {
     var accountService: AccountService { get }
     var tournamentService: TournamentService { get }
     var bluetoothService: BluetoothService { get }
+    var credentialService: CredentialService { get }
 }
 
 final class MockServiceFactory: ServiceFactoryProtocol {
@@ -21,4 +22,5 @@ final class MockServiceFactory: ServiceFactoryProtocol {
     var accountService: AccountService { MockedAccountService.shared }
     var tournamentService: TournamentService { MockedTournamentService() }
     var bluetoothService: BluetoothService { LiveBluetoothService.shared }
+    var credentialService: CredentialService { MockCredentialService.shared }
 }
