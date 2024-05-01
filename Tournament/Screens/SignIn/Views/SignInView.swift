@@ -13,20 +13,28 @@ struct SignInView: View {
     
     var body: some View {
         
-        VStack {
-            
-            Text("Welcome to Tournament!")
-                .font(Font.system(size: 32, weight: .bold, design: .rounded))
-            
-            Spacer()
-            
-            Button("Sign in with Google", action: googleButtonTapped)
-                .padding(.horizontal, 32)
-            
-            Spacer()
+        NavigationStack {
+            VStack {
+                
+                Spacer()
+                
+                Text("Welcome! ✨")
+                    .font(Font.system(size: 38, weight: .bold, design: .rounded))
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 32)
+                    .padding(.bottom, 8)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(Color.Text.normal)
+                
+                NavigationLink("Sign in with Google", destination: ChooseUsernameView())
+                    .buttonStyle(MainButtonStyle())
+                    .padding(.horizontal, 32)
+                
+                Spacer()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.General.background)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.General.background)
     }
     
     private func googleButtonTapped() {

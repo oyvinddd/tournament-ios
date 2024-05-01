@@ -31,6 +31,8 @@ final class RequestFactory: CredentialServiceInjectable {
     
     var accountUrl: URL { apiBaseUrl.appendingPathComponent("account") }
     
+    var usernameUrl: URL { accountUrl.appendingPathComponent("username") }
+    
     var googleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("google") }
     
     var appleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("apple") }
@@ -44,6 +46,14 @@ final class RequestFactory: CredentialServiceInjectable {
     func deleteAccountRequest() -> URLRequest {
         return RequestBuilder(.delete, url: accountUrl)
             .set(token: credentialService.accessToken)
+            .build()
+    }
+    
+    func updateUsernameRequest(_ username: String) -> URLRequest {
+        return RequestBuilder(.put, url: usernameUrl)
+            .set(value: "Content-Type", for: "application/json")
+            .set(token: credentialService.accessToken)
+            .set(body: UsernameRequest(username))
             .build()
     }
     
