@@ -10,10 +10,12 @@ import SwiftUI
 struct SignInView: View {
     
     @ObservedObject var viewModel = SignInViewModel()
+    @State var showGoogleSignIn = false
     
     var body: some View {
         
         NavigationStack {
+            
             VStack {
                 
                 Spacer()
@@ -35,9 +37,11 @@ struct SignInView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.General.background)
         }
+        .sheet(isPresented: $showGoogleSignIn) {
+            
+        }
     }
     
     private func googleButtonTapped() {
-        viewModel.signInUsingGoogle()
     }
 }

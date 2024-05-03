@@ -29,7 +29,7 @@ protocol AccountService {
 }
 
 final class LiveAccountService: AccountService, RequestFactoryInjectable, NetworkManagerInjectable {
-    
+
     var account: Account?
     
     var accessToken: String?
@@ -45,8 +45,8 @@ final class LiveAccountService: AccountService, RequestFactoryInjectable, Networ
     }
 }
 
-final class MockedAccountService: AccountService {
-
+final class MockedAccountService: AccountService, RequestFactoryInjectable {
+    
     static let shared = MockedAccountService()
     
     var account: Account? //= Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "test_access_token", refreshToken: "test_refresh_token")

@@ -6,11 +6,10 @@
 //
 
 import Foundation
+import AuthenticationServices
 
-@MainActor final class SignInViewModel: ObservableObject, AccountServiceInjectable {
+@MainActor final class SignInViewModel: ObservableObject, AuthenticationServiceInjectable {
     
-    func signInUsingGoogle() {
-        // dummy account
-        accountService.refreshAccount(Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "test_access_token", refreshToken: "test_refresh_token"))
+    func startGoogleSignIn(from contextProvider: ASWebAuthenticationPresentationContextProviding) {
     }
 }

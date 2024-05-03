@@ -43,6 +43,11 @@ final class RequestFactory: CredentialServiceInjectable {
     
     // MARK: - Account requests
     
+    func googleSignInRequest() -> URLRequest {
+        return RequestBuilder(.get, url: googleAuthUrl)
+            .build()
+    }
+    
     func deleteAccountRequest() -> URLRequest {
         return RequestBuilder(.delete, url: accountUrl)
             .set(token: credentialService.accessToken)

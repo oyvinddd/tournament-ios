@@ -29,6 +29,10 @@
 		8E03B0F42BE191A50057AAF9 /* UsernameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0F32BE191A50057AAF9 /* UsernameRequest.swift */; };
 		8E03B0F62BE1926C0057AAF9 /* ChooseUsernameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0F52BE1926C0057AAF9 /* ChooseUsernameViewModel.swift */; };
 		8E69A49E2BDC16C7005DC14F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69A49D2BDC16C7005DC14F /* ErrorView.swift */; };
+		8E84D8922BE4CE93006F4E97 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8912BE4CE93006F4E97 /* AuthenticationService.swift */; };
+		8E84D8942BE4CFF7006F4E97 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8932BE4CFF7006F4E97 /* TokenService.swift */; };
+		8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */; };
+		8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420522BDBBB2A00383D1D /* MainView.swift */; };
 		8EF420552BDBBB2B00383D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420542BDBBB2B00383D1D /* Assets.xcassets */; };
@@ -81,6 +85,10 @@
 		8E03B0F32BE191A50057AAF9 /* UsernameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameRequest.swift; sourceTree = "<group>"; };
 		8E03B0F52BE1926C0057AAF9 /* ChooseUsernameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUsernameViewModel.swift; sourceTree = "<group>"; };
 		8E69A49D2BDC16C7005DC14F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		8E84D8912BE4CE93006F4E97 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		8E84D8932BE4CFF7006F4E97 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenContainer.swift; sourceTree = "<group>"; };
+		8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
 		8EF420522BDBBB2A00383D1D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -212,6 +220,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		8E84D8972BE4D229006F4E97 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8EF420442BDBBB2A00383D1D = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +249,7 @@
 		8EF4204F2BDBBB2A00383D1D /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				8E84D8972BE4D229006F4E97 /* Utils */,
 				8E03B0C72BDEBC170057AAF9 /* Info.plist */,
 				8E03B0D02BDEDB650057AAF9 /* Networking */,
 				8EF420902BDBE44000383D1D /* Extensions */,
@@ -264,6 +281,8 @@
 				8EF420852BDBE22600383D1D /* AccountService.swift */,
 				8E03B0D52BDEE99E0057AAF9 /* BluetoothService.swift */,
 				8E03B0E32BE15AEC0057AAF9 /* CredentialService.swift */,
+				8E84D8912BE4CE93006F4E97 /* AuthenticationService.swift */,
+				8E84D8932BE4CFF7006F4E97 /* TokenService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -308,6 +327,7 @@
 				8EF4206C2BDBC16C00383D1D /* Player.swift */,
 				8EF420752BDBC3D300383D1D /* Tournament.swift */,
 				8EF420872BDBE2E800383D1D /* Account.swift */,
+				8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -509,6 +529,7 @@
 				8EF420962BDBE8B600383D1D /* CreateTournamentView.swift in Sources */,
 				8E03B0BE2BDE3BF00057AAF9 /* AccountView.swift in Sources */,
 				8E03B0DB2BDEEC390057AAF9 /* RegisterMatchViewModel.swift in Sources */,
+				8E84D8942BE4CFF7006F4E97 /* TokenService.swift in Sources */,
 				8E03B0F42BE191A50057AAF9 /* UsernameRequest.swift in Sources */,
 				8EF4208F2BDBE3E400383D1D /* SignInViewModel.swift in Sources */,
 				8E03B0D82BDEEC1C0057AAF9 /* RegisterMatchView.swift in Sources */,
@@ -530,6 +551,7 @@
 				8E03B0F22BE18CFD0057AAF9 /* ChooseUsernameView.swift in Sources */,
 				8E03B0ED2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift in Sources */,
 				8EF420722BDBC20E00383D1D /* TournamentService.swift in Sources */,
+				8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */,
 				8EF420782BDBC4A900383D1D /* TournamentViewModel.swift in Sources */,
 				8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */,
 				8EF420882BDBE2E800383D1D /* Account.swift in Sources */,
@@ -539,8 +561,10 @@
 				8E03B0EB2BE16EA80057AAF9 /* JoinRequest.swift in Sources */,
 				8EF420702BDBC1B500383D1D /* DataFactory.swift in Sources */,
 				8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */,
+				8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */,
 				8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */,
 				8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */,
+				8E84D8922BE4CE93006F4E97 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
