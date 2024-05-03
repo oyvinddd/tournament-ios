@@ -19,7 +19,7 @@ struct PlayerView: View {
         self.isLast = isLast
     }
     
-    private let cornerRadius: Double = 8
+    private let cornerRadius: Double = 12
     
     var body: some View {
         
@@ -29,7 +29,7 @@ struct PlayerView: View {
                 Text("😍")
                     .font(Font.system(size: 22))
                     .frame(alignment: .center)
-                    .padding(.all, 8)
+                    .padding(.all, 12)
             }
             .background(Ellipse().fill(.red))
             .padding(.leading, 16)
@@ -53,8 +53,8 @@ struct PlayerView: View {
             
             Text(placementString())
                 .font(Font.system(size: 18, weight: .bold, design: .rounded))
-                .frame(width: 30, alignment: .center)
-                .padding(.trailing, 8)
+                .frame(width: 30, alignment: .trailing)
+                .padding(.trailing, 16)
         }
         .frame(maxHeight: .infinity)
         .listRowBackground(Color.clear)

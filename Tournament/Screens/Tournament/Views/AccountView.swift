@@ -18,18 +18,6 @@ struct AccountView: View {
         
         VStack {
             
-            HStack {
-                Spacer()
-                
-                Button(action: buttonAction) {
-                    Image(systemName: "gearshape.fill")
-                        .renderingMode(.template)
-                        .imageScale(.large)
-                        .foregroundStyle(Color.Text.disabled)
-                }
-                .background(.yellow)
-            }
-            
             ZStack {
                 Text("🤩")
                     .font(Font.system(size: 64))
@@ -38,9 +26,9 @@ struct AccountView: View {
             .background(Circle().fill(.red))
             .padding(.bottom, 8)
             
-            Text("Hello, \(account.username)!")
+            Text(account.username)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .font(Font.system(size: 26, weight: .medium, design: .rounded))
+                .font(Font.system(size: 28, weight: .medium, design: .rounded))
                 .foregroundStyle(Color.Text.normal)
         }
         .padding(.horizontal, 16)

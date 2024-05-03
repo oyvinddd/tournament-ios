@@ -13,9 +13,9 @@ struct MainButtonStyle: ButtonStyle {
         
         var backgroundColor: Color
         if configuration.isPressed {
-            backgroundColor = Color.black
+            backgroundColor = Color.General.mainBackground2
         } else {
-            backgroundColor = Color.black
+            backgroundColor = Color.General.mainBackground2
         }
         
         return configuration.label
@@ -23,8 +23,28 @@ struct MainButtonStyle: ButtonStyle {
             .padding(.vertical, 14)
             .font(Font.system(size: 19, weight: .bold, design: .rounded))
             .background(backgroundColor)
-            .foregroundStyle(Color.white)
             .foregroundStyle(.white)
-            .clipShape(Capsule())
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+    }
+}
+
+struct SecondaryButtonStyle: ButtonStyle {
+    
+    func makeBody(configuration: Configuration) -> some View {
+        
+        var backgroundColor: Color
+        if configuration.isPressed {
+            backgroundColor = .white
+        } else {
+            backgroundColor = .white
+        }
+        
+        return configuration.label
+            .padding(.horizontal, 18)
+            .padding(.vertical, 14)
+            .font(Font.system(size: 19, weight: .bold, design: .rounded))
+            .background(backgroundColor)
+            .foregroundStyle(Color.General.mainBackground2)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }

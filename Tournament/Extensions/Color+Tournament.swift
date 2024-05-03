@@ -19,6 +19,13 @@ extension Color {
     }
     
     enum General {
+        
+        static let defaultBackground = Color(hex: 0xF7F6FB)
+        
+        static let mainBackground1 = Color(hex: 0xAE86EF)
+        
+        static let mainBackground2 = Color(hex: 0x6967E1)
+        
         static let background = Color(hex: 0xE4E6EB)
         
         static let main = Color(hex: 0x656FED)
@@ -33,6 +40,7 @@ extension Color {
     }
     
     enum Text {
+        
         static let normal = Color(hex: 0x545A66)
         
         static let subtitle = Color(hex: 0xC7C7C9)

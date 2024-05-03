@@ -29,7 +29,13 @@ struct MainView: View {
             }
             .scrollTargetBehavior(.viewAligned)
             .scrollIndicators(.hidden)
-            .background(Color.General.background)
+            .background(
+                LinearGradient(
+                    colors: [Color.General.mainBackground2, Color.General.mainBackground1],
+                    startPoint: .bottomLeading,
+                    endPoint: .topTrailing
+                )
+            )
             
             VStack {
                 Spacer()
@@ -41,7 +47,6 @@ struct MainView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea(.all, edges: .bottom)
-        .background(.white)
         .sheet(isPresented: $viewModel.showSignIn) {
             SignInView()
                 .interactiveDismissDisabled()

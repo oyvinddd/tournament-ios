@@ -30,12 +30,13 @@ struct DiscoveredPlayerView: View {
             }
             .padding(.all, 4)
             .background(Circle().fill(.white))
-            .shadow(color: .gray, radius: 5)
+            .shadow(color: .white, radius: 5)
             
             Text(player.username)
                 .frame(alignment: .center)
                 .multilineTextAlignment(.center)
                 .font(Font.system(size: 14, weight: .bold, design: .rounded))
+                .foregroundStyle(Color.Text.normal)
         }
     }
 }

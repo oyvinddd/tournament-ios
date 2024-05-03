@@ -56,9 +56,11 @@ final class LiveTournamentService: TournamentService, RequestFactoryInjectable, 
 final class MockedTournamentService: TournamentService, AccountServiceInjectable, DataFactoryInjectable {
 
     func getTournament() async throws -> Tournament {
+        /*
         guard accountService.account?.hasTournament ?? false else {
             throw APIError.noTournament
         }
+         */
         return dataFactory.tournament
     }
     
