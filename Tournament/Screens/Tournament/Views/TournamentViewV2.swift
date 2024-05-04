@@ -34,11 +34,17 @@ struct TournamentViewV2: View {
                 .contentMargins(.top, 0)
                 .background(.clear)
                 
+                // clipped view
+                ZStack {
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 30)
+                .background(.white)
+                .clipShape(Circle().trim(from: 0.5, to: 1.0))
+                
                 Spacer()
                     .frame(maxWidth: .infinity)
                     .background(Color.General.defaultBackground)
-                
-                ButtonView()
             }
             .frame(maxWidth: .infinity)
             
@@ -74,6 +80,16 @@ struct TournamentViewV2: View {
             .contentMargins(.top, topContentMargin, for: .scrollContent)
             .listStyle(.plain)
             .listSectionSpacing(0)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            VStack {
+                Spacer()
+                ButtonView()
+                    .background(.white)
+                    .shadow(color: Color.gray, radius: 6)
+                    .safeAreaPadding(.bottom, 16)
+                    //.clipShape(.rect(topLeadingRadius: 20, topTrailingRadius: 20))
+            }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -133,6 +149,7 @@ private struct PlayerInfoView: View {
 private struct ButtonView: View {
     
     var body: some View {
+        
         HStack {
             
             Button(action: {}) {
@@ -140,14 +157,14 @@ private struct ButtonView: View {
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(MainButtonStyle())
-            .padding(.leading, 16)
             
             Button(action: {}, label: {
-                Text(Image(systemName: "tray.full"))
+                Text(Image(systemName: "gearshape"))
             })
             .buttonStyle(SecondaryButtonStyle())
-            .padding(.trailing, 16)
         }
-        .background(Color.General.defaultBackground)
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 16)
+        .padding(.top, 16)
     }
 }
