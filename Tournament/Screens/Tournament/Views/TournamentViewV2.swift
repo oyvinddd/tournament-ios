@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TournamentViewV2: View {
     
+    @State private var showMatchRegistration = false
+    @State private var showSettings = false
+    
     var scoreboard: [Player] = [
         Player(id: UUID(), username: "oyvinddd", score: 1800, matchesPlayed: 8, lastSeen: Date.now),
         Player(id: UUID(), username: "rub1", score: 1900, matchesPlayed: 10, lastSeen: Date.now),
@@ -24,73 +27,85 @@ struct TournamentViewV2: View {
         
         ZStack {
             
-            VStack {
-                
-                // empty view
-                ZStack {
-                }
+            MatchRegistrationBottomView($showMatchRegistration)
                 .frame(maxWidth: .infinity)
-                .frame(height: topContentMargin)
-                .contentMargins(.top, 0)
-                .background(.clear)
-                
-                // clipped view
-                ZStack {
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 30)
-                .background(.white)
-                .clipShape(Circle().trim(from: 0.5, to: 1.0))
-                
-                Spacer()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.General.defaultBackground)
-            }
-            .frame(maxWidth: .infinity)
+                .padding(.horizontal, 16)
+                .safeAreaPadding(.bottom, 16)
             
-            List {
-                
-                // table view header
-                
-                Section {
+            if !showMatchRegistration {
+             
+                ZStack {
                     
-                    PlayerInfoView()
-                        .listRowBackground(Color.clear)
-                        .listRowInsets(EdgeInsets())
-                        .listRowSeparator(.hidden)
-                        .padding(.horizontal, 16)
-                }
-                
-                // scoreboard
-                
-                Section {
-                    
-                    ForEach(scoreboard.indices, id: \.self) { index in
+                    VStack {
                         
-                        let isLast = index == scoreboard.count - 1
+                        // empty view
+                        ZStack {
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: topContentMargin)
+                        .contentMargins(.top, 0)
+                        .background(.clear)
                         
-                        PlayerView(scoreboard[index], placement: index, isLast: isLast)
-                            .listRowInsets(EdgeInsets())
-                            .listRowSeparator(.hidden)
-                            .padding(.horizontal, 16)
+                        // clipped view
+                        ZStack {
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 30)
+                        .background(.white)
+                        .clipShape(Circle().trim(from: 0.5, to: 1.0))
+                        
+                        Spacer()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.General.defaultBackground)
                     }
+                    .frame(maxWidth: .infinity)
+                    
+                    List {
+                        
+                        // table view header
+                        
+                        Section {
+                            
+                            PlayerInfoView()
+                                .listRowBackground(Color.clear)
+                                .listRowInsets(EdgeInsets())
+                                .listRowSeparator(.hidden)
+                                .padding(.horizontal, 16)
+                        }
+                        
+                        // scoreboard
+                        
+                        Section {
+                            
+                            ForEach(scoreboard.indices, id: \.self) { index in
+                                
+                                let isLast = index == scoreboard.count - 1
+                                
+                                PlayerView(scoreboard[index], placement: index, isLast: isLast)
+                                    .listRowInsets(EdgeInsets())
+                                    .listRowSeparator(.hidden)
+                                    .padding(.horizontal, 16)
+                            }
+                        }
+                    }
+                    .contentMargins(.bottom, 56, for: .scrollContent)
+                    .contentMargins(.top, topContentMargin, for: .scrollContent)
+                    .listStyle(.plain)
+                    .listSectionSpacing(0)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                    VStack {
+                        Spacer()
+                        TournamentBottomView($showMatchRegistration)
+                            .background(.white)
+                            .shadow(color: Color.gray, radius: 6)
+                            .safeAreaPadding(.bottom, 16)
+                        //.clipShape(.rect(topLeadingRadius: 20, topTrailingRadius: 20))
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                .transition(.move(edge: showMatchRegistration ? .top : .bottom))
             }
-            .contentMargins(.bottom, 56, for: .scrollContent)
-            .contentMargins(.top, topContentMargin, for: .scrollContent)
-            .listStyle(.plain)
-            .listSectionSpacing(0)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            VStack {
-                Spacer()
-                ButtonView()
-                    .background(.white)
-                    .shadow(color: Color.gray, radius: 6)
-                    .safeAreaPadding(.bottom, 16)
-                    //.clipShape(.rect(topLeadingRadius: 20, topTrailingRadius: 20))
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
@@ -100,9 +115,6 @@ struct TournamentViewV2: View {
                 endPoint: .topTrailing
             )
         )
-    }
-    
-    private func registerButtonTapped() {
     }
 }
 
@@ -146,13 +158,19 @@ private struct PlayerInfoView: View {
 
 // MARK: - Button view
 
-private struct ButtonView: View {
+private struct TournamentBottomView: View {
+    
+    @Binding var showMatchRegistration: Bool
+    
+    init(_ showMatchRegistration: Binding<Bool>) {
+        self._showMatchRegistration = showMatchRegistration
+    }
     
     var body: some View {
         
         HStack {
             
-            Button(action: {}) {
+            Button(action: matchRegistrationTapped) {
                 Text("Register Match")
                     .frame(maxWidth: .infinity)
             }
@@ -166,5 +184,38 @@ private struct ButtonView: View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 16)
         .padding(.top, 16)
+    }
+    
+    private func matchRegistrationTapped() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        withAnimation { showMatchRegistration.toggle() }
+    }
+}
+
+private struct MatchRegistrationBottomView: View {
+    
+    @Binding var showMatchRegistration: Bool
+    
+    init(_ showMatchRegistration: Binding<Bool>) {
+        self._showMatchRegistration = showMatchRegistration
+    }
+    
+    var body: some View {
+        
+        VStack {
+            
+            Spacer()
+            
+            Button(action: closeButtonTapped, label: {
+                Text("Close")
+                    .frame(maxWidth: .infinity)
+            })
+            .buttonStyle(SecondaryButtonStyle())
+        }
+    }
+    
+    private func closeButtonTapped() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        withAnimation { showMatchRegistration.toggle() }
     }
 }
