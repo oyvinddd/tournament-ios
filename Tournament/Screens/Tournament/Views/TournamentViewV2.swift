@@ -25,12 +25,14 @@ struct TournamentViewV2: View {
     
     var body: some View {
         
-        ZStack {
+        VStack {
             
+            /*
             MatchRegistrationBottomView($showMatchRegistration)
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 16)
                 .safeAreaPadding(.bottom, 16)
+             */
             
             if !showMatchRegistration {
              
@@ -93,19 +95,19 @@ struct TournamentViewV2: View {
                     .listStyle(.plain)
                     .listSectionSpacing(0)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
-                    VStack {
-                        Spacer()
-                        TournamentBottomView($showMatchRegistration)
-                            .background(.white)
-                            .shadow(color: Color.gray, radius: 6)
-                            .safeAreaPadding(.bottom, 16)
-                        //.clipShape(.rect(topLeadingRadius: 20, topTrailingRadius: 20))
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .transition(.move(edge: showMatchRegistration ? .top : .bottom))
             }
+            
+            VStack {
+                Spacer()
+                TournamentBottomView($showMatchRegistration)
+                    .background(.white)
+                    .shadow(color: Color.gray, radius: 6)
+                    .safeAreaPadding(.bottom, 16)
+            }
+            
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(

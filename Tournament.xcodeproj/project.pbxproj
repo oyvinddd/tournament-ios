@@ -34,6 +34,8 @@
 		8E84D8942BE4CFF7006F4E97 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8932BE4CFF7006F4E97 /* TokenService.swift */; };
 		8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */; };
 		8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */; };
+		8E973E1B2BE7EEFD00E21705 /* MainViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E973E1A2BE7EEFD00E21705 /* MainViewV2.swift */; };
+		8E973E1D2BE7FA0600E21705 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E973E1C2BE7FA0600E21705 /* ScoreboardView.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420522BDBBB2A00383D1D /* MainView.swift */; };
 		8EF420552BDBBB2B00383D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420542BDBBB2B00383D1D /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		8E84D8932BE4CFF7006F4E97 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenContainer.swift; sourceTree = "<group>"; };
 		8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		8E973E1A2BE7EEFD00E21705 /* MainViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewV2.swift; sourceTree = "<group>"; };
+		8E973E1C2BE7FA0600E21705 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
 		8EF420522BDBBB2A00383D1D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 				8EF420832BDBE03D00383D1D /* TournamentHeaderView.swift */,
 				8E03B0BD2BDE3BF00057AAF9 /* AccountView.swift */,
 				8E805E932BE5070C00D144BF /* TournamentViewV2.swift */,
+				8E973E1C2BE7FA0600E21705 /* ScoreboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 		8EF420972BDBEC2600383D1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E973E1A2BE7EEFD00E21705 /* MainViewV2.swift */,
 				8EF420522BDBBB2A00383D1D /* MainView.swift */,
 				8EF420672BDBBD2600383D1D /* PlaceholderView.swift */,
 				8E03B0CE2BDEC8B70057AAF9 /* MainMenuView.swift */,
@@ -547,6 +553,7 @@
 				8E03B0E22BE15A440057AAF9 /* AppSettings.swift in Sources */,
 				8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */,
 				8EF420762BDBC3D300383D1D /* Tournament.swift in Sources */,
+				8E973E1B2BE7EEFD00E21705 /* MainViewV2.swift in Sources */,
 				8E03B0C42BDE44690057AAF9 /* SettingsViewModel.swift in Sources */,
 				8EF4206D2BDBC16C00383D1D /* Player.swift in Sources */,
 				8E03B0F02BE18B500057AAF9 /* ButtonStyle.swift in Sources */,
@@ -568,6 +575,7 @@
 				8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */,
 				8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */,
 				8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */,
+				8E973E1D2BE7FA0600E21705 /* ScoreboardView.swift in Sources */,
 				8E84D8922BE4CE93006F4E97 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
