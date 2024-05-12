@@ -26,7 +26,7 @@ struct MainViewV2: View {
                         ScoreboardView()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.brown)
+                    .background(Color.General.defaultBackground)
                     .transition(.move(edge: .bottom))
                 }
             }
@@ -44,10 +44,8 @@ struct MainViewV2: View {
                 .padding(.leading, 16)
                 .padding(.top, 16)
                 
-                //.frame(maxWidth: .infinity)
-                
                 Button(action: {}) {
-                    Text("gg")
+                    Image(systemName: "gearshape.fill")
                 }
                 .buttonStyle(SecondaryButtonStyle())
                 .padding(.trailing, 16)
@@ -55,7 +53,9 @@ struct MainViewV2: View {
             }
             .frame(maxWidth: .infinity)
             .safeAreaPadding(.bottom, 32)
-            .background(.white)
+            .background(Color.white
+                .shadow(color: Color.gray, radius: 5, x: 0, y: 0)
+                .mask(Rectangle().padding(.top, -20)))
         }
     }
     
