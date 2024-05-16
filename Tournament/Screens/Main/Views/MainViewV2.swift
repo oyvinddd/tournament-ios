@@ -18,6 +18,8 @@ struct MainViewV2: View {
             // background view (register match)
             ZStack {
                 
+                RegisterMatchView()
+                
                 if show {
                     
                     // tournament view

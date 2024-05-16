@@ -19,9 +19,11 @@ struct ScoreboardView: View {
     
     var body: some View {
         
-        VStack {
+        ZStack {
             
             AccountView(account: Account(id: UUID(), username: "oyvind_h", created: Date.now), buttonAction: {})
+                .frame(maxHeight: .infinity)
+                .padding(.top, 0)
             
             List {
                 
@@ -46,7 +48,7 @@ struct ScoreboardView: View {
                 }
             }
             .contentMargins(.bottom, 56, for: .scrollContent)
-            .contentMargins(.top, 0, for: .scrollContent)
+            .contentMargins(.top, 200, for: .scrollContent)
             .listStyle(.plain)
             .listSectionSpacing(0)
         }

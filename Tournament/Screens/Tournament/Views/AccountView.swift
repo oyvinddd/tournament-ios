@@ -30,7 +30,10 @@ struct AccountView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .font(Font.system(size: 28, weight: .medium, design: .rounded))
                 .foregroundStyle(Color.Text.normal)
+            
+            Spacer()
         }
+        .frame(maxHeight: .infinity)
         .padding(.horizontal, 16)
         .padding(.top, 16)
     }
