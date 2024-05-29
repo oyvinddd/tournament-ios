@@ -17,11 +17,13 @@ extension RequestFactoryInjectable {
     var requestFactory: RequestFactory { RequestFactory(apiBaseUrl: AppSettings.apiBaseUrl) }
 }
 
-final class RequestFactory: CredentialServiceInjectable {
+final class RequestFactory: AccountServiceInjectable {
     
     var apiBaseUrl: URL!
     
     var tournamentsUrl: URL { apiBaseUrl.appendingPathComponent("tournaments") }
+    
+    var searchUrl: URL { tournamentsUrl.appendingPathExtension("search") }
     
     var joinUrl: URL { tournamentsUrl.appendingPathComponent("join") }
     
@@ -50,14 +52,14 @@ final class RequestFactory: CredentialServiceInjectable {
     
     func deleteAccountRequest() -> URLRequest {
         return RequestBuilder(.delete, url: accountUrl)
-            .set(token: credentialService.accessToken)
+            .set(token: accountService.accessToken)
             .build()
     }
     
     func updateUsernameRequest(_ username: String) -> URLRequest {
         return RequestBuilder(.put, url: usernameUrl)
             .set(value: "Content-Type", for: "application/json")
-            .set(token: credentialService.accessToken)
+            .set(token: accountService.accessToken)
             .set(body: UsernameRequest(username))
             .build()
     }
@@ -67,35 +69,41 @@ final class RequestFactory: CredentialServiceInjectable {
     func createTournamentRequest(title: String) -> URLRequest {
         return RequestBuilder(.post, url: tournamentsUrl)
             .set(value: "Content-Type", for: "application/json")
-            .set(token: credentialService.accessToken)
+            .set(token: accountService.accessToken)
             .set(body: TournamentRequest(title, .monthly))
             .build()
     }
     
     func getTournamentRequest() -> URLRequest {
         return RequestBuilder(.get, url: tournamentsUrl)
-            .set(token: credentialService.accessToken)
+            .set(token: accountService.accessToken)
             .build()
     }
     
-    func joinTournamentRequest(code: String) -> URLRequest {
+    func tournamentSearchRequest(query: String) -> URLRequest {
+        return RequestBuilder(.post, url: joinUrl)
+            .set(token: accountService.accessToken)
+            .build()
+    }
+    
+    func joinTournamentRequest(tournamentId: UUID, code: String) -> URLRequest {
         return RequestBuilder(.put, url: joinUrl)
             .set(value: "Content-Type", for: "application/json")
-            .set(token: credentialService.accessToken)
+            .set(token: accountService.accessToken)
             .set(body: JoinRequest(code))
             .build()
     }
     
     func leaveTournamentRequest() -> URLRequest {
         return RequestBuilder(.put, url: leaveUrl)
-            .set(token: credentialService.accessToken)
+            .set(token: accountService.accessToken)
             .build()
     }
     
     func registerWinRequest(opponentId: UUID) -> URLRequest {
         return RequestBuilder(.post, url: matcesUrl)
             .set(value: "Content-Type", for: "application/json")
-            .set(token: credentialService.accessToken)
+            .set(token: accountService.accessToken)
             .set(body: MatchRequest(opponentId))
             .build()
     }
@@ -110,8 +118,9 @@ enum HTTPMethod: String {
 final class RequestBuilder {
     
     let method: HTTPMethod
-    let url: URL
+    var url: URL
     var headers: [String: String] = [:]
+    var param: String?
     var body: Data?
     
     init(_ method: HTTPMethod, url: URL, useDefaultHeaders: Bool = true) {
@@ -125,6 +134,12 @@ final class RequestBuilder {
     @discardableResult
     func set(value: String, for header: String) -> Self {
         headers[header] = value
+        return self
+    }
+    
+    @discardableResult
+    func set(param: String) -> Self {
+        self.param = param
         return self
     }
     
@@ -143,6 +158,10 @@ final class RequestBuilder {
     }
     
     func build() -> URLRequest {
+        if let param = param {
+            url.append(path: param, directoryHint: .inferFromPath)
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         

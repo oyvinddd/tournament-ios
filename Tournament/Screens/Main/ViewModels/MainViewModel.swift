@@ -12,6 +12,6 @@ import Foundation
     @Published var showSignIn = false
     
     init() {
-        showSignIn = !accountService.authenticated
+        showSignIn = false//!accountService.authenticated
     }
 }

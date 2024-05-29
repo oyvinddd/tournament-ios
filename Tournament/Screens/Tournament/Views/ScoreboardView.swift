@@ -10,18 +10,15 @@ import SwiftUI
 struct ScoreboardView: View {
     
     var scoreboard: [Player] = [
-        Player(id: UUID(), username: "oyvinddd", score: 1800, matchesPlayed: 8, lastSeen: Date.now),
-        Player(id: UUID(), username: "rub1", score: 1900, matchesPlayed: 10, lastSeen: Date.now),
-        Player(id: UUID(), username: "panzertax", score: 1200, matchesPlayed: 2, lastSeen: Date.now),
-        Player(id: UUID(), username: "konstant", score: 200, matchesPlayed: 2, lastSeen: Date.now),
-        Player(id: UUID(), username: "fredrik", score: 1200, matchesPlayed: 2, lastSeen: Date.now)
+        Player(id: UUID(), username: "oyvinddd", score: 1800, matchesPlayed: 8, matchesWon: 2),
+        Player(id: UUID(), username: "oyvinddd", score: 1800, matchesPlayed: 8, matchesWon: 2)
     ]
     
     var body: some View {
         
         ZStack {
             
-            AccountView(account: Account(id: UUID(), username: "oyvind_h", created: Date.now), buttonAction: {})
+            AccountView(account: Account(id: UUID(), email: "foo", username: "bar", created: Date.now), buttonAction: {})
                 .frame(maxHeight: .infinity)
                 .padding(.top, 0)
             

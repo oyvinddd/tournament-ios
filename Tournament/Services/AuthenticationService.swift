@@ -13,7 +13,7 @@ protocol AuthenticationServiceInjectable {
 }
 
 extension AuthenticationServiceInjectable {
-    var authenticationService: AuthenticationService { MockServiceFactory.instance.authenticationService }
+    var authenticationService: AuthenticationService { LiveServiceFactory.instance.authenticationService }
 }
 
 protocol AuthenticationService {

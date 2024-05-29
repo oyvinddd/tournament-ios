@@ -7,15 +7,5 @@
 
 import Foundation
 
-@MainActor final class ChooseUsernameViewModel: ObservableObject, AccountServiceInjectable {
-    
-    func chooseUsername(_ username: String) {
-        Task {
-            do {
-                let account = try await accountService.updateUsername(username)
-            } catch let error {
-                print(error)
-            }
-        }
-    }
+@MainActor final class ChooseUsernameViewModel: ObservableObject {
 }

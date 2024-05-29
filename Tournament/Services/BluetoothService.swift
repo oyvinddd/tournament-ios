@@ -13,7 +13,7 @@ protocol BluetoothServiceInjectable {
 }
 
 extension BluetoothServiceInjectable {
-    var bluetoothService: BluetoothService { MockServiceFactory.instance.bluetoothService }
+    var bluetoothService: BluetoothService { LiveServiceFactory.instance.bluetoothService }
 }
 
 protocol BluetoothService {

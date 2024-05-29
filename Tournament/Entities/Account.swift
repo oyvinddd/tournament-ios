@@ -13,6 +13,8 @@ struct Account: Codable, Identifiable {
     
     var tournamentId: UUID?
     
+    var email: String
+    
     var username: String
     
     var created: Date

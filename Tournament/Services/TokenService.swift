@@ -14,7 +14,7 @@ protocol TokenServiceInjectable {
 
 extension TokenServiceInjectable {
     
-    var tokenService: TokenService { return MockServiceFactory.instance.tokenService }
+    var tokenService: TokenService { return LiveServiceFactory.instance.tokenService }
 }
 
 protocol TokenService {

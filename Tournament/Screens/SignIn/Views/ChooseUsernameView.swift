@@ -31,6 +31,6 @@ struct ChooseUsernameView: View {
     }
     
     private func usernameButtonTapped() {
-        viewModel.chooseUsername(username)
+        //viewModel.chooseUsername(username)
     }
 }

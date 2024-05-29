@@ -22,7 +22,7 @@ struct RegisterMatchView: View {
                 username: "oyvinddd",
                 score: 1200,
                 matchesPlayed: 12,
-                lastSeen: Date.now))
+                matchesWon: 2))
             .onTapGesture {
                 feedbackGenerator.impactOccurred()
                 showConfirmDialog.toggle()

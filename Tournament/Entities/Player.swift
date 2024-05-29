@@ -17,5 +17,5 @@ struct Player: Codable, Identifiable {
     
     var matchesPlayed: Int
     
-    var lastSeen: Date
+    var matchesWon: Int
 }

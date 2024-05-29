@@ -14,7 +14,7 @@ import Foundation
         Task {
             
             do {
-                try await tournamentService.joinTournament(code: code)
+                //try await tournamentService.joinTournament(code: code)
             } catch let error {
                 print(error)
             }

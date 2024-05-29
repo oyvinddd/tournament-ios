@@ -13,11 +13,7 @@ struct TournamentViewV2: View {
     @State private var showSettings = false
     
     var scoreboard: [Player] = [
-        Player(id: UUID(), username: "oyvinddd", score: 1800, matchesPlayed: 8, lastSeen: Date.now),
-        Player(id: UUID(), username: "rub1", score: 1900, matchesPlayed: 10, lastSeen: Date.now),
-        Player(id: UUID(), username: "panzertax", score: 1200, matchesPlayed: 2, lastSeen: Date.now),
-        Player(id: UUID(), username: "konstant", score: 200, matchesPlayed: 2, lastSeen: Date.now),
-        Player(id: UUID(), username: "fredrik", score: 1200, matchesPlayed: 2, lastSeen: Date.now)
+        Player(id: UUID(), username: "oyvinddd", score: 1800, matchesPlayed: 8, matchesWon: 2)
     ]
     
     private let topContentMargin: CGFloat = 150
