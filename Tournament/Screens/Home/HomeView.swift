@@ -38,7 +38,6 @@ struct HomeView: View {
                     }
                 }
                 .padding(.horizontal, 16)
-                .background(.red)
                 
                 // tournament view
                 VStack {
