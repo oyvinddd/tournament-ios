@@ -47,7 +47,7 @@ struct HomeView: View {
                     List {
                         
                         ForEach(scoreboard.indices, id: \.self) { index in
-                            PlayerViewV2(index: index)
+                            PlayerView(index: index)
                                 .listRowInsets(EdgeInsets())
                                 .listRowSeparator(.hidden)
                                 .padding(.horizontal, 16)
@@ -55,7 +55,8 @@ struct HomeView: View {
                         }
                     }
                     .listStyle(.plain)
-                    .listRowSpacing(16)
+                    .listRowSpacing(20)
+                    .contentMargins(.top, 16)
                     
                     Spacer()
                     
@@ -64,9 +65,12 @@ struct HomeView: View {
                         Button(action: {}) {
                             Text("Button")
                         }
+                        .background(.yellow)
+                        //.buttonStyle(MainButtonStyle())
+                        .safeAreaPadding(.bottom)
                     }
                     .frame(maxWidth: .infinity)
-                    .background(.green)
+                    .padding(.vertical, 16)
                 }
                 .frame(maxWidth: .infinity)
                 .background(.white)
@@ -76,10 +80,11 @@ struct HomeView: View {
                         topTrailingRadius: 16
                     )
                 )
+                .ignoresSafeArea(edges: .bottom)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.blue)
+        .background(Color.General.background)
     }
     
     private func profileButtonTapped() {
@@ -87,7 +92,7 @@ struct HomeView: View {
     }
 }
 
-private struct PlayerViewV2: View {
+private struct PlayerView: View {
     
     let index: Int
     
@@ -97,7 +102,7 @@ private struct PlayerViewV2: View {
             
             Text("\(index + 1)")
                 .font(Font.system(size: 17, weight: .heavy))
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color.Text.subtitle)
                 .padding(.trailing, 8)
             
             ZStack {
@@ -112,13 +117,14 @@ private struct PlayerViewV2: View {
                 
                 Text("oyvind_h")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(Font.system(size: 18, weight: .bold))
+                    .font(Font.system(size: 19, weight: .bold))
                     .padding(.bottom, 1)
+                    .foregroundStyle(Color.Text.normal)
                 
                 Text("1800 pts")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(Font.system(size: 15, weight: .semibold))
-                    .foregroundStyle(.gray)
+                    .font(Font.system(size: 15, weight: .bold))
+                    .foregroundStyle(Color.Text.subtitle)
             }
             .frame(maxWidth: .infinity)
             
@@ -126,11 +132,11 @@ private struct PlayerViewV2: View {
             
             Text("3")
                 .font(Font.system(size: 17, weight: .bold))
-                .foregroundStyle(.black)
+                .foregroundStyle(Color.Text.normal)
             
             Text("3")
                 .font(Font.system(size: 17, weight: .bold))
-                .foregroundStyle(.black)
+                .foregroundStyle(Color.Text.normal)
                 .padding(.leading, 26)
         }
     }
