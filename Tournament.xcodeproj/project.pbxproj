@@ -37,6 +37,7 @@
 		8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */; };
 		8E973E1B2BE7EEFD00E21705 /* MainViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E973E1A2BE7EEFD00E21705 /* MainViewV2.swift */; };
 		8E973E1D2BE7FA0600E21705 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E973E1C2BE7FA0600E21705 /* ScoreboardView.swift */; };
+		8EEE2C6F2C09169E00AFA53C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE2C6E2C09169E00AFA53C /* HomeView.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420532BDBBB2A00383D1D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420522BDBBB2A00383D1D /* MainView.swift */; };
 		8EF420552BDBBB2B00383D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420542BDBBB2B00383D1D /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		8E973E1A2BE7EEFD00E21705 /* MainViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewV2.swift; sourceTree = "<group>"; };
 		8E973E1C2BE7FA0600E21705 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		8EEE2C6E2C09169E00AFA53C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
 		8EF420522BDBBB2A00383D1D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		8EEE2C6D2C09168D00AFA53C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8EEE2C6E2C09169E00AFA53C /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		8EF420442BDBBB2A00383D1D = {
 			isa = PBXGroup;
 			children = (
@@ -255,8 +265,8 @@
 		8EF4204F2BDBBB2A00383D1D /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
-				8E84D8972BE4D229006F4E97 /* Utils */,
 				8E03B0C72BDEBC170057AAF9 /* Info.plist */,
+				8E84D8972BE4D229006F4E97 /* Utils */,
 				8E03B0D02BDEDB650057AAF9 /* Networking */,
 				8EF420902BDBE44000383D1D /* Extensions */,
 				8EF4206B2BDBC16100383D1D /* Entities */,
@@ -295,6 +305,7 @@
 		8EF4205F2BDBBB8E00383D1D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8EEE2C6D2C09168D00AFA53C /* Home */,
 				8E03B0C82BDEBCC30057AAF9 /* RegisterMatch */,
 				8E03B0BF2BDE42F60057AAF9 /* Settings */,
 				8E69A49C2BDC16B7005DC14F /* Shared */,
@@ -573,6 +584,7 @@
 				8EF420702BDBC1B500383D1D /* DataFactory.swift in Sources */,
 				8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */,
 				8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */,
+				8EEE2C6F2C09169E00AFA53C /* HomeView.swift in Sources */,
 				8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */,
 				8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */,
 				8E973E1D2BE7FA0600E21705 /* ScoreboardView.swift in Sources */,

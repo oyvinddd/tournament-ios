@@ -50,6 +50,10 @@ final class RequestFactory: AccountServiceInjectable {
             .build()
     }
     
+    func createAccountRequest() -> URLRequest {
+        return RequestBuilder(.post, url: accountUrl).build()
+    }
+    
     func deleteAccountRequest() -> URLRequest {
         return RequestBuilder(.delete, url: accountUrl)
             .set(token: accountService.accessToken)

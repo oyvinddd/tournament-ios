@@ -12,6 +12,8 @@ import SwiftUI
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
-        WindowGroup { MainViewV2() }
+        WindowGroup {
+            HomeView()
+        }
     }
 }
