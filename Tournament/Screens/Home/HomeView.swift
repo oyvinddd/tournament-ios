@@ -46,6 +46,26 @@ struct HomeView: View {
                     // scoreboard
                     List {
                         
+                        Section {
+                            
+                            HStack {
+                                
+                                Text("Scoreboard".uppercased())
+                                    .font(Font.system(size: 14, weight: .heavy))
+                                    .foregroundStyle(Color.Text.normal)
+                                
+                                Spacer()
+                                
+                                Text("Matches")
+                                    .font(Font.system(size: 14, weight: .heavy))
+                                    .foregroundStyle(Color.Text.subtitle)
+                                
+                                Text("Wins")
+                                    .font(Font.system(size: 14, weight: .heavy))
+                                    .foregroundStyle(Color.Text.subtitle)
+                            }
+                        }
+                        
                         ForEach(scoreboard.indices, id: \.self) { index in
                             PlayerView(index: index)
                                 .listRowInsets(EdgeInsets())
@@ -86,7 +106,7 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.General.background)
         .sheet(isPresented: $showProfile) {
-            SettingsView()
+            SettingsView().presentationDetents([.medium])
         }
     }
     
@@ -141,7 +161,7 @@ private struct PlayerView: View {
             Text("3")
                 .font(Font.system(size: 17, weight: .bold))
                 .foregroundStyle(Color.Text.normal)
-                .padding(.leading, 26)
+                .padding(.leading, 32)
         }
     }
 }
