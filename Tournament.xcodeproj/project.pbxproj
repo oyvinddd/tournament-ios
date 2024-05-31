@@ -37,6 +37,8 @@
 		8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */; };
 		8ECE94ED2C0A006C005E23CB /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */; };
 		8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EE2C0A01B4005E23CB /* Credentials.swift */; };
+		8ECE94F12C0A060B005E23CB /* TournamentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94F02C0A060B005E23CB /* TournamentSearchView.swift */; };
+		8ECE94F32C0A071D005E23CB /* TournamentSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94F22C0A071D005E23CB /* TournamentSearchViewModel.swift */; };
 		8EEE2C6F2C09169E00AFA53C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE2C6E2C09169E00AFA53C /* HomeView.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420552BDBBB2B00383D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420542BDBBB2B00383D1D /* Assets.xcassets */; };
@@ -93,6 +95,8 @@
 		8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSignInView.swift; sourceTree = "<group>"; };
 		8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		8ECE94EE2C0A01B4005E23CB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		8ECE94F02C0A060B005E23CB /* TournamentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentSearchView.swift; sourceTree = "<group>"; };
+		8ECE94F22C0A071D005E23CB /* TournamentSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentSearchViewModel.swift; sourceTree = "<group>"; };
 		8EEE2C6E2C09169E00AFA53C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
@@ -442,6 +446,7 @@
 			children = (
 				8EF4209D2BDBEF6500383D1D /* JoinTournamentView.swift */,
 				8EF4209F2BDBEFF100383D1D /* DigitInputView.swift */,
+				8ECE94F02C0A060B005E23CB /* TournamentSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF420A22BDBF36D00383D1D /* JoinTournamentViewModel.swift */,
+				8ECE94F22C0A071D005E23CB /* TournamentSearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				8E03B0C42BDE44690057AAF9 /* SettingsViewModel.swift in Sources */,
 				8EF4206D2BDBC16C00383D1D /* Player.swift in Sources */,
 				8E03B0F02BE18B500057AAF9 /* ButtonStyle.swift in Sources */,
+				8ECE94F32C0A071D005E23CB /* TournamentSearchViewModel.swift in Sources */,
 				8E03B0F62BE1926C0057AAF9 /* ChooseUsernameViewModel.swift in Sources */,
 				8E03B0F22BE18CFD0057AAF9 /* ChooseUsernameView.swift in Sources */,
 				8E03B0ED2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift in Sources */,
@@ -573,6 +580,7 @@
 				8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */,
 				8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */,
 				8E84D8922BE4CE93006F4E97 /* AuthenticationService.swift in Sources */,
+				8ECE94F12C0A060B005E23CB /* TournamentSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

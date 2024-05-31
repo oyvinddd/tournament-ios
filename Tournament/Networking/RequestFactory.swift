@@ -79,6 +79,13 @@ final class RequestFactory: AccountServiceInjectable {
     
     // MARK: - Tournament requests
     
+    func tournamentSearchRequest(query: String) -> URLRequest {
+        return RequestBuilder(.get, url: searchUrl)
+            .set(value: "Content-Type", for: "application/json")
+            .set(token: accountService.accessToken)
+            .build()
+    }
+    
     func createTournamentRequest(title: String) -> URLRequest {
         return RequestBuilder(.post, url: tournamentsUrl)
             .set(value: "Content-Type", for: "application/json")
@@ -89,12 +96,6 @@ final class RequestFactory: AccountServiceInjectable {
     
     func getTournamentRequest() -> URLRequest {
         return RequestBuilder(.get, url: tournamentsUrl)
-            .set(token: accountService.accessToken)
-            .build()
-    }
-    
-    func tournamentSearchRequest(query: String) -> URLRequest {
-        return RequestBuilder(.post, url: joinUrl)
             .set(token: accountService.accessToken)
             .build()
     }
