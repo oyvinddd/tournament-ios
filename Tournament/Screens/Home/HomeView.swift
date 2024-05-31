@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @ObservedObject var viewModel = TournamentViewModel()
     @State private var showProfile = false
     
     var scoreboard: [String] = ["1", "2", "3", "abc", "", "", "", "", ""]

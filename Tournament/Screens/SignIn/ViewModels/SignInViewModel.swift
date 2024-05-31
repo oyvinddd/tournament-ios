@@ -8,16 +8,27 @@
 import Foundation
 import AuthenticationServices
 
+enum SignInState {
+    case idle
+    case loading
+    case signedIn(Credentials)
+    case failure(Error)
+}
+
 @MainActor final class SignInViewModel: ObservableObject, AuthenticationServiceInjectable {
     
-    @Published var credentials: Credentials?
+    @Published var state: SignInState = .idle
     
     func basicSignIn(_ username: String, _ password: String) {
         Task {
+            
             do {
-                credentials = try await authenticationService.basicSignIn(username, password)
+                
+                let credentials = try await authenticationService.basicSignIn(username, password)
+                state = .signedIn(credentials)
+                
             } catch let error {
-                print(error)
+                state = .failure(error)
             }
         }
     }
