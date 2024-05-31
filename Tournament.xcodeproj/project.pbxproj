@@ -34,6 +34,9 @@
 		8E84D8942BE4CFF7006F4E97 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8932BE4CFF7006F4E97 /* TokenService.swift */; };
 		8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */; };
 		8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */; };
+		8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */; };
+		8ECE94ED2C0A006C005E23CB /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */; };
+		8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EE2C0A01B4005E23CB /* Credentials.swift */; };
 		8EEE2C6F2C09169E00AFA53C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE2C6E2C09169E00AFA53C /* HomeView.swift */; };
 		8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420502BDBBB2A00383D1D /* TournamentApp.swift */; };
 		8EF420552BDBBB2B00383D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF420542BDBBB2B00383D1D /* Assets.xcassets */; };
@@ -87,6 +90,9 @@
 		8E84D8932BE4CFF7006F4E97 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenContainer.swift; sourceTree = "<group>"; };
 		8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSignInView.swift; sourceTree = "<group>"; };
+		8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		8ECE94EE2C0A01B4005E23CB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		8EEE2C6E2C09169E00AFA53C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8EF4204D2BDBBB2A00383D1D /* Tournament.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tournament.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF420502BDBBB2A00383D1D /* TournamentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentApp.swift; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 				8E03B0E72BE1690D0057AAF9 /* MatchRequest.swift */,
 				8E03B0EA2BE16EA80057AAF9 /* JoinRequest.swift */,
 				8E03B0F32BE191A50057AAF9 /* UsernameRequest.swift */,
+				8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -331,6 +338,7 @@
 				8EF420872BDBE2E800383D1D /* Account.swift */,
 				8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */,
 				8E47ADBA2C07964200653FD8 /* Match.swift */,
+				8ECE94EE2C0A01B4005E23CB /* Credentials.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 			children = (
 				8EF4208A2BDBE3C700383D1D /* SignInView.swift */,
 				8E03B0F12BE18CFD0057AAF9 /* ChooseUsernameView.swift */,
+				8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -546,18 +555,21 @@
 				8E03B0F62BE1926C0057AAF9 /* ChooseUsernameViewModel.swift in Sources */,
 				8E03B0F22BE18CFD0057AAF9 /* ChooseUsernameView.swift in Sources */,
 				8E03B0ED2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift in Sources */,
+				8ECE94ED2C0A006C005E23CB /* SignInRequest.swift in Sources */,
 				8EF420722BDBC20E00383D1D /* TournamentService.swift in Sources */,
 				8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */,
 				8EF420782BDBC4A900383D1D /* TournamentViewModel.swift in Sources */,
 				8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */,
 				8EF420882BDBE2E800383D1D /* Account.swift in Sources */,
 				8E03B0C12BDE43070057AAF9 /* SettingsView.swift in Sources */,
+				8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */,
 				8EF420842BDBE03D00383D1D /* TournamentHeaderView.swift in Sources */,
 				8E03B0EB2BE16EA80057AAF9 /* JoinRequest.swift in Sources */,
 				8EF420702BDBC1B500383D1D /* DataFactory.swift in Sources */,
 				8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */,
 				8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */,
 				8EEE2C6F2C09169E00AFA53C /* HomeView.swift in Sources */,
+				8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */,
 				8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */,
 				8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */,
 				8E84D8922BE4CE93006F4E97 /* AuthenticationService.swift in Sources */,

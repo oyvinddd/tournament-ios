@@ -22,14 +22,21 @@ protocol AuthenticationService {
     
     var appleAuthUrl: URL { get }
     
+    func basicSignIn(_ username: String, _ password: String) async throws -> Credentials
+    
     func startGoogleSignIn(from contextProvider: ASWebAuthenticationPresentationContextProviding)
 }
 
-final class LiveAuthenticationService: AuthenticationService, RequestFactoryInjectable {
-    
+final class LiveAuthenticationService: AuthenticationService, RequestFactoryInjectable, NetworkManagerInjectable {
+
     var googleAuthUrl: URL { requestFactory.googleAuthUrl }
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
+    
+    func basicSignIn(_ username: String, _ password: String) async throws -> Credentials {
+        let request = requestFactory.basicSignInRequest(username: username, password: password)
+        return try await networkManager.execute(request: request)
+    }
     
     func startGoogleSignIn(from contextProvider: ASWebAuthenticationPresentationContextProviding) {
         
