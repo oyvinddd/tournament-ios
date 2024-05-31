@@ -32,23 +32,14 @@ final class LiveAccountService: AccountService {
 
     static let shared = LiveAccountService()
     
-    init() {
-        account = Account(
-            id: UUID(uuidString: "43c9f799-55c1-45e6-ab25-1df1f55cd9cb")!,
-            email: "user@test1.com",
-            username: "user1",
-            created: Date.now,
-            accessToken: "token"
-        )
-    }
-    
     var account: Account?
     
     var accessToken: String? { account?.accessToken }
     
-    var signedIn: Bool { account?.accessToken != nil }
+    var signedIn: Bool = false
     
     func set(account: Account) {
         self.account = account
+        self.signedIn = true
     }
 }

@@ -65,6 +65,8 @@ struct HomeView: View {
                                     .foregroundStyle(Color.Text.subtitle)
                             }
                         }
+                        .listSectionSeparator(.hidden)
+                        .padding(.bottom, 16)
                         
                         ForEach(scoreboard.indices, id: \.self) { index in
                             PlayerView(index: index)

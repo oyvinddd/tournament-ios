@@ -24,7 +24,7 @@ struct LiveServiceFactory: ServiceFactoryProtocol {
     
     static let instance = LiveServiceFactory()
     
-    var authenticationService: AuthenticationService { LiveAuthenticationService() }
+    var authenticationService: AuthenticationService { MockedAuthenticationService() }
     
     var tokenService: TokenService { MockedTokenService() }
     

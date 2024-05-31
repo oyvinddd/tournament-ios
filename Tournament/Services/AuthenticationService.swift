@@ -18,10 +18,6 @@ extension AuthenticationServiceInjectable {
 
 protocol AuthenticationService {
     
-    var googleAuthUrl: URL { get }
-    
-    var appleAuthUrl: URL { get }
-    
     func basicSignIn(_ username: String, _ password: String) async throws -> Credentials
     
     func startGoogleSignIn(from contextProvider: ASWebAuthenticationPresentationContextProviding)
@@ -64,5 +60,19 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
         
         // lastly, we notify the system that the user was successfully authenticated
         //NotificationCenter.default.post(name: .signInSuccess)
+    }
+}
+
+// MARK: - Mocked authentication service
+
+final class MockedAuthenticationService: AuthenticationService {
+    
+    func basicSignIn(_ username: String, _ password: String) async throws -> Credentials {
+        let account = Account(id: UUID(), email: "foo@bar.com", username: "oyvind_h", created: Date.now)
+        return Credentials(account: account, accessToken: "the_token")
+    }
+    
+    func startGoogleSignIn(from contextProvider: any ASWebAuthenticationPresentationContextProviding) {
+        // do nothing
     }
 }
