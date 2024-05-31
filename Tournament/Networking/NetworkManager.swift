@@ -32,6 +32,7 @@ final class NetworkManager {
     }
     
     func execute<T: Decodable>(request: URLRequest) async throws -> T {
+        printRequest(request)
         
         let (data, response) = try await session.data(for: request)
         
@@ -55,6 +56,7 @@ final class NetworkManager {
     }
     
     func execute(request: URLRequest) async throws {
+        printRequest(request)
         
         let (_, response) = try await session.data(for: request)
         
@@ -66,5 +68,9 @@ final class NetworkManager {
         guard 200 ..< 300 ~= httpResponse.statusCode else {
             throw APIError.invalidResponse
         }
+    }
+    
+    private func printRequest(_ request: URLRequest) {
+        print("✨ [\(request.httpMethod!.uppercased())] \(request.url!.absoluteString)")
     }
 }
