@@ -10,7 +10,6 @@
 		8E03B0BE2BDE3BF00057AAF9 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0BD2BDE3BF00057AAF9 /* AccountView.swift */; };
 		8E03B0C12BDE43070057AAF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C02BDE43070057AAF9 /* SettingsView.swift */; };
 		8E03B0C42BDE44690057AAF9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */; };
-		8E03B0CF2BDEC8B70057AAF9 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0CE2BDEC8B70057AAF9 /* MainMenuView.swift */; };
 		8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D12BDEDB760057AAF9 /* APIError.swift */; };
 		8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D32BDEE94A0057AAF9 /* DiscoveredPlayerView.swift */; };
 		8E03B0D62BDEE99E0057AAF9 /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D52BDEE99E0057AAF9 /* BluetoothService.swift */; };
@@ -56,7 +55,6 @@
 		8EF4208F2BDBE3E400383D1D /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4208E2BDBE3E400383D1D /* SignInViewModel.swift */; };
 		8EF420922BDBE44E00383D1D /* Color+Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420912BDBE44E00383D1D /* Color+Tournament.swift */; };
 		8EF420962BDBE8B600383D1D /* CreateTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420952BDBE8B600383D1D /* CreateTournamentView.swift */; };
-		8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420992BDBEC3C00383D1D /* MainViewModel.swift */; };
 		8EF4209E2BDBEF6500383D1D /* JoinTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4209D2BDBEF6500383D1D /* JoinTournamentView.swift */; };
 		8EF420A02BDBEFF100383D1D /* DigitInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4209F2BDBEFF100383D1D /* DigitInputView.swift */; };
 		8EF420A32BDBF36D00383D1D /* JoinTournamentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF420A22BDBF36D00383D1D /* JoinTournamentViewModel.swift */; };
@@ -68,7 +66,6 @@
 		8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8E03B0C52BDEB40B0057AAF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E03B0C72BDEBC170057AAF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8E03B0CE2BDEC8B70057AAF9 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		8E03B0D12BDEDB760057AAF9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		8E03B0D32BDEE94A0057AAF9 /* DiscoveredPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredPlayerView.swift; sourceTree = "<group>"; };
 		8E03B0D52BDEE99E0057AAF9 /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
@@ -115,7 +112,6 @@
 		8EF4208E2BDBE3E400383D1D /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		8EF420912BDBE44E00383D1D /* Color+Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Tournament.swift"; sourceTree = "<group>"; };
 		8EF420952BDBE8B600383D1D /* CreateTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTournamentView.swift; sourceTree = "<group>"; };
-		8EF420992BDBEC3C00383D1D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		8EF4209D2BDBEF6500383D1D /* JoinTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTournamentView.swift; sourceTree = "<group>"; };
 		8EF4209F2BDBEFF100383D1D /* DigitInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitInputView.swift; sourceTree = "<group>"; };
 		8EF420A22BDBF36D00383D1D /* JoinTournamentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTournamentViewModel.swift; sourceTree = "<group>"; };
@@ -310,18 +306,8 @@
 				8EF420932BDBE89B00383D1D /* CreateTournament */,
 				8EF420892BDBE3B400383D1D /* SignIn */,
 				8EF420622BDBBC1D00383D1D /* Tournament */,
-				8EF420602BDBBB9D00383D1D /* Main */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		8EF420602BDBBB9D00383D1D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				8EF420982BDBEC2E00383D1D /* ViewModels */,
-				8EF420972BDBEC2600383D1D /* Views */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		8EF420622BDBBC1D00383D1D /* Tournament */ = {
@@ -414,22 +400,6 @@
 				8EF420952BDBE8B600383D1D /* CreateTournamentView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		8EF420972BDBEC2600383D1D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8E03B0CE2BDEC8B70057AAF9 /* MainMenuView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8EF420982BDBEC2E00383D1D /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				8EF420992BDBEC3C00383D1D /* MainViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8EF4209B2BDBEF4D00383D1D /* JoinTournament */ = {
@@ -534,7 +504,6 @@
 				8E03B0DD2BE153940057AAF9 /* NetworkManager.swift in Sources */,
 				8EF4208B2BDBE3C700383D1D /* SignInView.swift in Sources */,
 				8EF420742BDBC24900383D1D /* ServiceFactory.swift in Sources */,
-				8E03B0CF2BDEC8B70057AAF9 /* MainMenuView.swift in Sources */,
 				8E03B0E82BE1690D0057AAF9 /* MatchRequest.swift in Sources */,
 				8EF4206A2BDBBF5C00383D1D /* AppDelegate.swift in Sources */,
 				8EF420A02BDBEFF100383D1D /* DigitInputView.swift in Sources */,
@@ -577,7 +546,6 @@
 				8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */,
 				8EEE2C6F2C09169E00AFA53C /* HomeView.swift in Sources */,
 				8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */,
-				8EF4209A2BDBEC3C00383D1D /* MainViewModel.swift in Sources */,
 				8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */,
 				8E84D8922BE4CE93006F4E97 /* AuthenticationService.swift in Sources */,
 				8ECE94F12C0A060B005E23CB /* TournamentSearchView.swift in Sources */,
