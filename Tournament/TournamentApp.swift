@@ -14,12 +14,7 @@ import SwiftUI
     var body: some Scene {
         
         WindowGroup {
-            
-            if accountService.signedIn {
-                HomeView()
-            } else {
-                BasicSignInView()
-            }
+            HomeView()
         }
     }
 }

@@ -22,7 +22,7 @@ struct HomeView: View {
                 
                 // header view
                 HStack {
-                    Text("Tietoevry Bordtennis")
+                    Text("Welcome!")
                         .font(Font.system(size: 26, weight: .bold))
                         .foregroundStyle(.white)
                     
@@ -30,8 +30,8 @@ struct HomeView: View {
                     Button(action: profileButtonTapped) {
                         ZStack {
                             
-                            Text("😄")
-                                .font(Font.system(size: 24))
+                            Text("😍")
+                                .font(Font.system(size: 22))
                                 .padding(.all, 6)
                         }
                         
