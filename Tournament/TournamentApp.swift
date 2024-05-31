@@ -7,13 +7,19 @@
 
 import SwiftUI
 
-@main struct TournamentApp: App {
+@main struct TournamentApp: App, AccountServiceInjectable {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
+        
         WindowGroup {
-            HomeView()
+            
+            if accountService.signedIn {
+                HomeView()
+            } else {
+                BasicSignInView()
+            }
         }
     }
 }

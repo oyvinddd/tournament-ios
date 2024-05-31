@@ -15,7 +15,9 @@ enum SignInState {
     case failure(Error)
 }
 
-@MainActor final class SignInViewModel: ObservableObject, AuthenticationServiceInjectable {
+@MainActor final class SignInViewModel: ObservableObject,
+                                            AuthenticationServiceInjectable,
+                                            AccountServiceInjectable {
     
     @Published var state: SignInState = .idle
     
@@ -25,6 +27,10 @@ enum SignInState {
             do {
                 
                 let credentials = try await authenticationService.basicSignIn(username, password)
+                var account = credentials.account
+                account.accessToken = credentials.accessToken
+                accountService.set(account: account)
+                
                 state = .signedIn(credentials)
                 
             } catch let error {

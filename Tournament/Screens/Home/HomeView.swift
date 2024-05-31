@@ -66,7 +66,6 @@ struct HomeView: View {
                             Text("Button")
                         }
                         .background(.yellow)
-                        //.buttonStyle(MainButtonStyle())
                         .safeAreaPadding(.bottom)
                     }
                     .frame(maxWidth: .infinity)
@@ -80,14 +79,19 @@ struct HomeView: View {
                         topTrailingRadius: 16
                     )
                 )
+                //.shadow(color: .green, radius: 4, x: 0, y: 1)
                 .ignoresSafeArea(edges: .bottom)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.General.background)
+        .sheet(isPresented: $showProfile) {
+            SettingsView()
+        }
     }
     
     private func profileButtonTapped() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
         showProfile.toggle()
     }
 }
@@ -110,7 +114,7 @@ private struct PlayerView: View {
                     .font(Font.system(size: 24))
                     .padding(.all, 6)
             }
-            .background(Circle().fill(.gray))
+            .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
             .padding(.trailing, 8)
             
             VStack {
