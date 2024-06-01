@@ -38,6 +38,11 @@ enum TournamentState {
                 
             } catch let error {
                 
+                guard (error as? APIError) != APIError.missingTournament else {
+                    state = .missingTournament
+                    return
+                }
+                
                 state = .failure(error)
             }
         }
