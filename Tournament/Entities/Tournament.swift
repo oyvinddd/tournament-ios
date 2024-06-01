@@ -8,7 +8,7 @@
 import Foundation
 
 enum ResetInterval: Int, Codable {
-    case weekly, monthly, never
+    case weekly = 0, monthly = 1, never = 2
 }
 
 struct Tournament: Codable, Identifiable {
