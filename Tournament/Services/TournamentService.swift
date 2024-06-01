@@ -17,11 +17,9 @@ extension TournamentServiceInjectable {
 
 protocol TournamentService {
     
-    func updateUsername(_ username: String) async throws -> Account
+    func tournamentSearch(query: String) async throws -> [Tournament]
     
     func getTournament() async throws -> Tournament
-    
-    func tournamentSearch(query: String) async throws -> [Tournament]
     
     func joinTournament(_ id: UUID, code: String) async throws -> Tournament
     
@@ -34,18 +32,13 @@ final class LiveTournamentService: TournamentService, RequestFactoryInjectable, 
 
     static let shared = LiveTournamentService()
     
-    func updateUsername(_ username: String) async throws -> Account {
-        let request = requestFactory.updateUsernameRequest(username)
+    func tournamentSearch(query: String) async throws -> [Tournament] {
+        let request = requestFactory.tournamentSearchRequest(query: query)
         return try await networkManager.execute(request: request)
     }
     
     func getTournament() async throws -> Tournament {
         let request = requestFactory.getTournamentRequest()
-        return try await networkManager.execute(request: request)
-    }
-    
-    func tournamentSearch(query: String) async throws -> [Tournament] {
-        let request = requestFactory.tournamentSearchRequest(query: query)
         return try await networkManager.execute(request: request)
     }
     
@@ -62,5 +55,52 @@ final class LiveTournamentService: TournamentService, RequestFactoryInjectable, 
     func registerWin(opponentId: UUID) async throws {
         let request = requestFactory.registerWinRequest(opponentId: opponentId)
         return try await networkManager.execute(request: request)
+    }
+}
+
+final class MockedTournamentService: TournamentService {
+    
+    func tournamentSearch(query: String) async throws -> [Tournament] {
+        return []
+    }
+    
+    func getTournament() async throws -> Tournament {
+        
+        let random = Int.random(in: 0...2)
+        
+        if random == 0 {
+            let scoreboard: [Player] = [
+                Player(id: UUID(), username: "oyvind_h", score: 1200, matchesPlayed: 9, matchesWon: 2),
+                Player(id: UUID(), username: "panzertax", score: 1600, matchesPlayed: 12, matchesWon: 0),
+                Player(id: UUID(), username: "rub1", score: 1300, matchesPlayed: 9, matchesWon: 7)
+            ]
+            return Tournament(
+                id: UUID(),
+                adminId: UUID(),
+                title: "Foo Tournament",
+                created: Date.now,
+                scoreboard: scoreboard
+            )
+        } else if random == 1 {
+            throw APIError.missingTournament
+        } else {
+            throw APIError.invalidResponse
+        }
+    }
+    
+    func joinTournament(_ id: UUID, code: String) async throws -> Tournament {
+        return Tournament(
+            id: UUID(),
+            adminId: UUID(),
+            title: "Foo Tournament",
+            created: Date.now,
+            scoreboard: []
+        )
+    }
+    
+    func leaveTournament() async throws {
+    }
+    
+    func registerWin(opponentId: UUID) async throws {
     }
 }

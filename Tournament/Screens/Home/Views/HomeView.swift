@@ -12,11 +12,6 @@ struct HomeView: View {
     @ObservedObject var viewModel = TournamentViewModel()
     @State private var showProfile = false
     
-    @State var scoreboard: [Player] = [
-        Player(id: UUID(), username: "oyvind_h", score: 1200, matchesPlayed: 9, matchesWon: 2),
-        Player(id: UUID(), username: "rub1", score: 1300, matchesPlayed: 9, matchesWon: 7)
-    ]
-    
     var body: some View {
         
         ZStack {
@@ -46,7 +41,19 @@ struct HomeView: View {
                 // main content goes inside here
                 VStack {
                     
-                    ScoreboardView(scoreboard: $scoreboard)
+                    switch viewModel.state {
+                    case .idle:
+                        Text("Idle!")
+                    case .loading:
+                        Text("Loading!")
+                    case .success(let tournament):
+                        ScoreboardView(tournament.sortedScoreboard)
+                            .refreshable { reloadTournament() }
+                    case .missingTournament:
+                        TournamentSearchView()
+                    case .failure(let error):
+                        ErrorView(error, action: reloadTournament)
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .background(.white)
@@ -65,14 +72,16 @@ struct HomeView: View {
         .sheet(isPresented: $showProfile) {
             SettingsView().presentationDetents([.large])
         }
-        .onAppear {
-            viewModel.getTournament()
-        }
+        .onAppear { reloadTournament() }
     }
     
     private func profileButtonTapped() {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
         showProfile.toggle()
+    }
+    
+    private func reloadTournament() {
+        viewModel.getTournament()
     }
 }
 

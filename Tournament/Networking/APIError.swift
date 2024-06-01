@@ -16,4 +16,6 @@ enum APIError: Error {
     case invalidResponse
     
     case decodingFailed
+    
+    case missingTournament
 }

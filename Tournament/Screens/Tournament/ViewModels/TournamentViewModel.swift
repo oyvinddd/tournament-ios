@@ -27,6 +27,8 @@ enum TournamentState {
     @Published var account: Account?
     
     func getTournament() {
+        state = .loading
+        
         Task {
             do {
                 
