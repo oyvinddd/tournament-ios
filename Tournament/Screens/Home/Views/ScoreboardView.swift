@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ScoreboardView: View {
     
-    @Binding var scoreboard: [Player]
+    var scoreboard: [Player]
+    
+    init(_ scoreboard: [Player]) {
+        self.scoreboard = scoreboard
+    }
     
     var body: some View {
         

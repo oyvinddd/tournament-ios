@@ -10,14 +10,18 @@ import SwiftUI
 struct ErrorView: View {
     
     var error: Error
+    var action: (() -> Void)?
     
-    init(_ error: Error) {
+    init(_ error: Error, action: (() -> Void)? = nil) {
         self.error = error
+        self.action = action
     }
     
     var body: some View {
         
         VStack {
+            
+            Spacer()
             
             HStack {
                 Spacer()
@@ -47,11 +51,17 @@ struct ErrorView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
             
-            if (error as? APIError) == .noTournament {
-                
-                // todo: ...
+            if let action = action {
+                Button(action: action) {
+                    Text("Retry")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(SecondaryButtonStyle())
             }
+            
+            Spacer()
         }
+        .padding(.horizontal, 16)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }

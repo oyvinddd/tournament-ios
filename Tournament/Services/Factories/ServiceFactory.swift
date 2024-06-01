@@ -30,7 +30,7 @@ struct LiveServiceFactory: ServiceFactoryProtocol {
     
     var accountService: AccountService { LiveAccountService.shared }
     
-    var tournamentService: TournamentService { LiveTournamentService() }
+    var tournamentService: TournamentService { MockedTournamentService() }
     
     var bluetoothService: BluetoothService { LiveBluetoothService() }
 }
