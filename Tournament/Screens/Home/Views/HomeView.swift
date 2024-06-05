@@ -31,8 +31,16 @@ struct HomeView: View {
                             Text("😍")
                                 .font(Font.system(size: 22))
                                 .padding(.all, 6)
+                            
+                            /*
+                            HStack {
+                                Spacer()
+                                Circle()
+                                    .fill(.blue)
+                                    .frame(width: 20, height: 20)
+                            }
+                             */
                         }
-                        
                         .background(RoundedRectangle(cornerRadius: 10).fill(.green))
                     }
                 }
@@ -63,7 +71,7 @@ struct HomeView: View {
                         topTrailingRadius: 16
                     )
                 )
-                //.shadow(color: .green, radius: 4, x: 0, y: 1)
+                .shadow(color: Color.black.opacity(0.7), radius: 10, x: 0, y: 2)
                 .ignoresSafeArea(edges: .bottom)
             }
         }
