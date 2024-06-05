@@ -37,9 +37,14 @@ struct ScoreboardView: View {
                         .font(Font.system(size: 14, weight: .heavy))
                         .foregroundStyle(Color.Text.subtitle)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
             }
             .listSectionSeparator(.hidden)
+            .listRowInsets(EdgeInsets())
             .padding(.bottom, 16)
+            .background(.white)
             
             ForEach(scoreboard.indices, id: \.self) { index in
                 PlayerView(index: index, player: scoreboard[index])

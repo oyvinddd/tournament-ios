@@ -66,13 +66,15 @@ final class MockedTournamentService: TournamentService {
     
     func getTournament() async throws -> Tournament {
         
-        let random = Int.random(in: 0...2)
+        let random = 0//Int.random(in: 0...2)
         
         if random == 0 {
             let scoreboard: [Player] = [
                 Player(id: UUID(), username: "oyvind_h", score: 1200, matchesPlayed: 9, matchesWon: 2),
                 Player(id: UUID(), username: "panzertax", score: 1600, matchesPlayed: 12, matchesWon: 0),
-                Player(id: UUID(), username: "rub1", score: 1300, matchesPlayed: 9, matchesWon: 7)
+                Player(id: UUID(), username: "rub1", score: 1300, matchesPlayed: 9, matchesWon: 7),
+                Player(id: UUID(), username: "konstant", score: 990, matchesPlayed: 10, matchesWon: 0),
+                Player(id: UUID(), username: "stian", score: 120, matchesPlayed: 8, matchesWon: 1)
             ]
             return Tournament(
                 id: UUID(),
