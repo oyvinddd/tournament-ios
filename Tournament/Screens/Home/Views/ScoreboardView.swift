@@ -21,6 +21,16 @@ struct ScoreboardView: View {
             
             Section {
                 
+                ForEach(scoreboard.indices, id: \.self) { index in
+                    PlayerView(index: index, player: scoreboard[index])
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
+                        .padding(.horizontal, 16)
+                        .background(.white)
+                }
+                
+            } header: {
+                
                 HStack {
                     
                     Text("Scoreboard".uppercased())
@@ -40,23 +50,14 @@ struct ScoreboardView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
+                
             }
             .listSectionSeparator(.hidden)
             .listRowInsets(EdgeInsets())
-            .padding(.bottom, 16)
             .background(.white)
-            
-            ForEach(scoreboard.indices, id: \.self) { index in
-                PlayerView(index: index, player: scoreboard[index])
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparator(.hidden)
-                    .padding(.horizontal, 16)
-                    .background(.white)
-            }
         }
         .listStyle(.plain)
         .listRowSpacing(20)
-        .contentMargins(.top, 16)
     }
 }
 

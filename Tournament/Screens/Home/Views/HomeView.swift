@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var viewModel = TournamentViewModel()
+    @State private var playerFilter = ""
     @State private var showProfile = false
     
     var body: some View {
@@ -18,33 +19,7 @@ struct HomeView: View {
             
             VStack {
                 
-                // header view
-                HStack {
-                    Text(viewModel.title)
-                        .font(Font.system(size: 26, weight: .bold))
-                        .foregroundStyle(.white)
-                    
-                    Spacer()
-                    Button(action: profileButtonTapped) {
-                        ZStack {
-                            
-                            Text("😍")
-                                .font(Font.system(size: 22))
-                                .padding(.all, 6)
-                            
-                            /*
-                            HStack {
-                                Spacer()
-                                Circle()
-                                    .fill(.blue)
-                                    .frame(width: 20, height: 20)
-                            }
-                             */
-                        }
-                        .background(RoundedRectangle(cornerRadius: 10).fill(.green))
-                    }
-                }
-                .padding(.horizontal, 16)
+                HeaderView(title: $viewModel.title, playerFilter: $playerFilter)
                 
                 // main content goes inside here
                 VStack {
@@ -65,13 +40,8 @@ struct HomeView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .background(.white)
-                .clipShape(
-                    .rect(
-                        topLeadingRadius: 16,
-                        topTrailingRadius: 16
-                    )
-                )
-                .shadow(color: Color.black.opacity(0.7), radius: 10, x: 0, y: 2)
+                .clipShape(.rect(topLeadingRadius: 16, topTrailingRadius: 16))
+                .shadow(color: Color.black.opacity(0.6), radius: 10, x: 0, y: 2)
                 .ignoresSafeArea(edges: .bottom)
             }
         }

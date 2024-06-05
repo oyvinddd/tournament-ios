@@ -37,7 +37,7 @@ struct TournamentSearchView: View {
                 .contentMargins(.top, 16)
             }
             
-            Spacer()
+            //Spacer()
             
             TextField("Search for a tournament...", text: $query)
                 .frame(maxWidth: .infinity)
