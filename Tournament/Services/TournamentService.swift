@@ -17,6 +17,8 @@ extension TournamentServiceInjectable {
 
 protocol TournamentService {
     
+    func createTournament(_ title: String, resetInterval: ResetInterval) async throws -> Tournament
+    
     func tournamentSearch(query: String) async throws -> [Tournament]
     
     func getTournament() async throws -> Tournament
@@ -31,6 +33,11 @@ protocol TournamentService {
 final class LiveTournamentService: TournamentService, RequestFactoryInjectable, NetworkManagerInjectable {
 
     static let shared = LiveTournamentService()
+    
+    func createTournament(_ title: String, resetInterval: ResetInterval) async throws -> Tournament {
+        let request = requestFactory.createTournamentRequest(title, resetInterval: resetInterval)
+        return try await networkManager.execute(request: request)
+    }
     
     func tournamentSearch(query: String) async throws -> [Tournament] {
         let request = requestFactory.tournamentSearchRequest(query: query)
@@ -58,7 +65,18 @@ final class LiveTournamentService: TournamentService, RequestFactoryInjectable, 
     }
 }
 
-final class MockedTournamentService: TournamentService {
+final class MockedTournamentService: TournamentService, AccountServiceInjectable {
+    
+    static let shared = MockedTournamentService()
+    
+    private var tournaments = [Tournament]()
+
+    func createTournament(_ title: String, resetInterval: ResetInterval) async throws -> Tournament {
+        let adminId = accountService.account!.id
+        let tournament = Tournament(id: UUID(), adminId: adminId, title: title, created: Date.now, scoreboard: [])
+        tournaments.append(tournament)
+        return tournaments.last!
+    }
     
     func tournamentSearch(query: String) async throws -> [Tournament] {
         return []

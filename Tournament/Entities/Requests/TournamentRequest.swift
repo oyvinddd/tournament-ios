@@ -13,7 +13,7 @@ struct TournamentRequest: Codable {
     
     var interval: ResetInterval
     
-    init(_ title: String, _ interval: ResetInterval) {
+    init(_ title: String, _ interval: ResetInterval = .never) {
         self.title = title
         self.interval = interval
     }

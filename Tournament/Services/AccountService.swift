@@ -48,7 +48,8 @@ final class LiveAccountService: AccountService {
             account?.accessToken = credentials.accessToken
             signedIn.send(true)
             
-            print("Signed in as \(account!.username)! 🤩")
+            print("✨ Signed in as \(account!.username)! 🤩")
+            print("✨ Current tournament: \(account!.tournamentId?.uuidString ?? "NA")")
             
         } catch let error {
             print("Error loading credentials: \(error)")
@@ -69,7 +70,7 @@ final class LiveAccountService: AccountService {
     func signOut() {
         CredentialsManager.clear()
         signedIn.send(false)
-        print("Signed out! bye bye ... 😭")
+        print("💥 Signing out! bye bye ... 😭")
     }
 }
 

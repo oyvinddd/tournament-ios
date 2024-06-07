@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreateTournamentView: View {
     
+    @ObservedObject var viewModel = CreateTournamentViewModel()
     @State var title = ""
     
     var body: some View {
@@ -33,6 +34,6 @@ struct CreateTournamentView: View {
     }
     
     private func createButtonTapped() {
-        
+        viewModel.createTournament(title: title, resetInterval: .never)
     }
 }
