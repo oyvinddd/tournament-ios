@@ -48,12 +48,19 @@ struct HeaderView: View {
             
             // search field
             HStack {
+                
+                Image(systemName: "magnifyingglass")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .foregroundStyle(.white)
+                    .padding(.leading, 16)
+                    .padding(.trailing, 8)
+                
                 TextField("Filter players...", text: $playerFilter)
-                    .font(Font.system(size: 17, weight: .medium))
+                    .font(Font.system(size: 18, weight: .medium))
                     .foregroundStyle(.white)
                     .background(.clear)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 10)
+                    .padding(.trailing, 16)
+                    .padding(.vertical, 12)
             }
             .frame(maxWidth: .infinity)
             .background(RoundedRectangle(cornerRadius: 15).fill(.white).opacity(0.2))

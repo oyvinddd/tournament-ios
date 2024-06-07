@@ -42,6 +42,7 @@ struct ScoreboardView: View {
                     Text("Scoreboard".uppercased())
                         .font(Font.system(size: 14, weight: .heavy))
                         .foregroundStyle(Color.Text.normal)
+                        .padding(.top, 16)
                     
                     Spacer()
                     
@@ -55,7 +56,8 @@ struct ScoreboardView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.horizontal, 16)
-                
+                .padding(.bottom, 16)
+                .listSectionSeparator(.visible)
             }
             .listSectionSeparator(.hidden)
             .listRowInsets(EdgeInsets())
@@ -63,6 +65,7 @@ struct ScoreboardView: View {
         }
         .listStyle(.plain)
         .listRowSpacing(20)
+        .scrollDismissesKeyboard(.immediately)
     }
 }
 
