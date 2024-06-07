@@ -18,20 +18,21 @@ struct ProfileView: View {
         VStack {
             
             // top bar
-            HStack {
+            ZStack {
                 
-                Button("", systemImage: "xmark", action: closeButtonTapped)
-                    .background(.yellow)
-                    .font(Font.system(size: 22))
-                    .foregroundStyle(Color.Text.normal)
-                
-                Spacer()
-                
-                Text("Profile")
+                Text("Account")
                     .font(Font.system(size: 18, weight: .bold))
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .background(.red)
                     .foregroundStyle(Color.Text.normal)
+                
+                HStack {
+                    
+                    Button("", systemImage: "xmark", action: closeButtonTapped)
+                        .font(Font.system(size: 24, weight: .light))
+                        .foregroundStyle(Color.Text.normal)
+                    
+                    Spacer()
+                }
             }
             .frame(alignment: .top)
             .padding(.top, 16)
@@ -60,10 +61,13 @@ struct ProfileView: View {
             
             Divider()
             
+            ProfileMenuView()
+                .padding(.top, 16)
+            
             Spacer()
             
             Button("Sign Out", action: signOutButtonTapped)
-                .font(Font.system(size: 18, weight: .semibold))
+                .font(Font.system(size: 18, weight: .medium))
                 .frame(maxWidth: .infinity)
                 .foregroundStyle(.red)
                 .padding(.bottom, 16)
@@ -91,5 +95,49 @@ struct ProfileView: View {
     
     private func closeButtonTapped() {
         showProfile.toggle()
+    }
+}
+
+private struct ProfileMenuView: View {
+    
+    var body: some View {
+        
+        VStack {
+            
+            HStack {
+                Image(systemName: "person")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .padding(.trailing, 8)
+                    .opacity(0.7)
+                Text("Manage account")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .foregroundStyle(Color.Text.normal)
+                Spacer()
+            }
+            .padding(.bottom, 18)
+            
+            HStack {
+                Image(systemName: "gearshape")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .padding(.trailing, 8)
+                    .opacity(0.7)
+                Text("Manage tournament")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .foregroundStyle(Color.Text.normal)
+                Spacer()
+            }
+            .padding(.bottom, 18)
+            
+            HStack {
+                Image(systemName: "medal")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .padding(.trailing, 8)
+                    .opacity(0.7)
+                Text("My achievements")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .foregroundStyle(Color.Text.normal)
+                Spacer()
+            }
+        }
     }
 }
