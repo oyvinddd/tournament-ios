@@ -31,6 +31,7 @@ struct ScoreboardView: View {
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
                         .padding(.horizontal, 16)
+                        .padding(.top, index == 0 ? 16 : 0)
                         .background(.white)
                         .onTapGesture {
                             UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -40,32 +41,37 @@ struct ScoreboardView: View {
                 
             } header: {
                 
-                HStack {
+                VStack {
+                    HStack {
+                        
+                        Text("Scoreboard")
+                            .font(Font.system(size: 14, weight: .semibold))
+                            .foregroundStyle(Color.Text.normal)
+                            .padding(.leading, 16)
+                            .padding(.vertical, 8)
+                        
+                        Spacer()
+                        
+                        Text("Matches")
+                            .font(Font.system(size: 14, weight: .semibold))
+                            .foregroundStyle(Color.Text.subtitle)
+                            .padding(.vertical, 8)
+                        
+                        Text("Wins")
+                            .frame(width: 50, alignment: .trailing)
+                            .font(Font.system(size: 14, weight: .semibold))
+                            .foregroundStyle(Color.Text.subtitle)
+                            .padding(.trailing, 16)
+                            .padding(.vertical, 8)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.vertical, 0)
+                    .listSectionSeparator(.visible)
+                    .listRowInsets(EdgeInsets())
                     
-                    Text("Scoreboard")
-                        .font(Font.system(size: 14, weight: .semibold))
-                        .foregroundStyle(Color.Text.normal)
-                        .padding(.leading, 16)
-                        .background(.green)
-                    
-                    Spacer()
-                    
-                    Text("Matches")
-                        .font(Font.system(size: 14, weight: .semibold))
-                        .foregroundStyle(Color.Text.subtitle)
-                    
-                    Text("Wins")
-                        .frame(width: 50, alignment: .trailing)
-                        .font(Font.system(size: 14, weight: .semibold))
-                        .foregroundStyle(Color.Text.subtitle)
-                        .padding(.trailing, 16)
+                    Divider()
+                        .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .frame(height: 50)
-                .background(.red)
-                .padding(.bottom, 16)
-                .padding(.top, 0)
-                .listSectionSeparator(.visible)
             }
             .listSectionSeparator(.hidden)
             .listRowInsets(EdgeInsets())
@@ -73,6 +79,8 @@ struct ScoreboardView: View {
         }
         .listStyle(.plain)
         .listRowSpacing(20)
+        .scrollContentBackground(.hidden)
+        .environment(\.defaultMinListHeaderHeight, 0)
         .scrollDismissesKeyboard(.immediately)
     }
 }

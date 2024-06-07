@@ -28,8 +28,8 @@ struct AccountView: View {
                 HStack {
                     
                     Button("", systemImage: "xmark", action: closeButtonTapped)
-                        .font(Font.system(size: 24, weight: .light))
-                        .foregroundStyle(Color.Text.normal)
+                        .font(Font.system(size: 22, weight: .regular))
+                        .foregroundStyle(Color.Text.normal.opacity(0.8))
                     
                     Spacer()
                 }
