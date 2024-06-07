@@ -16,8 +16,6 @@ struct CreateTournamentView: View {
         
         VStack {
             
-            Image(systemName: "")
-            
             Text("Create Tournament")
                 .font(Font.system(size: 22, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)

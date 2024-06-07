@@ -86,7 +86,7 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
     
     func getTournament() async throws -> Tournament {
         
-        let random = 1//Int.random(in: 0...2)
+        let random = 0//Int.random(in: 0...2)
         
         if random == 0 {
             let scoreboard: [Player] = [

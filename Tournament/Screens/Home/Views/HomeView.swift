@@ -41,7 +41,6 @@ struct HomeView: View {
                             .refreshable { reloadTournament() }
                     case .missingTournament:
                         CreateTournamentView()
-                        //TournamentSearchView()
                     case .failure(let error):
                         ErrorView(error, action: reloadTournament)
                     }
