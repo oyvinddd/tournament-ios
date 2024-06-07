@@ -49,7 +49,8 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.General.background)
         .sheet(isPresented: $showProfile) {
-            ProfileView().presentationDetents([.large])
+            ProfileView(showProfile: $showProfile)
+                .presentationDetents([.large])
         }
         .sheet(item: $selectedPlayer) { player in
             PlayerDetailsView(PlayerDetailsViewModel(player))

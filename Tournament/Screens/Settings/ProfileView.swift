@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @ObservedObject var viewModel = ProfileViewModel()
+    @Binding var showProfile: Bool
     @State private var showSignOutAlert = false
     
     var body: some View {
@@ -18,11 +19,11 @@ struct ProfileView: View {
             
             // top bar
             HStack {
-                Button("", systemImage: "xmark") {
-                }
-                .background(.yellow)
-                .font(Font.system(size: 22))
-                .foregroundStyle(Color.Text.normal)
+                
+                Button("", systemImage: "xmark", action: closeButtonTapped)
+                    .background(.yellow)
+                    .font(Font.system(size: 22))
+                    .foregroundStyle(Color.Text.normal)
                 
                 Spacer()
                 
@@ -36,9 +37,8 @@ struct ProfileView: View {
             .padding(.top, 16)
             
             // account part
-            
             if let account = viewModel.account {
-             
+                
                 HStack {
                     
                     ZStack {
@@ -87,5 +87,9 @@ struct ProfileView: View {
     
     private func confirmSignOutTapped() {
         viewModel.signOut()
+    }
+    
+    private func closeButtonTapped() {
+        showProfile.toggle()
     }
 }
