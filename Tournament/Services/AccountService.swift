@@ -28,6 +28,8 @@ protocol AccountService {
     
     func set(account: Account)
     
+    func set(tournamentId: UUID)
+    
     func signOut()
 }
 
@@ -65,6 +67,19 @@ final class LiveAccountService: AccountService {
         // store credentials locally
         let credentials = Credentials(account, account.accessToken)
         try? CredentialsManager.save(credentials)
+    }
+    
+    func set(tournamentId: UUID) {
+        account?.tournamentId = tournamentId
+        
+        guard let account = account else {
+            return
+        }
+        
+        let credentials = Credentials(account, account.accessToken)
+        try? CredentialsManager.save(credentials)
+        
+        print("✨ Updated tournament successfully!")
     }
     
     func signOut() {

@@ -16,11 +16,14 @@ import Combine
     var body: some Scene {
         
         WindowGroup {
+            /*
             if viewModel.signedIn {
                 HomeView()
             } else {
                 BasicSignInView()
             }
+             */
+            CreateTournamentView()
         }
     }
 }

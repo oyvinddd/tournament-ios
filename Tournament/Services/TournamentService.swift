@@ -79,12 +79,14 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
     }
     
     func tournamentSearch(query: String) async throws -> [Tournament] {
-        return []
+        return tournaments.filter { tournament in
+            tournament.title == query
+        }
     }
     
     func getTournament() async throws -> Tournament {
         
-        let random = 0//Int.random(in: 0...2)
+        let random = 1//Int.random(in: 0...2)
         
         if random == 0 {
             let scoreboard: [Player] = [

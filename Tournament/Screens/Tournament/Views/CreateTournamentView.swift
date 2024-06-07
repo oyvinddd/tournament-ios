@@ -17,17 +17,32 @@ struct CreateTournamentView: View {
         VStack {
             
             Text("Create Tournament")
-                .font(Font.system(size: 28, weight: .bold))
+                .font(Font.system(size: 22, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(Color.Text.normal)
             
-            TextField("Tournament title...", text: $title)
-                .font(Font.system(size: 18, weight: .bold))
-                .frame(maxWidth: .infinity)
-                .backgroundStyle(.gray)
+            HStack {
+                
+                Image(systemName: "plus.circle")
+                    .font(Font.system(size: 18, weight: .medium))
+                    .foregroundStyle(.gray.opacity(0.7))
+                    .padding(.leading, 16)
+                    .padding(.trailing, 8)
+                
+                TextField("", text: $title, prompt: Text("Choose a title...").foregroundStyle(.gray.opacity(0.7)))
+                    .font(Font.system(size: 18, weight: .medium))
+                    .foregroundStyle(.gray)
+                    .background(.clear)
+                    .padding(.trailing, 16)
+                    .padding(.vertical, 12)
+            }
+            .frame(maxWidth: .infinity)
+            .background(RoundedRectangle(cornerRadius: 15).fill(.brown).opacity(0.2))
             
             Spacer()
             
             Button("Create", action: createButtonTapped)
+                .buttonStyle(MainButtonStyle())
                 .frame(maxWidth: .infinity)
         }
         .padding(.all, 32)
