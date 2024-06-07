@@ -14,7 +14,7 @@ import SwiftUI
     var body: some Scene {
         
         WindowGroup {
-            HomeView()
+            BasicSignInView()
         }
     }
 }

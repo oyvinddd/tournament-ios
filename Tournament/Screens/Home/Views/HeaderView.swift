@@ -47,6 +47,7 @@ struct HeaderView: View {
             HStack {
                 TextField("Filter players...", text: $playerFilter)
                     .font(Font.system(size: 17, weight: .medium))
+                    .foregroundStyle(.white)
                     .background(.clear)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 10)

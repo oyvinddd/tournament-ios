@@ -23,6 +23,8 @@ final class RequestFactory: AccountServiceInjectable {
     
     var signInUrl: URL { apiBaseUrl.appendingPathComponent("login") }
     
+    var registerUrl: URL { apiBaseUrl.appendingPathComponent("register") }
+    
     var tournamentsUrl: URL { apiBaseUrl.appendingPathComponent("tournaments") }
     
     var searchUrl: URL { tournamentsUrl.appendingPathExtension("search") }
@@ -49,9 +51,15 @@ final class RequestFactory: AccountServiceInjectable {
     
     func basicSignInRequest(username: String, password: String) -> URLRequest {
         return RequestBuilder(.post, url: signInUrl)
-            .set(body: SignInRequest(username, password))
+            .set(body: SignInOrRegistrationRequest(username, password))
             .build()
             
+    }
+    
+    func register(username: String, password: String) -> URLRequest {
+        return RequestBuilder(.post, url: registerUrl)
+            .set(body: SignInOrRegistrationRequest(username, password))
+            .build()
     }
     
     func googleSignInRequest() -> URLRequest {

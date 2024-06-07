@@ -16,17 +16,35 @@ enum SignInState {
 }
 
 @MainActor final class SignInViewModel: ObservableObject,
-                                            AuthenticationServiceInjectable,
-                                            AccountServiceInjectable {
+                                        AuthenticationServiceInjectable,
+                                        AccountServiceInjectable {
     
     @Published var state: SignInState = .idle
     
-    func basicSignIn(_ username: String, _ password: String) {
+    func signIn(_ username: String, _ password: String) {
         Task {
             
             do {
                 
-                let credentials = try await authenticationService.basicSignIn(username, password)
+                let credentials = try await authenticationService.signIn(username, password)
+                var account = credentials.account
+                account.accessToken = credentials.accessToken
+                accountService.set(account: account)
+                
+                state = .signedIn(credentials)
+                
+            } catch let error {
+                state = .failure(error)
+            }
+        }
+    }
+    
+    func register(_ username: String, _ password: String) {
+        Task {
+            
+            do {
+                
+                let credentials = try await authenticationService.register(username, password)
                 var account = credentials.account
                 account.accessToken = credentials.accessToken
                 accountService.set(account: account)
