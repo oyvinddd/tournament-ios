@@ -26,12 +26,14 @@ struct BasicSignInView: View {
                     .padding(.bottom, 16)
                 
                 TextField("Username", text: $username)
+                    .textInputAutocapitalization(.never)
                     .font(Font.system(size: 18, weight: .bold))
-                    .textFieldStyle(.roundedBorder)
+                    .textFieldStyle(RoundedTextFieldStyle())
                 
                 TextField("Password", text: $password)
+                    .textContentType(.password)
                     .font(Font.system(size: 18, weight: .bold))
-                    .textFieldStyle(.roundedBorder)
+                    .textFieldStyle(RoundedTextFieldStyle())
                 
                 Button(action: signInTapped) {
                     Text("Sign In")
@@ -71,10 +73,14 @@ struct BasicSignInView: View {
     }
     
     private func missingAccountTapped() {
+        username = ""
+        password = ""
         showRegistration.toggle()
     }
     
     private func backTapped() {
+        username = ""
+        password = ""
         showRegistration.toggle()
     }
 }
@@ -95,12 +101,14 @@ private struct RegistrationView: View {
                 .padding(.bottom, 16)
             
             TextField("Preferred username", text: $username)
+                .textInputAutocapitalization(.never)
                 .font(Font.system(size: 18, weight: .bold))
-                .textFieldStyle(.roundedBorder)
+                .textFieldStyle(RoundedTextFieldStyle())
             
             TextField("Preferred password", text: $password)
+                .textContentType(.newPassword)
                 .font(Font.system(size: 18, weight: .bold))
-                .textFieldStyle(.roundedBorder)
+                .textFieldStyle(RoundedTextFieldStyle())
             
             Button(action: registerAction) {
                 Text("Register")

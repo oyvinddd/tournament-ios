@@ -17,27 +17,27 @@ struct DigitInputView: View {
         HStack {
             
             TextField("", text: $digit1)
-                .textFieldStyle(RoundedTextFieldStyle())
+                .textFieldStyle(DigitTextFieldStyle())
             
             TextField("", text: $digit2)
-                .textFieldStyle(RoundedTextFieldStyle())
+                .textFieldStyle(DigitTextFieldStyle())
             
             TextField("", text: $digit1)
-                .textFieldStyle(RoundedTextFieldStyle())
+                .textFieldStyle(DigitTextFieldStyle())
             
             TextField("", text: $digit1)
-                .textFieldStyle(RoundedTextFieldStyle())
+                .textFieldStyle(DigitTextFieldStyle())
             
             TextField("", text: $digit1)
-                .textFieldStyle(RoundedTextFieldStyle())
+                .textFieldStyle(DigitTextFieldStyle())
             
             TextField("", text: $digit1)
-                .textFieldStyle(RoundedTextFieldStyle())
+                .textFieldStyle(DigitTextFieldStyle())
         }
     }
 }
 
-struct RoundedTextFieldStyle: TextFieldStyle {
+struct DigitTextFieldStyle: TextFieldStyle {
     
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration

@@ -22,6 +22,7 @@ enum SignInState {
     @Published var state: SignInState = .idle
     
     func signIn(_ username: String, _ password: String) {
+        
         Task {
             
             do {
@@ -41,11 +42,13 @@ enum SignInState {
     }
     
     func register(_ username: String, _ password: String) {
+        let newUsername = stripWhitespacesAndMakeLowercased(username)
+        
         Task {
             
             do {
                 
-                let credentials = try await authenticationService.register(username, password)
+                let credentials = try await authenticationService.register(newUsername, password)
                 var account = credentials.account
                 account.accessToken = credentials.accessToken
                 accountService.set(account: account)
@@ -56,5 +59,10 @@ enum SignInState {
                 state = .failure(error)
             }
         }
+    }
+    
+    private func stripWhitespacesAndMakeLowercased(_ username: String) -> String {
+        let trimmedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmedUsername.lowercased()
     }
 }

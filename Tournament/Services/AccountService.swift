@@ -26,6 +26,8 @@ protocol AccountService {
     
     var signedIn: PassthroughSubject<Bool, Never> { get }
     
+    var joinedTournament: PassthroughSubject<UUID, Never> { get }
+    
     func set(account: Account)
     
     func set(tournamentId: UUID)
@@ -42,6 +44,8 @@ final class LiveAccountService: AccountService {
     var accessToken: String? { account?.accessToken }
     
     var signedIn: PassthroughSubject = PassthroughSubject<Bool, Never>()
+    
+    var joinedTournament: PassthroughSubject = PassthroughSubject<UUID, Never>()
     
     init() {
         do {

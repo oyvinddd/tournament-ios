@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum TournamentState {
     
@@ -26,8 +27,14 @@ enum TournamentState {
     @Published var state: TournamentState = .loading
     @Published var account: Account?
     
+    private var subscriptions = Set<AnyCancellable>()
+    
     init() {
         account = accountService.account
+        
+        accountService.joinedTournament.receive(on: DispatchQueue.main).sink { [weak self] _ in
+            self?.getTournament()
+        }.store(in: &subscriptions)
     }
     
     func getTournament() {

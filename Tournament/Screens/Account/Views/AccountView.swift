@@ -45,14 +45,21 @@ struct AccountView: View {
                     ZStack {
                         
                         Text(account.emoji)
-                            .font(Font.system(size: 48))
+                            .font(Font.system(size: 42))
                             .padding(.all, 6)
                     }
                     .background(RoundedRectangle(cornerRadius: 10).fill(.green))
                     
-                    Text(account.username.lowercased())
-                        .font(Font.system(size: 20))
-                        .foregroundStyle(Color.Text.normal)
+                    VStack(alignment: .leading) {
+                        Text(account.username.lowercased())
+                            .font(Font.system(size: 28, weight: .semibold))
+                            .foregroundStyle(Color.Text.normal)
+                        
+                        Text("Some text here as well")
+                            .font(Font.system(size: 18, weight: .medium))
+                            .foregroundStyle(Color.Text.subtitle)
+                    }
+                    .padding(.leading, 8)
                     
                     Spacer()
                 }
