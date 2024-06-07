@@ -50,11 +50,11 @@ struct HeaderView: View {
                 
                 Image(systemName: "magnifyingglass")
                     .font(Font.system(size: 18, weight: .medium))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.white.opacity(0.7))
                     .padding(.leading, 16)
                     .padding(.trailing, 8)
                 
-                TextField("Filter players...", text: $playerFilter)
+                TextField("", text: $playerFilter, prompt: Text("Filter players...").foregroundStyle(.white.opacity(0.7)))
                     .font(Font.system(size: 18, weight: .medium))
                     .foregroundStyle(.white)
                     .background(.clear)
