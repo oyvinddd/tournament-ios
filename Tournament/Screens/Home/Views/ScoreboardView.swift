@@ -45,6 +45,7 @@ struct ScoreboardView: View {
                     Text("Scoreboard")
                         .font(Font.system(size: 14, weight: .semibold))
                         .foregroundStyle(Color.Text.normal)
+                        .padding(.leading, 16)
                         .background(.green)
                     
                     Spacer()
@@ -57,10 +58,13 @@ struct ScoreboardView: View {
                         .frame(width: 50, alignment: .trailing)
                         .font(Font.system(size: 14, weight: .semibold))
                         .foregroundStyle(Color.Text.subtitle)
+                        .padding(.trailing, 16)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding(.horizontal, 16)
+                .frame(height: 50)
+                .background(.red)
                 .padding(.bottom, 16)
+                .padding(.top, 0)
                 .listSectionSeparator(.visible)
             }
             .listSectionSeparator(.hidden)
