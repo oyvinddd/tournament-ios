@@ -24,9 +24,7 @@ struct HeaderView: View {
                     .foregroundStyle(.white)
                 
                 Spacer()
-                Button(action: {
-                    showProfile.toggle()
-                }) {
+                Button(action: profileTapped) {
                     ZStack {
                         
                         Text("😍")
@@ -67,5 +65,10 @@ struct HeaderView: View {
         }
         .padding(.horizontal, 16)
         .padding(.bottom, 8)
+    }
+    
+    private func profileTapped() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        showProfile.toggle()
     }
 }
