@@ -16,11 +16,11 @@ struct CreateTournamentView: View {
         VStack {
             
             Text("Create Tournament")
-                .font(Font.system(size: 28, weight: .bold, design: .rounded))
+                .font(Font.system(size: 28, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             TextField("Tournament title...", text: $title)
-                .font(Font.system(size: 18, weight: .bold, design: .rounded))
+                .font(Font.system(size: 18, weight: .bold))
                 .frame(maxWidth: .infinity)
                 .backgroundStyle(.gray)
             

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E03B0C12BDE43070057AAF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C02BDE43070057AAF9 /* SettingsView.swift */; };
-		8E03B0C42BDE44690057AAF9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */; };
+		8E03B0C12BDE43070057AAF9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C02BDE43070057AAF9 /* ProfileView.swift */; };
+		8E03B0C42BDE44690057AAF9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C32BDE44690057AAF9 /* ProfileViewModel.swift */; };
 		8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D12BDEDB760057AAF9 /* APIError.swift */; };
 		8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D32BDEE94A0057AAF9 /* DiscoveredPlayerView.swift */; };
 		8E03B0D62BDEE99E0057AAF9 /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D52BDEE99E0057AAF9 /* BluetoothService.swift */; };
@@ -35,6 +35,8 @@
 		8E84D8942BE4CFF7006F4E97 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8932BE4CFF7006F4E97 /* TokenService.swift */; };
 		8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */; };
 		8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */; };
+		8E85C80F2C130032003E9609 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E85C80E2C130032003E9609 /* PlayerDetailsView.swift */; };
+		8E85C8112C130198003E9609 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E85C8102C130198003E9609 /* PlayerDetailsViewModel.swift */; };
 		8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */; };
 		8ECE94ED2C0A006C005E23CB /* SignInOrRegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EC2C0A006C005E23CB /* SignInOrRegistrationRequest.swift */; };
 		8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EE2C0A01B4005E23CB /* Credentials.swift */; };
@@ -62,8 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E03B0C02BDE43070057AAF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		8E03B0C02BDE43070057AAF9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8E03B0C32BDE44690057AAF9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8E03B0C52BDEB40B0057AAF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E03B0C72BDEBC170057AAF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8E03B0D12BDEDB760057AAF9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		8E84D8932BE4CFF7006F4E97 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenContainer.swift; sourceTree = "<group>"; };
 		8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		8E85C80E2C130032003E9609 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		8E85C8102C130198003E9609 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
 		8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSignInView.swift; sourceTree = "<group>"; };
 		8ECE94EC2C0A006C005E23CB /* SignInOrRegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInOrRegistrationRequest.swift; sourceTree = "<group>"; };
 		8ECE94EE2C0A01B4005E23CB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -135,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8E03B0C22BDE445B0057AAF9 /* ViewModels */,
-				8E03B0C02BDE43070057AAF9 /* SettingsView.swift */,
+				8E03B0C02BDE43070057AAF9 /* ProfileView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -143,7 +147,7 @@
 		8E03B0C22BDE445B0057AAF9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8E03B0C32BDE44690057AAF9 /* SettingsViewModel.swift */,
+				8E03B0C32BDE44690057AAF9 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -349,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0485A62C111B4B00E98795 /* TournamentDetailsView.swift */,
+				8E85C80E2C130032003E9609 /* PlayerDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF420772BDBC4A900383D1D /* TournamentViewModel.swift */,
+				8E85C8102C130198003E9609 /* PlayerDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -535,7 +541,7 @@
 				8E03B0E22BE15A440057AAF9 /* AppSettings.swift in Sources */,
 				8EF420762BDBC3D300383D1D /* Tournament.swift in Sources */,
 				8E47ADBD2C079AC400653FD8 /* AccountService.swift in Sources */,
-				8E03B0C42BDE44690057AAF9 /* SettingsViewModel.swift in Sources */,
+				8E03B0C42BDE44690057AAF9 /* ProfileViewModel.swift in Sources */,
 				8EF4206D2BDBC16C00383D1D /* Player.swift in Sources */,
 				8E03B0F02BE18B500057AAF9 /* ButtonStyle.swift in Sources */,
 				8ECE94F32C0A071D005E23CB /* TournamentSearchViewModel.swift in Sources */,
@@ -545,10 +551,12 @@
 				8ECE94ED2C0A006C005E23CB /* SignInOrRegistrationRequest.swift in Sources */,
 				8EF420722BDBC20E00383D1D /* TournamentService.swift in Sources */,
 				8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */,
+				8E85C8112C130198003E9609 /* PlayerDetailsViewModel.swift in Sources */,
 				8EF420782BDBC4A900383D1D /* TournamentViewModel.swift in Sources */,
 				8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */,
+				8E85C80F2C130032003E9609 /* PlayerDetailsView.swift in Sources */,
 				8EF420882BDBE2E800383D1D /* Account.swift in Sources */,
-				8E03B0C12BDE43070057AAF9 /* SettingsView.swift in Sources */,
+				8E03B0C12BDE43070057AAF9 /* ProfileView.swift in Sources */,
 				8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */,
 				8E0485A52C11141E00E98795 /* HeaderView.swift in Sources */,
 				8E03B0EB2BE16EA80057AAF9 /* JoinRequest.swift in Sources */,

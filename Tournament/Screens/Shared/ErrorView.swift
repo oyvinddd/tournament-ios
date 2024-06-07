@@ -36,7 +36,7 @@ struct ErrorView: View {
             .padding(.bottom, 8)
             
             Text("Oops! There was an error...")
-                .font(Font.system(size: 20, weight: .bold, design: .rounded))
+                .font(Font.system(size: 20, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color.Text.normal)
@@ -44,7 +44,7 @@ struct ErrorView: View {
                 .padding(.bottom, 2)
             
             Text(error.localizedDescription)
-                .font(Font.system(size: 17, weight: .medium, design: .rounded))
+                .font(Font.system(size: 17, weight: .medium))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color.Text.subtitle)

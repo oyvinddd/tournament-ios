@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ScoreboardView: View {
     
+    @Binding var selectedPlayer: Player?
+    
     var scoreboard: [Player]
     
-    init(_ scoreboard: [Player]) {
+    init(_ scoreboard: [Player], _ selectedPlayer: Binding<Player?>) {
         self.scoreboard = scoreboard
+        self._selectedPlayer = selectedPlayer
     }
     
     var body: some View {
@@ -27,6 +30,9 @@ struct ScoreboardView: View {
                         .listRowSeparator(.hidden)
                         .padding(.horizontal, 16)
                         .background(.white)
+                        .onTapGesture {
+                            selectedPlayer = scoreboard[index]
+                        }
                 }
                 
             } header: {
@@ -49,7 +55,6 @@ struct ScoreboardView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.horizontal, 16)
-                .padding(.vertical, 8)
                 
             }
             .listSectionSeparator(.hidden)

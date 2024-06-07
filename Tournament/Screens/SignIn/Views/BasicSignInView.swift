@@ -10,8 +10,8 @@ import SwiftUI
 struct BasicSignInView: View {
     
     @ObservedObject var viewModel = SignInViewModel()
-    @State private var showRegistration = false
     
+    @State private var showRegistration = false
     @State private var username: String = ""
     @State private var password: String = ""
     

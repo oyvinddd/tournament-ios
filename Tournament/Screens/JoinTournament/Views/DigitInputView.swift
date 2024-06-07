@@ -42,7 +42,7 @@ struct RoundedTextFieldStyle: TextFieldStyle {
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
             .padding(.all)
-            .font(Font.system(size: 22, weight: .bold, design: .rounded))
+            .font(Font.system(size: 22, weight: .bold))
             .multilineTextAlignment(.center)
             .background(Color(UIColor.systemGray6))
             .clipShape(RoundedRectangle(cornerRadius: 8))

@@ -13,7 +13,7 @@ struct ConfirmRegisterMatchView: View {
         VStack {
             
             Text("Register Win")
-                .font(Font.system(size: 32, weight: .bold, design: .rounded))
+                .font(Font.system(size: 32, weight: .bold))
             
             Button("Register", action: confirmRegisterMatchTapped)
                 .frame(maxWidth: .infinity)

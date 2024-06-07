@@ -12,6 +12,7 @@ struct HomeView: View {
     @ObservedObject var viewModel = TournamentViewModel()
     @State private var playerFilter = ""
     @State private var showProfile = false
+    @State private var selectedPlayer: Player?
     
     var body: some View {
         
@@ -19,7 +20,7 @@ struct HomeView: View {
             
             VStack {
                 
-                HeaderView(title: $viewModel.title, playerFilter: $playerFilter)
+                HeaderView(title: $viewModel.title, playerFilter: $playerFilter, showProfile: $showProfile)
                 
                 // main content goes inside here
                 VStack {
@@ -30,7 +31,7 @@ struct HomeView: View {
                     case .loading:
                         Text("Loading!")
                     case .success(let tournament):
-                        ScoreboardView(tournament.sortedScoreboard)
+                        ScoreboardView(tournament.sortedScoreboard, $selectedPlayer)
                             .refreshable { reloadTournament() }
                     case .missingTournament:
                         TournamentSearchView()
@@ -48,9 +49,15 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.General.background)
         .sheet(isPresented: $showProfile) {
-            SettingsView().presentationDetents([.large])
+            ProfileView().presentationDetents([.large])
         }
-        .onAppear { reloadTournament() }
+        .sheet(item: $selectedPlayer) { player in
+            PlayerDetailsView(PlayerDetailsViewModel(player))
+                .presentationDetents([.medium])
+        }
+        .onAppear {
+            reloadTournament()
+        }
     }
     
     private func profileButtonTapped() {

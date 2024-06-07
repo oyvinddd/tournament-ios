@@ -11,6 +11,7 @@ struct HeaderView: View {
     
     @Binding var title: String
     @Binding var playerFilter: String
+    @Binding var showProfile: Bool
     
     var body: some View {
         
@@ -23,7 +24,9 @@ struct HeaderView: View {
                     .foregroundStyle(.white)
                 
                 Spacer()
-                Button(action: {}) {
+                Button(action: {
+                    showProfile.toggle()
+                }) {
                     ZStack {
                         
                         Text("😍")

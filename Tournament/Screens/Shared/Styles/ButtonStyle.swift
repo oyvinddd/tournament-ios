@@ -42,7 +42,7 @@ struct SecondaryButtonStyle: ButtonStyle {
         return configuration.label
             .padding(.horizontal, 18)
             .padding(.vertical, 14)
-            .font(Font.system(size: 19, weight: .bold, design: .rounded))
+            .font(Font.system(size: 19, weight: .bold))
             .background(backgroundColor)
             .foregroundStyle(Color.General.mainBackground2)
             .clipShape(RoundedRectangle(cornerRadius: 12))

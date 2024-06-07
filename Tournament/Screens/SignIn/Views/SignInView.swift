@@ -21,7 +21,7 @@ struct SignInView: View {
                 Spacer()
                 
                 Text("Welcome! ✨")
-                    .font(Font.system(size: 38, weight: .bold, design: .rounded))
+                    .font(Font.system(size: 38, weight: .bold))
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal, 32)
                     .padding(.bottom, 8)

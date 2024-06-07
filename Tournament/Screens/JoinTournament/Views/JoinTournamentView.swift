@@ -17,13 +17,13 @@ struct JoinTournamentView: View {
             Spacer()
             
             Text("Join Tournament")
-                .font(Font.system(size: 28, weight: .bold, design: .rounded))
+                .font(Font.system(size: 28, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(.black)
                 .padding(.bottom, 2)
             
             Text("Input code to join a given tournament")
-                .font(Font.system(size: 18, weight: .bold, design: .rounded))
+                .font(Font.system(size: 18, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(.gray)
                 .padding(.bottom, 20)

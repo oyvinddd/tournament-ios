@@ -35,7 +35,7 @@ struct DiscoveredPlayerView: View {
             Text(player.username)
                 .frame(alignment: .center)
                 .multilineTextAlignment(.center)
-                .font(Font.system(size: 14, weight: .bold, design: .rounded))
+                .font(Font.system(size: 14, weight: .bold))
                 .foregroundStyle(Color.Text.normal)
         }
     }
