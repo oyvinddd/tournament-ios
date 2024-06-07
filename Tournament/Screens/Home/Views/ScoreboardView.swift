@@ -25,7 +25,7 @@ struct ScoreboardView: View {
             Section {
                 
                 ForEach(scoreboard.indices, id: \.self) { index in
-                    PlayerView(index: index, player: scoreboard[index])
+                    PlayerView(placement: index+1, player: scoreboard[index])
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
                         .padding(.horizontal, 16)
@@ -71,14 +71,23 @@ struct ScoreboardView: View {
 
 private struct PlayerView: View {
     
-    let index: Int
+    let placement: Int
     let player: Player
+    
+    private var stringFromPlacement: String {
+        switch placement {
+        case 1: "🥇"
+        case 2: "🥈"
+        case 3: "🥉"
+        default: "\(placement)"
+        }
+    }
     
     var body: some View {
         
         HStack {
             
-            Text("\(index + 1)")
+            Text(stringFromPlacement)
                 .font(Font.system(size: 17, weight: .heavy))
                 .foregroundStyle(Color.Text.subtitle)
                 .padding(.trailing, 8)
