@@ -35,6 +35,7 @@ enum SignInState {
                 
             } catch let error {
                 state = .failure(error)
+                print(error)
             }
         }
     }

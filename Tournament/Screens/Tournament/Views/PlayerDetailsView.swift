@@ -20,7 +20,7 @@ struct PlayerDetailsView: View {
         VStack {
          
             ZStack {
-                Text("🤩")
+                Text(viewModel.player.emoji)
                     .font(Font.system(size: 48))
                     .padding(.all, 6)
             }

@@ -42,19 +42,20 @@ struct ScoreboardView: View {
                 
                 HStack {
                     
-                    Text("Scoreboard".uppercased())
-                        .font(Font.system(size: 14, weight: .heavy))
+                    Text("Scoreboard")
+                        .font(Font.system(size: 14, weight: .semibold))
                         .foregroundStyle(Color.Text.normal)
-                        .padding(.top, 16)
+                        .background(.green)
                     
                     Spacer()
                     
                     Text("Matches")
-                        .font(Font.system(size: 14, weight: .heavy))
+                        .font(Font.system(size: 14, weight: .semibold))
                         .foregroundStyle(Color.Text.subtitle)
                     
                     Text("Wins")
-                        .font(Font.system(size: 14, weight: .heavy))
+                        .frame(width: 50, alignment: .trailing)
+                        .font(Font.system(size: 14, weight: .semibold))
                         .foregroundStyle(Color.Text.subtitle)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -71,6 +72,8 @@ struct ScoreboardView: View {
         .scrollDismissesKeyboard(.immediately)
     }
 }
+
+// MARK: - Player view
 
 private struct PlayerView: View {
     
@@ -96,7 +99,9 @@ private struct PlayerView: View {
         HStack {
             
             Text(stringFromPlacement)
-                .font(Font.system(size: 17, weight: .heavy))
+                .frame(width: 20, alignment: .center)
+                .multilineTextAlignment(.center)
+                .font(Font.system(size: 16, weight: .semibold))
                 .foregroundStyle(Color.Text.subtitle)
                 .padding(.trailing, 8)
             
@@ -105,20 +110,19 @@ private struct PlayerView: View {
                     .font(Font.system(size: 24))
                     .padding(.all, 6)
             }
-            .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
+            .background(RoundedRectangle(cornerRadius: 8).fill(Color.General.playerBackground))
             .padding(.trailing, 8)
             
             VStack {
                 
                 Text(player.username.lowercased())
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(Font.system(size: 19, weight: .bold))
-                    .padding(.bottom, 1)
+                    .font(Font.system(size: 18, weight: .semibold))
                     .foregroundStyle(Color.Text.normal)
                 
                 Text("\(player.score)")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(Font.system(size: 15, weight: .bold))
+                    .font(Font.system(size: 14, weight: .semibold))
                     .foregroundStyle(Color.Text.subtitle)
             }
             .frame(maxWidth: .infinity)
@@ -126,13 +130,13 @@ private struct PlayerView: View {
             Spacer()
             
             Text("\(player.matchesPlayed)")
-                .font(Font.system(size: 17, weight: .bold))
+                .font(Font.system(size: 16, weight: .semibold))
                 .foregroundStyle(Color.Text.normal)
             
             Text("\(player.matchesWon)")
-                .font(Font.system(size: 17, weight: .bold))
+                .frame(width: 50, alignment: .trailing)
+                .font(Font.system(size: 16, weight: .semibold))
                 .foregroundStyle(Color.Text.normal)
-                .padding(.leading, 32)
         }
     }
 }

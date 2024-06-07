@@ -8,6 +8,10 @@
 import Foundation
 import AuthenticationServices
 
+enum AuthError: Error {
+    case unauthorized
+}
+
 protocol AuthenticationServiceInjectable {
     var authenticationService: AuthenticationService { get }
 }
@@ -73,14 +77,22 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
 
 final class MockedAuthenticationService: AuthenticationService {
     
+    private var accounts = [
+        Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "test_token")
+    ]
+    
     func register(_ username: String, _ password: String) async throws -> Credentials {
         let account = Account(id: UUID(), username: username, created: Date.now, accessToken: "token")
         return Credentials(account, account.accessToken)
     }
     
     func signIn(_ username: String, _ password: String) async throws -> Credentials {
-        let account = Account(id: UUID(), username: username, created: Date.now, accessToken: "token")
-        return Credentials(account, account.accessToken)
+        for account in accounts {
+            if account.username == username.lowercased() {
+                return Credentials(account, "some_test_token")
+            }
+        }
+        throw AuthError.unauthorized
     }
     
     func startGoogleSignIn(from contextProvider: any ASWebAuthenticationPresentationContextProviding) {

@@ -26,8 +26,6 @@ extension Color {
         
         static let mainBackground2 = Color(hex: 0x6967E1)
         
-        //static let background = Color(hex: 0xE4E6EB)
-        
         static let main = Color(hex: 0x656FED)
         
         static let mainDark = Color(hex: 0x4C56C8)
@@ -37,6 +35,8 @@ extension Color {
         static let pointsBackground = Color(hex: 0xD587B6)
         
         static let totalWinsBackground = Color(hex: 0x8C77CE)
+        
+        static let playerBackground = Color(hex: 0xECECEC)
     }
     
     enum Text {
