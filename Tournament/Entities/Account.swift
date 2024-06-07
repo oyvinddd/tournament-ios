@@ -22,4 +22,6 @@ struct Account: Codable, Identifiable {
     var refreshToken: String?
     
     var hasTournament: Bool { tournamentId != nil }
+    
+    var emoji: String { Emoji.emojiFromId(id) }
 }

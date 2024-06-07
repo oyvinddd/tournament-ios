@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     
+    @Binding var account: Account?
     @Binding var title: String
     @Binding var playerFilter: String
     @Binding var showProfile: Bool
@@ -27,7 +28,7 @@ struct HeaderView: View {
                 Button(action: profileTapped) {
                     ZStack {
                         
-                        Text("😍")
+                        Text(account?.emoji ?? "🫠")
                             .font(Font.system(size: 22))
                             .padding(.all, 6)
                         

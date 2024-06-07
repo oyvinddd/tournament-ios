@@ -20,7 +20,13 @@ struct HomeView: View {
             
             VStack {
                 
-                HeaderView(title: $viewModel.title, playerFilter: $playerFilter, showProfile: $showProfile)
+                // top header
+                HeaderView(
+                    account: $viewModel.account,
+                    title: $viewModel.title,
+                    playerFilter: $playerFilter,
+                    showProfile: $showProfile
+                )
                 
                 // main content goes inside here
                 VStack {
@@ -42,7 +48,7 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity)
                 .background(.white)
                 .clipShape(.rect(topLeadingRadius: 16, topTrailingRadius: 16))
-                .shadow(color: Color.black.opacity(0.6), radius: 10, x: 0, y: 2)
+                .shadow(color: Color.Text.normal.opacity(0.6), radius: 10, x: 0, y: 2)
                 .ignoresSafeArea(edges: .bottom)
             }
         }

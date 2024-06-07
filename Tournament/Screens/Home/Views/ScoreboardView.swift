@@ -25,14 +25,16 @@ struct ScoreboardView: View {
             Section {
                 
                 ForEach(scoreboard.indices, id: \.self) { index in
-                    PlayerView(placement: index+1, player: scoreboard[index])
+                    let player = scoreboard[index]
+                    
+                    PlayerView(index+1, player)
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
                         .padding(.horizontal, 16)
                         .background(.white)
                         .onTapGesture {
                             UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                            selectedPlayer = scoreboard[index]
+                            selectedPlayer = player
                         }
                 }
                 
@@ -84,6 +86,11 @@ private struct PlayerView: View {
         }
     }
     
+    init(_ placement: Int, _ player: Player) {
+        self.placement = placement
+        self.player = player
+    }
+    
     var body: some View {
         
         HStack {
@@ -94,7 +101,7 @@ private struct PlayerView: View {
                 .padding(.trailing, 8)
             
             ZStack {
-                Text("🤩")
+                Text(player.emoji)
                     .font(Font.system(size: 24))
                     .padding(.all, 6)
             }

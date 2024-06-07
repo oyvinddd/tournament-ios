@@ -18,4 +18,6 @@ struct Player: Codable, Identifiable {
     var matchesPlayed: Int
     
     var matchesWon: Int
+    
+    var emoji: String { Emoji.emojiFromId(id) }
 }

@@ -19,7 +19,7 @@ struct JoinTournamentView: View {
             Text("Join Tournament")
                 .font(Font.system(size: 28, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundStyle(.black)
+                .foregroundStyle(Color.Text.normal)
                 .padding(.bottom, 2)
             
             Text("Input code to join a given tournament")

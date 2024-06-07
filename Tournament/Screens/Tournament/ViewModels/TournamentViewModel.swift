@@ -20,11 +20,15 @@ enum TournamentState {
     case failure(Error)
 }
 
-@MainActor final class TournamentViewModel: ObservableObject, TournamentServiceInjectable {
+@MainActor final class TournamentViewModel: ObservableObject, AccountServiceInjectable, TournamentServiceInjectable {
     
     @Published var title: String = "Welcome!"
     @Published var state: TournamentState = .loading
     @Published var account: Account?
+    
+    init() {
+        account = accountService.account
+    }
     
     func getTournament() {
         state = .loading

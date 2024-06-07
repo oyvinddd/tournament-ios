@@ -37,6 +37,7 @@
 		8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */; };
 		8E85C80F2C130032003E9609 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E85C80E2C130032003E9609 /* PlayerDetailsView.swift */; };
 		8E85C8112C130198003E9609 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E85C8102C130198003E9609 /* PlayerDetailsViewModel.swift */; };
+		8E85C8132C134054003E9609 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E85C8122C134054003E9609 /* Emoji.swift */; };
 		8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */; };
 		8ECE94ED2C0A006C005E23CB /* SignInOrRegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EC2C0A006C005E23CB /* SignInOrRegistrationRequest.swift */; };
 		8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EE2C0A01B4005E23CB /* Credentials.swift */; };
@@ -96,6 +97,7 @@
 		8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		8E85C80E2C130032003E9609 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		8E85C8102C130198003E9609 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
+		8E85C8122C134054003E9609 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSignInView.swift; sourceTree = "<group>"; };
 		8ECE94EC2C0A006C005E23CB /* SignInOrRegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInOrRegistrationRequest.swift; sourceTree = "<group>"; };
 		8ECE94EE2C0A01B4005E23CB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */,
+				8E85C8122C134054003E9609 /* Emoji.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				8EF420702BDBC1B500383D1D /* DataFactory.swift in Sources */,
 				8EF420512BDBBB2A00383D1D /* TournamentApp.swift in Sources */,
 				8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */,
+				8E85C8132C134054003E9609 /* Emoji.swift in Sources */,
 				8E0A599A2C0AF382002BF784 /* ScoreboardView.swift in Sources */,
 				8EEE2C6F2C09169E00AFA53C /* HomeView.swift in Sources */,
 				8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */,

@@ -74,7 +74,8 @@ final class MockedTournamentService: TournamentService {
                 Player(id: UUID(), username: "panzertax", score: 1600, matchesPlayed: 12, matchesWon: 0),
                 Player(id: UUID(), username: "rub1", score: 1300, matchesPlayed: 9, matchesWon: 7),
                 Player(id: UUID(), username: "konstant", score: 990, matchesPlayed: 10, matchesWon: 0),
-                Player(id: UUID(), username: "stian", score: 120, matchesPlayed: 8, matchesWon: 1)
+                Player(id: UUID(), username: "stian", score: 120, matchesPlayed: 8, matchesWon: 1),
+                Player(id: UUID(), username: "fredrrrik", score: 999, matchesPlayed: 8, matchesWon: 1)
             ]
             return Tournament(
                 id: UUID(),

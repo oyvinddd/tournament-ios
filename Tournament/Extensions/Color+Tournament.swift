@@ -41,7 +41,7 @@ extension Color {
     
     enum Text {
         
-        static let normal = Color(hex: 0x0C0C0C)
+        static let normal = Color(hex: 0x313443)
         
         static let subtitle = Color(hex: 0x9D9D9D)
         

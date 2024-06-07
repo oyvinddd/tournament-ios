@@ -44,7 +44,7 @@ struct ProfileView: View {
                     
                     ZStack {
                         
-                        Text("😍")
+                        Text(account.emoji)
                             .font(Font.system(size: 48))
                             .padding(.all, 6)
                     }
@@ -108,7 +108,7 @@ private struct ProfileMenuView: View {
                 Image(systemName: "person")
                     .font(Font.system(size: 18, weight: .medium))
                     .padding(.trailing, 8)
-                    .opacity(0.7)
+                    .opacity(0.5)
                 Text("Manage account")
                     .font(Font.system(size: 18, weight: .medium))
                     .foregroundStyle(Color.Text.normal)
@@ -120,7 +120,7 @@ private struct ProfileMenuView: View {
                 Image(systemName: "gearshape")
                     .font(Font.system(size: 18, weight: .medium))
                     .padding(.trailing, 8)
-                    .opacity(0.7)
+                    .opacity(0.5)
                 Text("Manage tournament")
                     .font(Font.system(size: 18, weight: .medium))
                     .foregroundStyle(Color.Text.normal)
@@ -132,7 +132,7 @@ private struct ProfileMenuView: View {
                 Image(systemName: "medal")
                     .font(Font.system(size: 18, weight: .medium))
                     .padding(.trailing, 8)
-                    .opacity(0.7)
+                    .opacity(0.5)
                 Text("My achievements")
                     .font(Font.system(size: 18, weight: .medium))
                     .foregroundStyle(Color.Text.normal)
