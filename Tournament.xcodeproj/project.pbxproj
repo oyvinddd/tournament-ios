@@ -36,7 +36,7 @@
 		8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */; };
 		8E84D8992BE4D234006F4E97 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */; };
 		8ECE94EB2C09FCEB005E23CB /* BasicSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */; };
-		8ECE94ED2C0A006C005E23CB /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */; };
+		8ECE94ED2C0A006C005E23CB /* SignInOrRegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EC2C0A006C005E23CB /* SignInOrRegistrationRequest.swift */; };
 		8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94EE2C0A01B4005E23CB /* Credentials.swift */; };
 		8ECE94F12C0A060B005E23CB /* TournamentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94F02C0A060B005E23CB /* TournamentSearchView.swift */; };
 		8ECE94F32C0A071D005E23CB /* TournamentSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE94F22C0A071D005E23CB /* TournamentSearchViewModel.swift */; };
@@ -93,7 +93,7 @@
 		8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenContainer.swift; sourceTree = "<group>"; };
 		8E84D8982BE4D234006F4E97 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		8ECE94EA2C09FCEB005E23CB /* BasicSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSignInView.swift; sourceTree = "<group>"; };
-		8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		8ECE94EC2C0A006C005E23CB /* SignInOrRegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInOrRegistrationRequest.swift; sourceTree = "<group>"; };
 		8ECE94EE2C0A01B4005E23CB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		8ECE94F02C0A060B005E23CB /* TournamentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentSearchView.swift; sourceTree = "<group>"; };
 		8ECE94F22C0A071D005E23CB /* TournamentSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentSearchViewModel.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				8E03B0E72BE1690D0057AAF9 /* MatchRequest.swift */,
 				8E03B0EA2BE16EA80057AAF9 /* JoinRequest.swift */,
 				8E03B0F32BE191A50057AAF9 /* UsernameRequest.swift */,
-				8ECE94EC2C0A006C005E23CB /* SignInRequest.swift */,
+				8ECE94EC2C0A006C005E23CB /* SignInOrRegistrationRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 				8E03B0F62BE1926C0057AAF9 /* ChooseUsernameViewModel.swift in Sources */,
 				8E03B0F22BE18CFD0057AAF9 /* ChooseUsernameView.swift in Sources */,
 				8E03B0ED2BE175F70057AAF9 /* ConfirmRegisterMatchView.swift in Sources */,
-				8ECE94ED2C0A006C005E23CB /* SignInRequest.swift in Sources */,
+				8ECE94ED2C0A006C005E23CB /* SignInOrRegistrationRequest.swift in Sources */,
 				8EF420722BDBC20E00383D1D /* TournamentService.swift in Sources */,
 				8E84D8962BE4D1F4006F4E97 /* TokenContainer.swift in Sources */,
 				8EF420782BDBC4A900383D1D /* TournamentViewModel.swift in Sources */,
@@ -706,6 +706,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -743,6 +744,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

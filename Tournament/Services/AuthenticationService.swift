@@ -18,7 +18,9 @@ extension AuthenticationServiceInjectable {
 
 protocol AuthenticationService {
     
-    func basicSignIn(_ username: String, _ password: String) async throws -> Credentials
+    func register(_ username: String, _ password: String) async throws -> Credentials
+    
+    func signIn(_ username: String, _ password: String) async throws -> Credentials
     
     func startGoogleSignIn(from contextProvider: ASWebAuthenticationPresentationContextProviding)
 }
@@ -29,13 +31,17 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
     
-    func basicSignIn(_ username: String, _ password: String) async throws -> Credentials {
+    func register(_ username: String, _ password: String) async throws -> Credentials {
+        let request = requestFactory.register(username: username, password: password)
+        return try await networkManager.execute(request: request)
+    }
+    
+    func signIn(_ username: String, _ password: String) async throws -> Credentials {
         let request = requestFactory.basicSignInRequest(username: username, password: password)
         return try await networkManager.execute(request: request)
     }
     
     func startGoogleSignIn(from contextProvider: ASWebAuthenticationPresentationContextProviding) {
-        
         let callback = ASWebAuthenticationSession.Callback.customScheme("anchorage")
         let session = ASWebAuthenticationSession(url: googleAuthUrl, callback: callback, completionHandler: handleAuthenticationCallback)
         session.presentationContextProvider = contextProvider
@@ -67,8 +73,13 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
 
 final class MockedAuthenticationService: AuthenticationService {
     
-    func basicSignIn(_ username: String, _ password: String) async throws -> Credentials {
-        let account = Account(id: UUID(), email: "foo@bar.com", username: "oyvind_h", created: Date.now)
+    func register(_ username: String, _ password: String) async throws -> Credentials {
+        let account = Account(id: UUID(), email: "", username: username, created: Date.now)
+        return Credentials(account: account, accessToken: "the_token")
+    }
+    
+    func signIn(_ username: String, _ password: String) async throws -> Credentials {
+        let account = Account(id: UUID(), email: "", username: username, created: Date.now)
         return Credentials(account: account, accessToken: "the_token")
     }
     
