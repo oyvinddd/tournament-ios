@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @ObservedObject var viewModel = ProfileViewModel()
+    @State private var showSignOutAlert = false
     
     var body: some View {
         
@@ -32,14 +33,20 @@ struct ProfileView: View {
             .frame(alignment: .top)
             .padding(.top, 16)
             
+            Spacer()
+            
             Button("Sign Out", action: signOutButtonTapped)
+                .font(Font.system(size: 18, weight: .semibold))
                 .frame(maxWidth: .infinity)
                 .foregroundStyle(.red)
+                .padding(.bottom, 8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 16)
         .background(.white)
     }
     
-    private func signOutButtonTapped() {}
+    private func signOutButtonTapped() {
+        viewModel.signOut()
+    }
 }

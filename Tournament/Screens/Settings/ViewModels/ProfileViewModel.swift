@@ -7,5 +7,9 @@
 
 import Foundation
 
-@MainActor final class ProfileViewModel: ObservableObject {
+@MainActor final class ProfileViewModel: ObservableObject, AccountServiceInjectable {
+    
+    func signOut() {
+        accountService.signOut()
+    }
 }
