@@ -43,9 +43,12 @@ struct BasicSignInView: View {
                     Text("I don't have an account")
                         .font(Font.system(size: 18, weight: .bold))
                         .foregroundStyle(Color.General.main)
+                        .frame(maxWidth: .infinity)
                 }
+                .frame(maxWidth: .infinity)
                 .padding(.top, 16)
             }
+            .frame(maxWidth: .infinity)
             .padding(.horizontal, 16)
             
         } else {
