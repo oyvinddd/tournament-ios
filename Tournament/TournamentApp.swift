@@ -16,14 +16,11 @@ import Combine
     var body: some Scene {
         
         WindowGroup {
-            /*
             if viewModel.signedIn {
                 HomeView()
             } else {
                 BasicSignInView()
             }
-             */
-            CreateTournamentView()
         }
     }
 }
@@ -35,6 +32,8 @@ import Combine
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
+        signedIn = accountService.account != nil
+        
         accountService.signedIn.receive(on: DispatchQueue.main).sink { [weak self] signedIn in
             self?.signedIn = signedIn
         }.store(in: &subscriptions)

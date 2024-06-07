@@ -16,6 +16,8 @@ struct CreateTournamentView: View {
         
         VStack {
             
+            Image(systemName: "")
+            
             Text("Create Tournament")
                 .font(Font.system(size: 22, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,10 +44,10 @@ struct CreateTournamentView: View {
             Spacer()
             
             Button("Create", action: createButtonTapped)
-                .buttonStyle(MainButtonStyle())
                 .frame(maxWidth: .infinity)
+                .buttonStyle(MainButtonStyle())
         }
-        .padding(.all, 32)
+        .padding(.all, 16)
     }
     
     private func createButtonTapped() {

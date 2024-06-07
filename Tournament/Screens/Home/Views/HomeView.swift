@@ -40,7 +40,8 @@ struct HomeView: View {
                         ScoreboardView(tournament.sortedScoreboard, $selectedPlayer)
                             .refreshable { reloadTournament() }
                     case .missingTournament:
-                        TournamentSearchView()
+                        CreateTournamentView()
+                        //TournamentSearchView()
                     case .failure(let error):
                         ErrorView(error, action: reloadTournament)
                     }
