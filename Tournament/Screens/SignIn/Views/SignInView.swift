@@ -28,9 +28,11 @@ struct SignInView: View {
                     .multilineTextAlignment(.center)
                     .foregroundStyle(Color.Text.normal)
                 
+                /*
                 NavigationLink("Sign in with Google", destination: ChooseUsernameView())
                     .buttonStyle(MainButtonStyle())
                     .padding(.horizontal, 32)
+                 */
                 
                 Spacer()
             }

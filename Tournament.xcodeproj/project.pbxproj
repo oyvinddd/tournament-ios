@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E03B0C12BDE43070057AAF9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C02BDE43070057AAF9 /* ProfileView.swift */; };
-		8E03B0C42BDE44690057AAF9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C32BDE44690057AAF9 /* ProfileViewModel.swift */; };
+		8E03B0C12BDE43070057AAF9 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C02BDE43070057AAF9 /* AccountView.swift */; };
+		8E03B0C42BDE44690057AAF9 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0C32BDE44690057AAF9 /* AccountViewModel.swift */; };
 		8E03B0D22BDEDB760057AAF9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D12BDEDB760057AAF9 /* APIError.swift */; };
 		8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D32BDEE94A0057AAF9 /* DiscoveredPlayerView.swift */; };
 		8E03B0D62BDEE99E0057AAF9 /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E03B0D52BDEE99E0057AAF9 /* BluetoothService.swift */; };
@@ -64,8 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E03B0C02BDE43070057AAF9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		8E03B0C32BDE44690057AAF9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8E03B0C02BDE43070057AAF9 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		8E03B0C32BDE44690057AAF9 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		8E03B0C52BDEB40B0057AAF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E03B0C72BDEBC170057AAF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8E03B0D12BDEDB760057AAF9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -135,19 +135,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E03B0BF2BDE42F60057AAF9 /* Profile */ = {
+		8E03B0BF2BDE42F60057AAF9 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				8E85C8162C134E54003E9609 /* Views */,
 				8E03B0C22BDE445B0057AAF9 /* ViewModels */,
 			);
-			path = Profile;
+			path = Account;
 			sourceTree = "<group>";
 		};
 		8E03B0C22BDE445B0057AAF9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8E03B0C32BDE44690057AAF9 /* ProfileViewModel.swift */,
+				8E03B0C32BDE44690057AAF9 /* AccountViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 		8E85C8162C134E54003E9609 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8E03B0C02BDE43070057AAF9 /* ProfileView.swift */,
+				8E03B0C02BDE43070057AAF9 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 			children = (
 				8EEE2C6D2C09168D00AFA53C /* Home */,
 				8E03B0C82BDEBCC30057AAF9 /* RegisterMatch */,
-				8E03B0BF2BDE42F60057AAF9 /* Profile */,
+				8E03B0BF2BDE42F60057AAF9 /* Account */,
 				8E69A49C2BDC16B7005DC14F /* Shared */,
 				8EF420892BDBE3B400383D1D /* SignIn */,
 				8EF420622BDBBC1D00383D1D /* Tournament */,
@@ -509,7 +509,7 @@
 				8E03B0E22BE15A440057AAF9 /* AppSettings.swift in Sources */,
 				8EF420762BDBC3D300383D1D /* Tournament.swift in Sources */,
 				8E47ADBD2C079AC400653FD8 /* AccountService.swift in Sources */,
-				8E03B0C42BDE44690057AAF9 /* ProfileViewModel.swift in Sources */,
+				8E03B0C42BDE44690057AAF9 /* AccountViewModel.swift in Sources */,
 				8EF4206D2BDBC16C00383D1D /* Player.swift in Sources */,
 				8E03B0F02BE18B500057AAF9 /* ButtonStyle.swift in Sources */,
 				8ECE94F32C0A071D005E23CB /* TournamentSearchViewModel.swift in Sources */,
@@ -522,7 +522,7 @@
 				8E03B0D42BDEE94A0057AAF9 /* DiscoveredPlayerView.swift in Sources */,
 				8E85C80F2C130032003E9609 /* PlayerDetailsView.swift in Sources */,
 				8EF420882BDBE2E800383D1D /* Account.swift in Sources */,
-				8E03B0C12BDE43070057AAF9 /* ProfileView.swift in Sources */,
+				8E03B0C12BDE43070057AAF9 /* AccountView.swift in Sources */,
 				8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */,
 				8E0485A52C11141E00E98795 /* HeaderView.swift in Sources */,
 				8E03B0EB2BE16EA80057AAF9 /* JoinRequest.swift in Sources */,

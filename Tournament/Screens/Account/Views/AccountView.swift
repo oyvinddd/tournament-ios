@@ -1,5 +1,5 @@
 //
-//  ProfileView.swift
+//  AccountView.swift
 //  Tournament
 //
 //  Created by Øyvind Hauge on 28/04/2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct AccountView: View {
     
-    @ObservedObject var viewModel = ProfileViewModel()
+    @ObservedObject var viewModel = AccountViewModel()
     @Binding var showProfile: Bool
     @State private var showSignOutAlert = false
     
