@@ -13,17 +13,13 @@ struct Account: Codable, Identifiable {
     
     var tournamentId: UUID?
     
-    var email: String
-    
     var username: String
     
     var created: Date
     
-    var accessToken: String?
+    var accessToken: String
     
     var refreshToken: String?
-    
-    var authenticated: Bool { accessToken != nil }
     
     var hasTournament: Bool { tournamentId != nil }
 }

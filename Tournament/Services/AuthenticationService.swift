@@ -74,16 +74,16 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
 final class MockedAuthenticationService: AuthenticationService {
     
     func register(_ username: String, _ password: String) async throws -> Credentials {
-        let account = Account(id: UUID(), email: "", username: username, created: Date.now)
-        return Credentials(account: account, accessToken: "the_token")
+        let account = Account(id: UUID(), username: username, created: Date.now, accessToken: "token")
+        return Credentials(account, account.accessToken)
     }
     
     func signIn(_ username: String, _ password: String) async throws -> Credentials {
-        let account = Account(id: UUID(), email: "", username: username, created: Date.now)
-        return Credentials(account: account, accessToken: "the_token")
+        let account = Account(id: UUID(), username: username, created: Date.now, accessToken: "token")
+        return Credentials(account, account.accessToken)
     }
     
     func startGoogleSignIn(from contextProvider: any ASWebAuthenticationPresentationContextProviding) {
-        // do nothing
+        // not implemented
     }
 }

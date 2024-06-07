@@ -31,6 +31,7 @@ struct ScoreboardView: View {
                         .padding(.horizontal, 16)
                         .background(.white)
                         .onTapGesture {
+                            UIImpactFeedbackGenerator(style: .light).impactOccurred()
                             selectedPlayer = scoreboard[index]
                         }
                 }
