@@ -30,7 +30,7 @@ struct BasicSignInView: View {
                     .font(Font.system(size: 18, weight: .bold))
                     .textFieldStyle(RoundedTextFieldStyle())
                 
-                TextField("Password", text: $password)
+                SecureField("Password", text: $password)
                     .textContentType(.password)
                     .font(Font.system(size: 18, weight: .bold))
                     .textFieldStyle(RoundedTextFieldStyle())
@@ -40,6 +40,7 @@ struct BasicSignInView: View {
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(MainButtonStyle())
+                .padding(.horizontal, 64)
                 
                 Button(action: missingAccountTapped) {
                     Text("I don't have an account")

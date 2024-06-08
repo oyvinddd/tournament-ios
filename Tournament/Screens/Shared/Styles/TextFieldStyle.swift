@@ -11,13 +11,12 @@ struct RoundedTextFieldStyle: TextFieldStyle {
     
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
-            .font(Font.system(size: 18, weight: .medium))
-            .padding(.vertical)
-            .padding(.horizontal, 24)
-            .background(
-                Color(UIColor.systemGray6)
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .font(Font.system(size: 17, weight: .medium))
+            .padding(.vertical, 14)
+            .padding(.horizontal, 16)
+            .background(Color(UIColor.systemGray6))
+            .foregroundStyle(Color.Text.normal)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 

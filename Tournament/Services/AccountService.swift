@@ -83,6 +83,8 @@ final class LiveAccountService: AccountService {
         let credentials = Credentials(account, account.accessToken)
         try? CredentialsManager.save(credentials)
         
+        joinedTournament.send(tournamentId)
+        
         print("✨ Updated tournament successfully!")
     }
     

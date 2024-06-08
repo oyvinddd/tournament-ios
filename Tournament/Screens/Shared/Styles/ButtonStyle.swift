@@ -19,12 +19,12 @@ struct MainButtonStyle: ButtonStyle {
         }
         
         return configuration.label
-            .padding(.horizontal, 18)
-            .padding(.vertical, 14)
-            .font(Font.system(size: 18, weight: .bold))
+            .padding(.horizontal, 16)
+            .padding(.vertical, 16)
+            .font(Font.system(size: 16, weight: .bold))
             .background(backgroundColor)
             .foregroundStyle(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(Capsule(style: .continuous))
     }
 }
 

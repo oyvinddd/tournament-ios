@@ -17,21 +17,25 @@ struct JoinTournamentView: View {
             Spacer()
             
             Text("Join Tournament")
-                .font(Font.system(size: 28, weight: .bold))
+                .font(Font.system(size: 24, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(Color.Text.normal)
-                .padding(.bottom, 2)
+                .padding(.bottom, 4)
             
-            Text("Input code to join a given tournament")
-                .font(Font.system(size: 18, weight: .bold))
+            Text("Please insert code")
+                .font(Font.system(size: 18, weight: .medium))
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color.Text.subtitle)
                 .padding(.bottom, 20)
             
             DigitInputView()
             
             Spacer()
         }
-        .padding(.all, 32)
+        .padding(.horizontal, 16)
     }
+}
+
+#Preview {
+    JoinTournamentView(viewModel: JoinTournamentViewModel())
 }
