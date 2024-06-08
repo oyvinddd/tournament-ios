@@ -25,6 +25,8 @@ struct Tournament: Codable, Identifiable {
     
     var resetInterval: ResetInterval = .never
     
+    var code: String?
+    
     var sortedScoreboard: [Player] {
         return scoreboard.sorted(by: { $0.score > $1.score })
     }
