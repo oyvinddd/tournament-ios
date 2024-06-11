@@ -11,17 +11,27 @@ enum TournamentSearchState {
     case idle
     case failure(Error)
     case success([Tournament])
+    case noMatchingTournaments
 }
 
 @MainActor final class TournamentSearchViewModel: ObservableObject, TournamentServiceInjectable {
     
     @Published var state: TournamentSearchState = .idle
     
+    init() {
+        
+    }
+    
     func tournamentSearch(query: String) {
         Task {
             do {
                 let tournaments = try await tournamentService.tournamentSearch(query: query)
-                state = .success(tournaments)
+                
+                if tournaments.isEmpty {
+                    state = .noMatchingTournaments
+                } else {
+                    state = .success(tournaments)
+                }
             } catch let error {
                 state = .failure(error)
             }

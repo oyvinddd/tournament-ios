@@ -31,7 +31,7 @@ protocol TournamentService {
 }
 
 final class LiveTournamentService: TournamentService, RequestFactoryInjectable, NetworkManagerInjectable {
-
+    
     static let shared = LiveTournamentService()
     
     func createTournament(_ title: String, resetInterval: ResetInterval) async throws -> Tournament {
@@ -86,9 +86,10 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
                 Player(id: UUID(), username: "n00bie", score: 666, matchesPlayed: 80, matchesWon: 101),
                 Player(id: UUID(), username: "tor", score: 1200, matchesPlayed: 12, matchesWon: 12),
                 Player(id: UUID(), username: "ben", score: 998, matchesPlayed: 0, matchesWon: 0)
-            ])
+            ]),
+        Tournament(id: UUID(), adminId: UUID(), title: "Foo Tournament", created: Date.now, scoreboard: [])
     ]
-
+    
     func createTournament(_ title: String, resetInterval: ResetInterval) async throws -> Tournament {
         let adminId = accountService.account!.id
         let tournament = Tournament(id: UUID(), adminId: adminId, title: title, created: Date.now, scoreboard: [])
@@ -97,9 +98,7 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
     }
     
     func tournamentSearch(query: String) async throws -> [Tournament] {
-        return tournaments.filter { tournament in
-            tournament.title == query
-        }
+        return tournaments.filter { $0.title.lowercased().contains(query) }
     }
     
     func getTournament() async throws -> Tournament {
