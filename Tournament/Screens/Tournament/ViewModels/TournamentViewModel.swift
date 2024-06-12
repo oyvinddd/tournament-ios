@@ -21,11 +21,12 @@ enum TournamentState {
     case failure(Error)
 }
 
-@MainActor final class TournamentViewModel: ObservableObject, AccountServiceInjectable, TournamentServiceInjectable {
+@MainActor final class TournamentViewModel: ObservableObject, AccountServiceInjectable, TournamentServiceInjectable, PlayerBroadcastServiceInjectable {
     
     @Published var title: String = "Welcome!"
     @Published var state: TournamentState = .loading
     @Published var account: Account?
+    @Published var broadcasting: Bool = false
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -72,5 +73,13 @@ enum TournamentState {
             
             // if we reach this part we have successfully left
         }
+    }
+    
+    func startBluetoothBroadcasting() {
+        playerBroadcastService.toggleBroadcasting(true)
+    }
+    
+    func stopBluetoothBroadcasting() {
+        playerBroadcastService.toggleBroadcasting(false)
     }
 }

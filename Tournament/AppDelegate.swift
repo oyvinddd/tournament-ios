@@ -15,9 +15,12 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     private func applyGlobalConfiguration() {
-        //UIScrollView.appearance().bounces = false
+        // scroll view
         UIScrollView.appearance().isPagingEnabled = true
         UIScrollView.appearance().showsHorizontalScrollIndicator = false
         UIScrollView.appearance().showsVerticalScrollIndicator = false
+        
+        // text field
+        UITextField.appearance().clearButtonMode = .whileEditing
     }
 }

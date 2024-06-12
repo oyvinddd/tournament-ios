@@ -95,6 +95,8 @@ private struct SearchFieldView: View {
             
             TextField("", text: $query, prompt: Text("Tournament search...").foregroundStyle(.gray.opacity(0.7)))
                 .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
+                .keyboardType(.alphabet)
                 .font(Font.system(size: 18, weight: .medium))
                 .foregroundStyle(Color.Text.normal)
                 .background(.clear)

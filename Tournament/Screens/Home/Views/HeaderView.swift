@@ -56,6 +56,8 @@ struct HeaderView: View {
                 
                 TextField("", text: $playerFilter, prompt: Text("Filter players...").foregroundStyle(.white.opacity(0.7)))
                     .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(.alphabet)
                     .font(Font.system(size: 18, weight: .medium))
                     .foregroundStyle(.white)
                     .background(.clear)

@@ -18,7 +18,7 @@ extension PlayerBroadcastServiceInjectable {
 
 protocol PlayerBroadcastService {
     
-    func toggleBroadcasting(enabled: Bool)
+    func toggleBroadcasting(_ enabled: Bool)
 }
 
 final class LivePlayerBroadcastService: NSObject, PlayerBroadcastService {
@@ -35,7 +35,7 @@ final class LivePlayerBroadcastService: NSObject, PlayerBroadcastService {
         initialSetup(UUID())
     }
     
-    func toggleBroadcasting(enabled: Bool) {
+    func toggleBroadcasting(_ enabled: Bool) {
         guard enabled else {
             peripheralManager.stopAdvertising()
             return
