@@ -17,7 +17,7 @@ extension DataFactoryInjectable {
 
 final class DataFactory {
     
-    let tournament = Tournament(id: UUID(), adminId: UUID(), title: "Tietoevry Table Tennis", created: Date.now, scoreboard: [])
-    
     static let shared = DataFactory()
+    
+    let tournament = Tournament(id: UUID(), adminId: UUID(), title: "Tietoevry Table Tennis", created: Date.now, scoreboard: [])
 }
