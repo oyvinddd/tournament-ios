@@ -26,15 +26,20 @@ enum TournamentState {
     @Published var title: String = "Welcome!"
     @Published var state: TournamentState = .loading
     @Published var account: Account?
-    @Published var broadcasting: Bool = false
+    @Published var btBroadcastingState: BroadcastingState = .unknown
     
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
         account = accountService.account
+        playerBroadcastService.setup(with: account?.id)
         
         accountService.joinedTournament.receive(on: DispatchQueue.main).sink { [weak self] _ in
             self?.getTournament()
+        }.store(in: &subscriptions)
+        
+        playerBroadcastService.broadcastingSubject.receive(on: DispatchQueue.main).sink { [weak self] state in
+            self?.btBroadcastingState = state
         }.store(in: &subscriptions)
     }
     

@@ -71,7 +71,7 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
     
     private var tournaments = [
         Tournament(
-            id: UUID(),
+            id: UUID(uuidString: "9e061887-ab41-47fa-af58-107b561d67ab")!,
             adminId: UUID(),
             title: "Tietoevry Bordtennis",
             created: Date.now,
