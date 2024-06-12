@@ -7,11 +7,16 @@
 
 import Foundation
 
-@MainActor final class PlayerDetailsViewModel: ObservableObject, TournamentServiceInjectable {
+@MainActor final class PlayerDetailsViewModel: ObservableObject, TournamentServiceInjectable, PlayerDiscoveryServiceInjectable {
     
     let player: Player
     
     init(_ player: Player) {
         self.player = player
+        _ = bluetoothService
+    }
+    
+    func startScanningForPlayer() {
+        //bluetoothService.startScanningForPlayer(player.id)
     }
 }
