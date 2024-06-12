@@ -25,6 +25,7 @@ struct HomeView: View {
                     account: $viewModel.account,
                     title: $viewModel.title,
                     playerFilter: $playerFilter,
+                    btBroadcastingState: $viewModel.btBroadcastingState,
                     showProfile: $showProfile
                 )
                 
@@ -35,7 +36,11 @@ struct HomeView: View {
                     case .idle:
                         Text("Idle!")
                     case .loading:
+                        Spacer()
                         Text("Loading!")
+                            .font(Font.system(size: 32, weight: .semibold))
+                            .foregroundStyle(Color.Text.normal)
+                        Spacer()
                     case .success(let tournament):
                         ScoreboardView(tournament.sortedScoreboard, $selectedPlayer)
                             .refreshable { reloadTournament() }

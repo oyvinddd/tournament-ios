@@ -12,6 +12,7 @@ struct HeaderView: View {
     @Binding var account: Account?
     @Binding var title: String
     @Binding var playerFilter: String
+    @Binding var btBroadcastingState: BroadcastingState
     @Binding var showProfile: Bool
     
     var body: some View {
