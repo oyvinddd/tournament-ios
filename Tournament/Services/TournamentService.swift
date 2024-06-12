@@ -91,8 +91,17 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
     ]
     
     func createTournament(_ title: String, resetInterval: ResetInterval) async throws -> Tournament {
-        let adminId = accountService.account!.id
-        let tournament = Tournament(id: UUID(), adminId: adminId, title: title, created: Date.now, scoreboard: [])
+        
+        let account = accountService.account!
+        let player = Player(
+            id: account.id,
+            username: account.username,
+            score: 1600,
+            matchesPlayed: 0,
+            matchesWon: 0
+        )
+        
+        let tournament = Tournament(id: UUID(), adminId: account.id, title: title, created: Date.now, scoreboard: [player])
         tournaments.append(tournament)
         return tournaments.last!
     }

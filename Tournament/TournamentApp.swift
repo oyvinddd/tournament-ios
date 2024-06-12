@@ -16,14 +16,11 @@ import Combine
     var body: some Scene {
         
         WindowGroup {
-            /*
             if viewModel.signedIn {
                 HomeView()
             } else {
                 BasicSignInView()
             }
-             */
-            PlayerDetailsView(PlayerDetailsViewModel(Player(id: UUID(), username: "panzertax", score: 1800, matchesPlayed: 0, matchesWon: 0)))
         }
     }
 }
