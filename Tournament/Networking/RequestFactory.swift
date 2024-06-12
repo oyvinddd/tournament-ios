@@ -14,7 +14,7 @@ protocol RequestFactoryInjectable {
 
 extension RequestFactoryInjectable {
     
-    var requestFactory: RequestFactory { RequestFactory(apiBaseUrl: AppSettings.apiBaseUrl) }
+    var requestFactory: RequestFactory { RequestFactory(apiBaseUrl: "") }
 }
 
 final class RequestFactory: AccountServiceInjectable {

@@ -17,7 +17,9 @@ protocol ServiceFactoryProtocol {
     
     var tournamentService: TournamentService { get }
     
-    var bluetoothService: BluetoothService { get }
+    var playerDiscoveryService: PlayerDiscoveryService { get }
+    
+    var playerBroadcastService: PlayerBroadcastService { get }
 }
 
 struct LiveServiceFactory: ServiceFactoryProtocol {
@@ -32,5 +34,7 @@ struct LiveServiceFactory: ServiceFactoryProtocol {
     
     var tournamentService: TournamentService { MockedTournamentService() }
     
-    var bluetoothService: BluetoothService { LiveBluetoothService() }
+    var playerDiscoveryService: PlayerDiscoveryService { LivePlayerDiscoveryService() }
+    
+    var playerBroadcastService: PlayerBroadcastService { LivePlayerBroadcastService() }
 }

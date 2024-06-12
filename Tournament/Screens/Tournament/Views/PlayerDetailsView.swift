@@ -18,7 +18,7 @@ struct PlayerDetailsView: View {
     var body: some View {
         
         VStack {
-         
+            
             ZStack {
                 Text(viewModel.player.emoji)
                     .font(Font.system(size: 48))
@@ -29,6 +29,7 @@ struct PlayerDetailsView: View {
             
             Text(viewModel.player.username.lowercased())
                 .font(Font.system(size: 20, weight: .bold))
+                .foregroundStyle(Color.Text.normal)
                 .frame(maxWidth: .infinity)
                 .padding(.top, 4)
             
@@ -39,10 +40,12 @@ struct PlayerDetailsView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 16)
+        .onAppear {
+            viewModel.startScanningForPlayer()
+        }
     }
     
     private func registerWinTapped() {
-        
     }
 }
 
