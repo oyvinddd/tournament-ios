@@ -52,6 +52,8 @@ final class LiveAccountService: AccountService {
             let credentials = try CredentialsManager.load()
             account = credentials.account
             account?.accessToken = credentials.accessToken
+            // TODO: remove after we are done testing
+            account?.tournamentId = UUID(uuidString: "9e061887-ab41-47fa-af58-107b561d67ab")!
             signedIn.send(true)
             
             print("✨ Signed in as \(account!.username)! 🤩")

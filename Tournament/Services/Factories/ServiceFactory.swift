@@ -36,5 +36,5 @@ struct LiveServiceFactory: ServiceFactoryProtocol {
     
     var playerDiscoveryService: PlayerDiscoveryService { LivePlayerDiscoveryService() }
     
-    var playerBroadcastService: PlayerBroadcastService { LivePlayerBroadcastService() }
+    var playerBroadcastService: PlayerBroadcastService { LivePlayerBroadcastService.shared }
 }

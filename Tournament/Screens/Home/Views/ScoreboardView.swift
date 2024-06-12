@@ -27,7 +27,7 @@ struct ScoreboardView: View {
                 ForEach(scoreboard.indices, id: \.self) { index in
                     let player = scoreboard[index]
                     
-                    PlayerView(index+1, player)
+                    PlayerView(index+1, player, index == scoreboard.count - 1)
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
                         .padding(.horizontal, 16)
@@ -91,19 +91,33 @@ private struct PlayerView: View {
     
     let placement: Int
     let player: Player
+    let isLast: Bool
     
     private var stringFromPlacement: String {
+        guard !isLast else {
+            return "💩"
+        }
+        
         switch placement {
-        case 1: "🥇"
-        case 2: "🥈"
-        case 3: "🥉"
-        default: "\(placement)"
+        case 1: return "🥇"
+        case 2: return "🥈"
+        case 3: return "🥉"
+        default: return "\(placement)"
         }
     }
     
-    init(_ placement: Int, _ player: Player) {
+    private var matchesPlayed: String {
+        player.matchesPlayed == 0 ? "-" : "\(player.matchesPlayed)"
+    }
+    
+    private var matchesWon: String {
+        player.matchesPlayed == 0 ? "-" : "\(player.matchesWon)"
+    }
+    
+    init(_ placement: Int, _ player: Player, _ isLast: Bool) {
         self.placement = placement
         self.player = player
+        self.isLast = isLast
     }
     
     var body: some View {
@@ -132,7 +146,7 @@ private struct PlayerView: View {
                     .font(Font.system(size: 18, weight: .semibold))
                     .foregroundStyle(Color.Text.normal)
                 
-                Text("\(player.score)")
+                Text("\(player.score) points")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(Font.system(size: 14, weight: .semibold))
                     .foregroundStyle(Color.Text.subtitle)
@@ -141,11 +155,11 @@ private struct PlayerView: View {
             
             Spacer()
             
-            Text("\(player.matchesPlayed)")
+            Text("\(matchesPlayed)")
                 .font(Font.system(size: 16, weight: .semibold))
                 .foregroundStyle(Color.Text.normal)
             
-            Text("\(player.matchesWon)")
+            Text("\(matchesWon)")
                 .frame(width: 50, alignment: .trailing)
                 .font(Font.system(size: 16, weight: .semibold))
                 .foregroundStyle(Color.Text.normal)
