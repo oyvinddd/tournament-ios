@@ -64,6 +64,10 @@ struct HomeView: View {
         }
         .onAppear {
             reloadTournament()
+            viewModel.startBluetoothBroadcasting()
+        }
+        .onDisappear {
+            viewModel.stopBluetoothBroadcasting()
         }
     }
     
