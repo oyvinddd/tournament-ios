@@ -13,7 +13,7 @@ struct HeaderView: View {
     @Binding var title: String
     @Binding var playerFilter: String
     @Binding var btBroadcastingState: BroadcastingState
-    @Binding var showProfile: Bool
+    @Binding var showAccount: Bool
     
     var body: some View {
         
@@ -26,24 +26,8 @@ struct HeaderView: View {
                     .foregroundStyle(.white)
                 
                 Spacer()
-                Button(action: profileTapped) {
-                    ZStack {
-                        
-                        Text(account?.emoji ?? "🫠")
-                            .font(Font.system(size: 22))
-                            .padding(.all, 6)
-                        
-                        /*
-                        HStack {
-                            Spacer()
-                            Circle()
-                                .fill(.blue)
-                                .frame(width: 20, height: 20)
-                        }
-                         */
-                    }
-                    .background(RoundedRectangle(cornerRadius: 10).fill(.green))
-                }
+                
+                AccountButtonView(account?.emoji, $btBroadcastingState, $showAccount)
             }
             
             // search field
@@ -71,9 +55,15 @@ struct HeaderView: View {
         .padding(.horizontal, 16)
         .padding(.bottom, 8)
     }
+}
+
+#Preview {
     
-    private func profileTapped() {
-        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-        showProfile.toggle()
-    }
+    @State var account: Account? = Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "token")
+    @State var title = "Foo Tournament"
+    @State var filter = ""
+    @State var btBroadcastingState = BroadcastingState.enabled
+    @State var showAccount = false
+    
+    return HeaderView(account: $account, title: $title, playerFilter: $filter, btBroadcastingState: $btBroadcastingState, showAccount: $showAccount)
 }
