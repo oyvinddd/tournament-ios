@@ -80,6 +80,10 @@ struct ScoreboardView: View {
         .listStyle(.plain)
         .listRowSpacing(20)
         .scrollContentBackground(.hidden)
+        .safeAreaInset(edge: .bottom, content: {
+            // kind of hacky but it works
+            Spacer().frame(height: 32)
+        })
         .environment(\.defaultMinListHeaderHeight, 0)
         .scrollDismissesKeyboard(.immediately)
     }

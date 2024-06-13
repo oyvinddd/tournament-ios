@@ -10,7 +10,13 @@ import SwiftUI
 struct MatchConfirmationView: View {
     
     var body: some View {
-        Text("Hello, World!")
+        
+        VStack {
+            
+            Image(systemName: "hand.thumbsup")
+            
+            Text("Hello, World!")
+        }
     }
 }
 

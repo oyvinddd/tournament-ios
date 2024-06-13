@@ -26,7 +26,7 @@ struct HomeView: View {
                     title: $viewModel.title,
                     playerFilter: $playerFilter,
                     btBroadcastingState: $viewModel.btBroadcastingState,
-                    showProfile: $showProfile
+                    showAccount: $showProfile
                 )
                 
                 // main content goes inside here
