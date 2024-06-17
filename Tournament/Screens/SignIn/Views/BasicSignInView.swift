@@ -116,6 +116,7 @@ private struct RegistrationView: View {
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(MainButtonStyle())
+            .padding(.horizontal, 64)
             
             Button(action: backAction) {
                 Text("Back")

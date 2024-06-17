@@ -12,6 +12,7 @@ struct HomeView: View {
     @ObservedObject var viewModel = TournamentViewModel()
     @State private var playerFilter = ""
     @State private var showProfile = false
+    @State private var showMatchRegistration = false
     @State private var selectedPlayer: Player?
     
     var body: some View {
@@ -42,8 +43,9 @@ struct HomeView: View {
                             .foregroundStyle(Color.Text.normal)
                         Spacer()
                     case .success(let tournament):
-                        ScoreboardView(tournament.sortedScoreboard, $selectedPlayer)
-                            .refreshable { reloadTournament() }
+                        ScoreboardView(tournament.sortedScoreboard, $selectedPlayer,
+                                       $showMatchRegistration)
+                        .refreshable { reloadTournament() }
                     case .missingTournament:
                         CreateTournamentView()
                     case .failure(let error):
