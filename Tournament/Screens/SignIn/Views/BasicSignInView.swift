@@ -79,7 +79,7 @@ struct BasicSignInView: View {
     }
     
     private func registrationTapped() {
-        viewModel.register(username, password)
+        viewModel.register(email, username, password)
     }
     
     private func missingAccountTapped() {

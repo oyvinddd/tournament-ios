@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SignInOrRegistrationRequest: Encodable {
+struct SignInRequest: Encodable {
     
     var username: String
     

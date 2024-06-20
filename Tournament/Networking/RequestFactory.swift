@@ -14,16 +14,16 @@ protocol RequestFactoryInjectable {
 
 extension RequestFactoryInjectable {
     
-    var requestFactory: RequestFactory { RequestFactory(apiBaseUrl: "") }
+    var requestFactory: RequestFactory { RequestFactory(AppConfig.apiBaseUrl) }
 }
 
 final class RequestFactory: AccountServiceInjectable {
     
     var apiBaseUrl: URL!
     
-    var signInUrl: URL { apiBaseUrl.appendingPathComponent("login") }
+    var signInUrl: URL { apiBaseUrl.appendingPathComponent("accounts/login") }
     
-    var registerUrl: URL { apiBaseUrl.appendingPathComponent("register") }
+    var registerUrl: URL { apiBaseUrl.appendingPathComponent("accounts") }
     
     var tournamentsUrl: URL { apiBaseUrl.appendingPathComponent("tournaments") }
     
@@ -35,30 +35,29 @@ final class RequestFactory: AccountServiceInjectable {
     
     var matcesUrl: URL { apiBaseUrl.appendingPathComponent("matches") }
     
-    var accountUrl: URL { apiBaseUrl.appendingPathComponent("account") }
-    
-    var usernameUrl: URL { accountUrl.appendingPathComponent("username") }
+    var accountsUrl: URL { apiBaseUrl.appendingPathComponent("accounts") }
     
     var googleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("google") }
     
     var appleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("apple") }
     
-    init(apiBaseUrl: String, addApiAndVersionPath: Bool = true) {
+    init(_ apiBaseUrl: String, addApiAndVersionPath: Bool = false) {
         self.apiBaseUrl = URL(string: apiBaseUrl + (addApiAndVersionPath ? "/api/v1" : ""))!
     }
     
     // MARK: - Account requests
     
-    func basicSignInRequest(username: String, password: String) -> URLRequest {
+    func basicSignInRequest(emailOrUsername: String, password: String) -> URLRequest {
         return RequestBuilder(.post, url: signInUrl)
-            .set(body: SignInOrRegistrationRequest(username, password))
+            .set(value: "Content-Type", for: "application/json")
+            .set(body: SignInRequest(emailOrUsername, password))
             .build()
-            
     }
     
-    func register(username: String, password: String) -> URLRequest {
+    func register(email: String, username: String, password: String) -> URLRequest {
         return RequestBuilder(.post, url: registerUrl)
-            .set(body: SignInOrRegistrationRequest(username, password))
+            .set(value: "Content-Type", for: "application/json")
+            .set(body: RegisterRequest(email, username, password))
             .build()
     }
     
@@ -68,20 +67,12 @@ final class RequestFactory: AccountServiceInjectable {
     }
     
     func createAccountRequest() -> URLRequest {
-        return RequestBuilder(.post, url: accountUrl).build()
+        return RequestBuilder(.post, url: accountsUrl).build()
     }
     
     func deleteAccountRequest() -> URLRequest {
-        return RequestBuilder(.delete, url: accountUrl)
+        return RequestBuilder(.delete, url: accountsUrl)
             .set(token: accountService.accessToken)
-            .build()
-    }
-    
-    func updateUsernameRequest(_ username: String) -> URLRequest {
-        return RequestBuilder(.put, url: usernameUrl)
-            .set(value: "Content-Type", for: "application/json")
-            .set(token: accountService.accessToken)
-            .set(body: UsernameRequest(username))
             .build()
     }
     
