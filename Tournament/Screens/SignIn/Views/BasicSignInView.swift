@@ -12,6 +12,7 @@ struct BasicSignInView: View {
     @ObservedObject var viewModel = SignInViewModel()
     
     @State private var showRegistration = false
+    @State private var email: String = ""
     @State private var username: String = ""
     @State private var password: String = ""
     
@@ -20,12 +21,18 @@ struct BasicSignInView: View {
         if !showRegistration {
          
             VStack(spacing: 16) {
-                Text("Welcome!")
-                    .font(Font.system(size: 32, weight: .bold))
+                Text("Hello!👋")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(Font.system(size: 28, weight: .bold))
                     .foregroundStyle(Color.Text.normal)
+                
+                Text("Sign in or register an account to get started")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(Font.system(size: 18, weight: .bold))
+                    .foregroundStyle(Color.Text.subtitle)
                     .padding(.bottom, 16)
                 
-                TextField("Username", text: $username)
+                TextField("Email or username", text: $username)
                     .textInputAutocapitalization(.never)
                     .font(Font.system(size: 18, weight: .bold))
                     .textFieldStyle(RoundedTextFieldStyle())
@@ -41,6 +48,7 @@ struct BasicSignInView: View {
                 }
                 .buttonStyle(MainButtonStyle())
                 .padding(.horizontal, 64)
+                .padding(.top, 16)
                 
                 Button(action: missingAccountTapped) {
                     Text("I don't have an account")
@@ -52,11 +60,12 @@ struct BasicSignInView: View {
                 .padding(.top, 16)
             }
             .frame(maxWidth: .infinity)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 32)
             
         } else {
             
             RegistrationView(
+                email: $email,
                 username: $username,
                 password: $password,
                 registerAction: registrationTapped,
@@ -88,6 +97,7 @@ struct BasicSignInView: View {
 
 private struct RegistrationView: View {
     
+    @Binding var email: String
     @Binding var username: String
     @Binding var password: String
     var registerAction: () -> Void
@@ -97,9 +107,15 @@ private struct RegistrationView: View {
         
         VStack(spacing: 16) {
             Text("Register account")
-                .font(Font.system(size: 32, weight: .bold))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(Font.system(size: 28, weight: .bold))
                 .foregroundStyle(Color.Text.normal)
                 .padding(.bottom, 16)
+            
+            TextField("Email", text: $email)
+                .textInputAutocapitalization(.never)
+                .font(Font.system(size: 18, weight: .bold))
+                .textFieldStyle(RoundedTextFieldStyle())
             
             TextField("Preferred username", text: $username)
                 .textInputAutocapitalization(.never)
@@ -117,6 +133,7 @@ private struct RegistrationView: View {
             }
             .buttonStyle(MainButtonStyle())
             .padding(.horizontal, 64)
+            .padding(.top, 16)
             
             Button(action: backAction) {
                 Text("Back")
@@ -125,7 +142,7 @@ private struct RegistrationView: View {
             }
             .padding(.top, 16)
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 32)
     }
 }
 

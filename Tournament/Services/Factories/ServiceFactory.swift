@@ -26,13 +26,13 @@ struct LiveServiceFactory: ServiceFactoryProtocol {
     
     static let instance = LiveServiceFactory()
     
-    var authenticationService: AuthenticationService { MockedAuthenticationService() }
+    var authenticationService: AuthenticationService { LiveAuthenticationService() }
     
-    var tokenService: TokenService { MockedTokenService() }
+    var tokenService: TokenService { LiveTokenService() }
     
     var accountService: AccountService { LiveAccountService.shared }
     
-    var tournamentService: TournamentService { MockedTournamentService.shared }
+    var tournamentService: TournamentService { LiveTournamentService.shared }
     
     var playerDiscoveryService: PlayerDiscoveryService { LivePlayerDiscoveryService() }
     
