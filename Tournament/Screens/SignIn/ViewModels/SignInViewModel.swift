@@ -41,14 +41,14 @@ enum SignInState {
         }
     }
     
-    func register(_ username: String, _ password: String) {
+    func register(_ email: String, _ username: String, _ password: String) {
         let newUsername = stripWhitespacesAndMakeLowercased(username)
         
         Task {
             
             do {
                 
-                let credentials = try await authenticationService.register(newUsername, password)
+                let credentials = try await authenticationService.register(email, newUsername, password)
                 var account = credentials.account
                 account.accessToken = credentials.accessToken
                 accountService.set(account: account)

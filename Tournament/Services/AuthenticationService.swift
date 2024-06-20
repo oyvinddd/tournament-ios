@@ -22,7 +22,7 @@ extension AuthenticationServiceInjectable {
 
 protocol AuthenticationService {
     
-    func register(_ username: String, _ password: String) async throws -> Credentials
+    func register(_ email: String, _ username: String, _ password: String) async throws -> Credentials
     
     func signIn(_ username: String, _ password: String) async throws -> Credentials
     
@@ -35,13 +35,13 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
     
-    func register(_ username: String, _ password: String) async throws -> Credentials {
-        let request = requestFactory.register(username: username, password: password)
+    func register(_ email: String, _ username: String, _ password: String) async throws -> Credentials {
+        let request = requestFactory.register(email: email, username: username, password: password)
         return try await networkManager.execute(request: request)
     }
     
-    func signIn(_ username: String, _ password: String) async throws -> Credentials {
-        let request = requestFactory.basicSignInRequest(username: username, password: password)
+    func signIn(_ emailOrUsername: String, _ password: String) async throws -> Credentials {
+        let request = requestFactory.basicSignInRequest(emailOrUsername: emailOrUsername, password: password)
         return try await networkManager.execute(request: request)
     }
     
@@ -81,7 +81,7 @@ final class MockedAuthenticationService: AuthenticationService {
         Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "test_token")
     ]
     
-    func register(_ username: String, _ password: String) async throws -> Credentials {
+    func register(_ email: String, _ username: String, _ password: String) async throws -> Credentials {
         let account = Account(id: UUID(), username: username, created: Date.now, accessToken: "token")
         return Credentials(account, account.accessToken)
     }
