@@ -40,6 +40,8 @@ final class NetworkManager {
             throw APIError.invalidResponse
         }
         
+        printResponse(httpResponse)
+        
         // TODO: need a mapping function here to handle the individual http codes
         guard 200 ..< 300 ~= httpResponse.statusCode else {
             throw APIError.invalidResponse
@@ -64,6 +66,8 @@ final class NetworkManager {
             throw APIError.invalidResponse
         }
         
+        printResponse(httpResponse)
+        
         // TODO: need a mapping function here to handle the individual http codes
         guard 200 ..< 300 ~= httpResponse.statusCode else {
             throw APIError.invalidResponse
@@ -71,6 +75,16 @@ final class NetworkManager {
     }
     
     private func printRequest(_ request: URLRequest) {
-        print("✨ [\(request.httpMethod!.uppercased())] \(request.url!.absoluteString)")
+        guard let method = request.httpMethod, let url = request.url else {
+            return
+        }
+        print("✨ [REQUEST] \(method.uppercased()) \(url.path())")
+    }
+    
+    private func printResponse(_ response: HTTPURLResponse) {
+        guard let url = response.url else {
+            return
+        }
+        print("💫 [RESPONSE] HTTP \(response.statusCode) for \(url.path())")
     }
 }

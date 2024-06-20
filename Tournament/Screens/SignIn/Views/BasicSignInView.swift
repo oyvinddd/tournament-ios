@@ -42,6 +42,14 @@ struct BasicSignInView: View {
                     .font(Font.system(size: 18, weight: .bold))
                     .textFieldStyle(RoundedTextFieldStyle())
                 
+                // if sign in failed, show error message
+                if case let SignInState.failure(error) = viewModel.state {
+                    Text(userFacingErrorMessage(error))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(Font.system(size: 16, weight: .semibold))
+                        .foregroundStyle(Color.General.error)
+                }
+                
                 Button(action: signInTapped) {
                     Text("Sign In")
                         .frame(maxWidth: .infinity)
@@ -85,13 +93,24 @@ struct BasicSignInView: View {
     private func missingAccountTapped() {
         username = ""
         password = ""
-        showRegistration.toggle()
+        withAnimation(.linear(duration: 0.5)) {
+            showRegistration.toggle()
+        }
     }
     
     private func backTapped() {
         username = ""
         password = ""
-        showRegistration.toggle()
+        withAnimation(.linear(duration: 0.5)) {
+            showRegistration.toggle()
+        }
+    }
+    
+    private func userFacingErrorMessage(_ error: Error) -> String {
+        guard showRegistration else {
+            return "⛔️ Wrong username or password"
+        }
+        return error.localizedDescription
     }
 }
 

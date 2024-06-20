@@ -37,6 +37,12 @@ extension Color {
         static let totalWinsBackground = Color(hex: 0x8C77CE)
         
         static let playerBackground = Color(hex: 0xECECEC)
+        
+        static let error = Color(hex: 0xD14936)
+        
+        static let warning = Color(.yellow)
+        
+        static let success = Color(.green)
     }
     
     enum Text {
