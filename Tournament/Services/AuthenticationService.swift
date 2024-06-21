@@ -78,18 +78,17 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
 final class MockedAuthenticationService: AuthenticationService {
     
     private var accounts = [
-        Account(id: UUID(), username: "oyvind_h", created: Date.now, accessToken: "test_token")
+        Account(id: UUID(), email: "foo@bar.baz", userName: "john_doe", totalMatchesPlayed: 0, totalMatchesWon: 0, createdDate: Date.now, updatedDate: Date.now)
     ]
     
     func register(_ email: String, _ username: String, _ password: String) async throws -> Credentials {
-        let account = Account(id: UUID(), username: username, created: Date.now, accessToken: "token")
-        return Credentials(account, account.accessToken)
+        return Credentials(accounts.first!, "some_token")
     }
     
     func signIn(_ username: String, _ password: String) async throws -> Credentials {
         for account in accounts {
-            if account.username == username.lowercased() {
-                return Credentials(account, "some_test_token")
+            if account.userName == username.lowercased() {
+                return Credentials(account, "some_token")
             }
         }
         throw AuthError.unauthorized

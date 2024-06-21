@@ -91,6 +91,7 @@ struct BasicSignInView: View {
     }
     
     private func missingAccountTapped() {
+        email = ""
         username = ""
         password = ""
         withAnimation(.linear(duration: 0.5)) {
@@ -99,6 +100,7 @@ struct BasicSignInView: View {
     }
     
     private func backTapped() {
+        email = ""
         username = ""
         password = ""
         withAnimation(.linear(duration: 0.5)) {

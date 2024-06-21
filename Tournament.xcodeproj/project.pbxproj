@@ -27,6 +27,7 @@
 		8E0A599A2C0AF382002BF784 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A59992C0AF382002BF784 /* ScoreboardView.swift */; };
 		8E47ADBB2C07964200653FD8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47ADBA2C07964200653FD8 /* Match.swift */; };
 		8E47ADBD2C079AC400653FD8 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47ADBC2C079AC400653FD8 /* AccountService.swift */; };
+		8E628C152C259FCC00F4D0DB /* TournamentAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E628C142C259FCC00F4D0DB /* TournamentAccount.swift */; };
 		8E69A49E2BDC16C7005DC14F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E69A49D2BDC16C7005DC14F /* ErrorView.swift */; };
 		8E793C012C24BBE500750BD6 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E793C002C24BBE500750BD6 /* AppConfig.swift */; };
 		8E793C032C24BDE500750BD6 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E793C022C24BDE500750BD6 /* RegisterRequest.swift */; };
@@ -91,6 +92,7 @@
 		8E0A59992C0AF382002BF784 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		8E47ADBA2C07964200653FD8 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		8E47ADBC2C079AC400653FD8 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		8E628C142C259FCC00F4D0DB /* TournamentAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentAccount.swift; sourceTree = "<group>"; };
 		8E69A49D2BDC16C7005DC14F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		8E793C002C24BBE500750BD6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		8E793C022C24BDE500750BD6 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				8E84D8952BE4D1F4006F4E97 /* TokenContainer.swift */,
 				8E47ADBA2C07964200653FD8 /* Match.swift */,
 				8ECE94EE2C0A01B4005E23CB /* Credentials.swift */,
+				8E628C142C259FCC00F4D0DB /* TournamentAccount.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				8E85C80F2C130032003E9609 /* PlayerDetailsView.swift in Sources */,
 				8EAD57D52C1A4D5700ADE43A /* MatchConfirmationView.swift in Sources */,
 				8EF420882BDBE2E800383D1D /* Account.swift in Sources */,
+				8E628C152C259FCC00F4D0DB /* TournamentAccount.swift in Sources */,
 				8E03B0C12BDE43070057AAF9 /* AccountView.swift in Sources */,
 				8ECE94EF2C0A01B4005E23CB /* Credentials.swift in Sources */,
 				8E0485A52C11141E00E98795 /* HeaderView.swift in Sources */,

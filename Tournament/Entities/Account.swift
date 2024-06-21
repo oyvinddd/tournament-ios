@@ -11,17 +11,22 @@ struct Account: Codable, Identifiable {
     
     var id: UUID
     
-    var tournamentId: UUID?
+    var email: String
     
-    var username: String
+    var userName: String
     
-    var created: Date
+    var totalMatchesPlayed: Int
     
-    var accessToken: String
+    var totalMatchesWon: Int
     
-    var refreshToken: String?
+    var createdDate: Date
     
-    var hasTournament: Bool { tournamentId != nil }
+    var updatedDate: Date
+    
+    var tournamentAccounts: [TournamentAccount]?
+}
+
+extension Account {
     
     var emoji: String { Emoji.emojiFromId(id) }
 }

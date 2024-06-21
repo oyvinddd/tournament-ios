@@ -28,7 +28,7 @@ protocol AccountService {
     
     var joinedTournament: PassthroughSubject<UUID, Never> { get }
     
-    func set(account: Account)
+    func set(account: Account, accessToken: String)
     
     func set(tournamentId: UUID)
     
@@ -41,7 +41,7 @@ final class LiveAccountService: AccountService {
     
     var account: Account?
     
-    var accessToken: String? { account?.accessToken }
+    var accessToken: String?
     
     var signedIn: PassthroughSubject = PassthroughSubject<Bool, Never>()
     
@@ -51,13 +51,11 @@ final class LiveAccountService: AccountService {
         do {
             let credentials = try CredentialsManager.load()
             account = credentials.account
-            account?.accessToken = credentials.accessToken
-            // TODO: remove after we are done testing
-            account?.tournamentId = UUID(uuidString: "9e061887-ab41-47fa-af58-107b561d67ab")!
+            accessToken = credentials.token
             signedIn.send(true)
             
-            print("✨ Signed in as \(account!.username)! 🤩")
-            print("✨ Current tournament: \(account!.tournamentId?.uuidString ?? "NA")")
+            print("✨ Signed in as \(credentials.account.userName)! 🤩")
+            print("✨ Current tournament: \("None")")
             
         } catch let error {
             print("Error loading credentials: \(error)")
@@ -65,24 +63,23 @@ final class LiveAccountService: AccountService {
         }
     }
     
-    func set(account: Account) {
+    func set(account: Account, accessToken: String) {
         // sign in
         self.account = account
         signedIn.send(true)
         
         // store credentials locally
-        let credentials = Credentials(account, account.accessToken)
-        try? CredentialsManager.save(credentials)
+        try? CredentialsManager.save(Credentials(account, accessToken))
     }
     
     func set(tournamentId: UUID) {
-        account?.tournamentId = tournamentId
+        //account?.tournamentId = tournamentId
         
-        guard let account = account else {
+        guard let account = account, let token = accessToken else {
             return
         }
         
-        let credentials = Credentials(account, account.accessToken)
+        let credentials = Credentials(account, token)
         try? CredentialsManager.save(credentials)
         
         joinedTournament.send(tournamentId)
