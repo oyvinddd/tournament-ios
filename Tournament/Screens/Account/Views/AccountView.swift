@@ -51,7 +51,7 @@ struct AccountView: View {
                     .background(RoundedRectangle(cornerRadius: 10).fill(.green))
                     
                     VStack(alignment: .leading) {
-                        Text(account.username.lowercased())
+                        Text(account.userName.lowercased())
                             .font(Font.system(size: 28, weight: .semibold))
                             .foregroundStyle(Color.Text.normal)
                         

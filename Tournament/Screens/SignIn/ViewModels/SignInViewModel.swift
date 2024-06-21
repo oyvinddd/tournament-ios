@@ -28,9 +28,9 @@ enum SignInState {
             do {
                 
                 let credentials = try await authenticationService.signIn(username, password)
-                var account = credentials.account
-                account.accessToken = credentials.accessToken
-                accountService.set(account: account)
+                let account = credentials.account
+                let accessToken = credentials.token
+                accountService.set(account: account, accessToken: accessToken)
                 
                 state = .signedIn(credentials)
                 
@@ -49,9 +49,9 @@ enum SignInState {
             do {
                 
                 let credentials = try await authenticationService.register(email, newUsername, password)
-                var account = credentials.account
-                account.accessToken = credentials.accessToken
-                accountService.set(account: account)
+                let account = credentials.account
+                let accessToken = credentials.token
+                accountService.set(account: account, accessToken: accessToken)
                 
                 state = .signedIn(credentials)
                 

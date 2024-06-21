@@ -49,14 +49,14 @@ final class RequestFactory: AccountServiceInjectable {
     
     func basicSignInRequest(emailOrUsername: String, password: String) -> URLRequest {
         return RequestBuilder(.post, url: signInUrl)
-            .set(value: "Content-Type", for: "application/json")
+            .set(value: "application/json", for: "Content-Type")
             .set(body: SignInRequest(emailOrUsername, password))
             .build()
     }
     
     func register(email: String, username: String, password: String) -> URLRequest {
         return RequestBuilder(.post, url: registerUrl)
-            .set(value: "Content-Type", for: "application/json")
+            .set(value: "application/json", for: "Content-Type")
             .set(body: RegisterRequest(email, username, password))
             .build()
     }
@@ -80,7 +80,7 @@ final class RequestFactory: AccountServiceInjectable {
     
     func createTournamentRequest(_ title: String, resetInterval: ResetInterval = .never) -> URLRequest {
         return RequestBuilder(.post, url: tournamentsUrl)
-            .set(value: "Content-Type", for: "application/json")
+            .set(value: "application/json", for: "Content-Type")
             .set(token: accountService.accessToken)
             .set(body: TournamentRequest(title, resetInterval))
             .build()
@@ -88,14 +88,14 @@ final class RequestFactory: AccountServiceInjectable {
     
     func tournamentSearchRequest(query: String) -> URLRequest {
         return RequestBuilder(.get, url: searchUrl)
-            .set(value: "Content-Type", for: "application/json")
+            .set(value: "application/json", for: "Content-Type")
             .set(token: accountService.accessToken)
             .build()
     }
     
     func createTournamentRequest(title: String) -> URLRequest {
         return RequestBuilder(.post, url: tournamentsUrl)
-            .set(value: "Content-Type", for: "application/json")
+            .set(value: "application/json", for: "Content-Type")
             .set(token: accountService.accessToken)
             .set(body: TournamentRequest(title, .monthly))
             .build()
@@ -109,7 +109,7 @@ final class RequestFactory: AccountServiceInjectable {
     
     func joinTournamentRequest(tournamentId: UUID, code: String) -> URLRequest {
         return RequestBuilder(.put, url: joinUrl)
-            .set(value: "Content-Type", for: "application/json")
+            .set(value: "application/json", for: "Content-Type")
             .set(token: accountService.accessToken)
             .set(body: JoinRequest(code))
             .build()
@@ -123,7 +123,7 @@ final class RequestFactory: AccountServiceInjectable {
     
     func registerWinRequest(opponentId: UUID) -> URLRequest {
         return RequestBuilder(.post, url: matcesUrl)
-            .set(value: "Content-Type", for: "application/json")
+            .set(value: "application/json", for: "Content-Type")
             .set(token: accountService.accessToken)
             .set(body: MatchRequest(opponentId))
             .build()
@@ -198,9 +198,9 @@ final class RequestBuilder {
     }
     
     private func defaultHeaders() -> [String: String] {
-        return [
-            "X-App-Version": "app_version_here",
-            "X-Device-Type": "device_version_here"
+        return [:
+            //"X-App-Version": "app_version_here",
+            //"X-Device-Type": "device_version_here"
             // "Content-Type": "application/json"
         ]
     }

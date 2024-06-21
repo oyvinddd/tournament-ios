@@ -19,17 +19,8 @@ extension NetworkManagerInjectable {
 
 final class NetworkManager {
     
-    private let session: URLSession
-    
-    private var jsonDecoder: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }
-    
-    init(urlSession: URLSession = URLSession.shared) {
-        self.session = urlSession
-    }
+    private let session = URLSession.shared
+    private let jsonDecoder = JSONDecoder()
     
     func execute<T: Decodable>(request: URLRequest) async throws -> T {
         printRequest(request)
@@ -51,7 +42,8 @@ final class NetworkManager {
             
             return try jsonDecoder.decode(T.self, from: data)
             
-        } catch _ {
+        } catch let error {
+            print(error)
             
             throw APIError.decodingFailed
         }
@@ -78,13 +70,13 @@ final class NetworkManager {
         guard let method = request.httpMethod, let url = request.url else {
             return
         }
-        print("✨ [REQUEST] \(method.uppercased()) \(url.path())")
+        print("⬆️ [REQ] \(method.uppercased()) \(url.path())")
     }
     
     private func printResponse(_ response: HTTPURLResponse) {
         guard let url = response.url else {
             return
         }
-        print("💫 [RESPONSE] HTTP \(response.statusCode) for \(url.path())")
+        print("⬇️ [RES] HTTP \(response.statusCode) for \(url.path())")
     }
 }

@@ -95,7 +95,7 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
         let account = accountService.account!
         let player = Player(
             id: account.id,
-            username: account.username,
+            username: account.userName,
             score: 1600,
             matchesPlayed: 0,
             matchesWon: 0
@@ -114,7 +114,7 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
         guard let account = accountService.account else {
             throw APIError.unauthorized
         }
-        
+        /*
         guard let tournamentId = account.tournamentId else {
             throw APIError.missingTournament
         }
@@ -124,7 +124,7 @@ final class MockedTournamentService: TournamentService, AccountServiceInjectable
                 return tournament
             }
         }
-        
+        */
         throw APIError.missingTournament
     }
     
