@@ -78,7 +78,7 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
 final class MockedAuthenticationService: AuthenticationService {
     
     private var accounts = [
-        Account(id: UUID(), email: "foo@bar.baz", userName: "john_doe", totalMatchesPlayed: 0, totalMatchesWon: 0, createdDate: Date.now, updatedDate: Date.now)
+        Account(id: UUID(), email: "foo@bar.baz", userName: "john_doe", totalMatchesPlayed: 0, totalMatchesWon: 0, createdDate: "Date.now", updatedDate: "Date.now")
     ]
     
     func register(_ email: String, _ username: String, _ password: String) async throws -> Credentials {

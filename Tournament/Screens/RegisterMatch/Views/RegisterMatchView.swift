@@ -19,10 +19,13 @@ struct RegisterMatchView: View {
             
             DiscoveredPlayerView(Player(
                 id: UUID(),
+                tournamentId: UUID(), 
+                accountId: UUID(),
                 username: "oyvinddd",
                 score: 1200,
-                matchesPlayed: 12,
-                matchesWon: 2))
+                matchesWon: 2, 
+                matchesPlayed: 12)
+            )
             .onTapGesture {
                 feedbackGenerator.impactOccurred()
                 showConfirmDialog.toggle()

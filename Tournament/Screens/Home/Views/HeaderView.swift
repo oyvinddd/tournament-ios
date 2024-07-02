@@ -59,7 +59,7 @@ struct HeaderView: View {
 
 #Preview {
     
-    @State var account: Account? = Account(id: UUID(), email: "foo@bar.baz", userName: "john_doe", totalMatchesPlayed: 0, totalMatchesWon: 0, createdDate: Date.now, updatedDate: Date.now)
+    @State var account: Account? = Account(id: UUID(), email: "foo@bar.baz", userName: "john_doe", totalMatchesPlayed: 0, totalMatchesWon: 0, createdDate: "Date.now", updatedDate: "Date.now")
     @State var title = "Foo Tournament"
     @State var filter = ""
     @State var btBroadcastingState = BroadcastingState.enabled

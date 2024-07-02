@@ -19,9 +19,9 @@ struct Account: Codable, Identifiable {
     
     var totalMatchesWon: Int
     
-    var createdDate: Date
+    var createdDate: String
     
-    var updatedDate: Date
+    var updatedDate: String
     
     var tournamentAccounts: [TournamentAccount]?
 }

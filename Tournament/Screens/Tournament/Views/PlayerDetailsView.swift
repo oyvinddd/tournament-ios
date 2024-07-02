@@ -52,7 +52,7 @@ struct PlayerDetailsView: View {
 #Preview {
     PlayerDetailsView(
         PlayerDetailsViewModel(
-            Player(id: UUID(), username: "oyvind_h", score: 1200, matchesPlayed: 12, matchesWon: 6)
+            Player(id: UUID(), tournamentId: UUID(), accountId: UUID(), username: "oyvind_h", score: 1200, matchesWon: 6, matchesPlayed: 12)
         )
     )
 }

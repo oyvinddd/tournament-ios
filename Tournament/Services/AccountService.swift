@@ -35,6 +35,8 @@ protocol AccountService {
     func signOut()
 }
 
+// MARK: - Live account service
+
 final class LiveAccountService: AccountService {
 
     static let shared = LiveAccountService()
