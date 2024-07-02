@@ -27,6 +27,8 @@ final class RequestFactory: AccountServiceInjectable {
     
     var tournamentsUrl: URL { apiBaseUrl.appendingPathComponent("tournaments") }
     
+    var accountTournament: URL { apiBaseUrl.appendingPathComponent("tournaments/active") }
+    
     var searchUrl: URL { tournamentsUrl.appendingPathExtension("search") }
     
     var joinUrl: URL { tournamentsUrl.appendingPathComponent("join") }
@@ -102,13 +104,13 @@ final class RequestFactory: AccountServiceInjectable {
     }
     
     func getTournamentRequest() -> URLRequest {
-        return RequestBuilder(.get, url: tournamentsUrl)
+        return RequestBuilder(.get, url: accountTournament)
             .set(token: accountService.accessToken)
             .build()
     }
     
     func joinTournamentRequest(tournamentId: UUID, code: String) -> URLRequest {
-        return RequestBuilder(.put, url: joinUrl)
+        return RequestBuilder(.put, url: joinUrl.appendingPathComponent(tournamentId.uuidString))
             .set(value: "application/json", for: "Content-Type")
             .set(token: accountService.accessToken)
             .set(body: JoinRequest(code))

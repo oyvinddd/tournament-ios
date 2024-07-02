@@ -19,15 +19,11 @@ struct Tournament: Codable, Identifiable {
     
     var title: String
     
-    var created: Date
+    var isActive: Bool
     
-    var scoreboard: [Player]
+    var tournamentAccounts: [Player]
     
-    var resetInterval: ResetInterval = .never
-    
-    var code: String?
-    
-    var sortedScoreboard: [Player] {
-        return scoreboard.sorted(by: { $0.score > $1.score })
+    var scoreboard: [Player] {
+        return tournamentAccounts.sorted(by: { $0.score > $1.score })
     }
 }

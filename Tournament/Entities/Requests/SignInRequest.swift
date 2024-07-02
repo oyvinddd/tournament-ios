@@ -9,12 +9,12 @@ import Foundation
 
 struct SignInRequest: Encodable {
     
-    var username: String
+    var loginDetails: String
     
     var password: String
     
-    init(_ username: String, _ password: String) {
-        self.username = username
+    init(_ loginDetails: String, _ password: String) {
+        self.loginDetails = loginDetails
         self.password = password
     }
 }

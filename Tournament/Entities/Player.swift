@@ -11,13 +11,17 @@ struct Player: Codable, Identifiable {
     
     var id: UUID
     
+    var tournamentId: UUID
+    
+    var accountId: UUID
+    
     var username: String
     
     var score: Int
     
-    var matchesPlayed: Int
-    
     var matchesWon: Int
+    
+    var matchesPlayed: Int
     
     var emoji: String { Emoji.emojiFromId(id) }
 }

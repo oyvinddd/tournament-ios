@@ -43,7 +43,7 @@ struct HomeView: View {
                             .foregroundStyle(Color.Text.normal)
                         Spacer()
                     case .success(let tournament):
-                        ScoreboardView(tournament.sortedScoreboard, $selectedPlayer,
+                        ScoreboardView(tournament.scoreboard, $selectedPlayer,
                                        $showMatchRegistration)
                         .refreshable { reloadTournament() }
                     case .missingTournament:
