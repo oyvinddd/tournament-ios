@@ -30,6 +30,8 @@ protocol TournamentService {
     func registerWin(opponentId: UUID) async throws
 }
 
+// MARK: - Live tournament service
+
 final class LiveTournamentService: TournamentService, RequestFactoryInjectable, NetworkManagerInjectable {
     
     static let shared = LiveTournamentService()
@@ -64,6 +66,8 @@ final class LiveTournamentService: TournamentService, RequestFactoryInjectable, 
         return try await networkManager.execute(request: request)
     }
 }
+
+// MARK: - Mocked tournament service
 
 final class MockedTournamentService: TournamentService, AccountServiceInjectable {
     
