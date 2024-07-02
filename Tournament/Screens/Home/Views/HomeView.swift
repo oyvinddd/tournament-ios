@@ -35,13 +35,11 @@ struct HomeView: View {
                     
                     switch viewModel.state {
                     case .idle:
+                        Spacer()
                         Text("Idle!")
+                        Spacer()
                     case .loading:
-                        Spacer()
-                        Text("Loading!")
-                            .font(Font.system(size: 32, weight: .semibold))
-                            .foregroundStyle(Color.Text.normal)
-                        Spacer()
+                        LoadingView("Please wait...", "Loading tournament data!")
                     case .success(let tournament):
                         ScoreboardView(tournament.scoreboard, $selectedPlayer,
                                        $showMatchRegistration)

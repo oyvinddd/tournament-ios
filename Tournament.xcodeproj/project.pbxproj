@@ -26,6 +26,7 @@
 		8E0485A72C111B4B00E98795 /* TournamentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0485A62C111B4B00E98795 /* TournamentDetailsView.swift */; };
 		8E0A599A2C0AF382002BF784 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A59992C0AF382002BF784 /* ScoreboardView.swift */; };
 		8E12B99E2C33D65B00363C9A /* TournamentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E12B99D2C33D65B00363C9A /* TournamentError.swift */; };
+		8E12B9A02C33E1F700363C9A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E12B99F2C33E1F700363C9A /* LoadingView.swift */; };
 		8E47ADBB2C07964200653FD8 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47ADBA2C07964200653FD8 /* Match.swift */; };
 		8E47ADBD2C079AC400653FD8 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47ADBC2C079AC400653FD8 /* AccountService.swift */; };
 		8E628C152C259FCC00F4D0DB /* TournamentAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E628C142C259FCC00F4D0DB /* TournamentAccount.swift */; };
@@ -91,6 +92,7 @@
 		8E0485A62C111B4B00E98795 /* TournamentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailsView.swift; sourceTree = "<group>"; };
 		8E0A59992C0AF382002BF784 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		8E12B99D2C33D65B00363C9A /* TournamentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentError.swift; sourceTree = "<group>"; };
+		8E12B99F2C33E1F700363C9A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8E47ADBA2C07964200653FD8 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		8E47ADBC2C079AC400653FD8 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		8E628C142C259FCC00F4D0DB /* TournamentAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentAccount.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				8E03B0EE2BE18B420057AAF9 /* Styles */,
 				8E69A49D2BDC16C7005DC14F /* ErrorView.swift */,
+				8E12B99F2C33E1F700363C9A /* LoadingView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				8E03B0E82BE1690D0057AAF9 /* MatchRequest.swift in Sources */,
 				8EF4206A2BDBBF5C00383D1D /* AppDelegate.swift in Sources */,
 				8EF420A02BDBEFF100383D1D /* DigitInputView.swift in Sources */,
+				8E12B9A02C33E1F700363C9A /* LoadingView.swift in Sources */,
 				8EF420A32BDBF36D00383D1D /* JoinTournamentViewModel.swift in Sources */,
 				8EF420962BDBE8B600383D1D /* CreateTournamentView.swift in Sources */,
 				8ED4E4542C13A7760048182F /* TextFieldStyle.swift in Sources */,

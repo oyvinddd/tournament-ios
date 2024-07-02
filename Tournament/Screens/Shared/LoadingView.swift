@@ -1,20 +1,20 @@
 //
-//  ErrorView.swift
+//  LoadingView.swift
 //  Tournament
 //
-//  Created by Øyvind Hauge on 26/04/2024.
+//  Created by Øyvind Hauge on 02/07/2024.
 //
 
 import SwiftUI
 
-struct ErrorView: View {
+struct LoadingView: View {
     
-    var error: Error
-    var action: (() -> Void)?
+    let title: String
+    let subtitle: String
     
-    init(_ error: Error, action: (() -> Void)? = nil) {
-        self.error = error
-        self.action = action
+    init(_ title: String, _ subtitle: String) {
+        self.title = title
+        self.subtitle = subtitle
     }
     
     var body: some View {
@@ -26,7 +26,7 @@ struct ErrorView: View {
             HStack {
                 Spacer()
                 
-                Image(systemName: "exclamationmark.triangle")
+                Image(systemName: "network")
                     .renderingMode(.template)
                     .font(Font.system(size: 56))
                     .foregroundStyle(Color.General.mainBackground2)
@@ -36,7 +36,7 @@ struct ErrorView: View {
             .padding(.top, 16)
             .padding(.bottom, 8)
             
-            Text("Oops! There was an error...")
+            Text(title)
                 .font(Font.system(size: 20, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .multilineTextAlignment(.center)
@@ -44,7 +44,7 @@ struct ErrorView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 2)
             
-            Text(error.localizedDescription)
+            Text(subtitle)
                 .font(Font.system(size: 17, weight: .medium))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .multilineTextAlignment(.center)
@@ -52,18 +52,14 @@ struct ErrorView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
             
-            if let action = action {
-                Button(action: action) {
-                    Text("Retry")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(SecondaryButtonStyle())
-            }
-            
             Spacer()
         }
         .padding(.horizontal, 16)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }
+}
+
+#Preview {
+    LoadingView("Please wait", "Loading tournament data")
 }
