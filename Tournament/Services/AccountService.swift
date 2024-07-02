@@ -28,6 +28,8 @@ protocol AccountService {
     
     var joinedTournament: PassthroughSubject<UUID, Never> { get }
     
+    func registerPushToken(_ tokenData: Data) async throws
+    
     func set(account: Account, accessToken: String)
     
     func set(tournamentId: UUID)
@@ -37,7 +39,7 @@ protocol AccountService {
 
 // MARK: - Live account service
 
-final class LiveAccountService: AccountService {
+final class LiveAccountService: AccountService, RequestFactoryInjectable, NetworkManagerInjectable {
 
     static let shared = LiveAccountService()
     
@@ -63,6 +65,14 @@ final class LiveAccountService: AccountService {
             print("Error loading credentials: \(error)")
             signedIn.send(false)
         }
+    }
+    
+    func registerPushToken(_ tokenData: Data) async throws {
+        guard let pushToken = String(data: tokenData, encoding: .utf8) else {
+            throw APIError.invalidPushToken
+        }
+        let request = requestFactory.registerPushTokenRequest(pushToken)
+        try await networkManager.execute(request: request)
     }
     
     func set(account: Account, accessToken: String) {
@@ -95,6 +105,8 @@ final class LiveAccountService: AccountService {
         print("💥 Signing out! bye bye ... 😭")
     }
 }
+
+// MARK: - Local credentials manager
 
 enum CredentialsError: Error {
     case notFound, invalid

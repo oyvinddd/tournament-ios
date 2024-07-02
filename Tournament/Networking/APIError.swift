@@ -9,6 +9,8 @@ import Foundation
 
 enum APIError: Error {
     
+    case notLoggedIn
+    
     case unauthorized
     
     case noTournament
@@ -18,4 +20,6 @@ enum APIError: Error {
     case decodingFailed
     
     case missingTournament
+    
+    case invalidPushToken
 }

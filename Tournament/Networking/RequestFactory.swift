@@ -43,6 +43,8 @@ final class RequestFactory: AccountServiceInjectable {
     
     var appleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("apple") }
     
+    var pushTokensUrl: URL { apiBaseUrl.appendingPathComponent("push-tokens") }
+    
     init(_ apiBaseUrl: String, addApiAndVersionPath: Bool = false) {
         self.apiBaseUrl = URL(string: apiBaseUrl + (addApiAndVersionPath ? "/api/v1" : ""))!
     }
@@ -128,6 +130,16 @@ final class RequestFactory: AccountServiceInjectable {
             .set(value: "application/json", for: "Content-Type")
             .set(token: accountService.accessToken)
             .set(body: MatchRequest(opponentId))
+            .build()
+    }
+    
+    // MARK: - Push tokens
+    
+    func registerPushTokenRequest(_ token: String) -> URLRequest {
+        return RequestBuilder(.post, url: pushTokensUrl)
+            .set(value: "application/json", for: "Content-Type")
+            .set(token: accountService.accessToken)
+            .set(body: PushTokenRequest(token))
             .build()
     }
 }
