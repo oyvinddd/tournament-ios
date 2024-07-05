@@ -55,7 +55,7 @@ struct AccountView: View {
                             .font(Font.system(size: 28, weight: .semibold))
                             .foregroundStyle(Color.Text.normal)
                         
-                        Text("Some text here as well")
+                        Text(viewModel.information)
                             .font(Font.system(size: 18, weight: .medium))
                             .foregroundStyle(Color.Text.subtitle)
                     }

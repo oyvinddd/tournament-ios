@@ -29,4 +29,6 @@ struct Account: Codable, Identifiable {
 extension Account {
     
     var emoji: String { Emoji.emojiFromId(id) }
+    
+    var hasTournament: Bool { tournamentAccounts != nil && tournamentAccounts!.count > 0 }
 }
