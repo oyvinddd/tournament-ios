@@ -19,7 +19,7 @@ struct MainButtonStyle: ButtonStyle {
         }
         
         return configuration.label
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 24)
             .padding(.vertical, 16)
             .font(Font.system(size: 16, weight: .bold))
             .background(backgroundColor)

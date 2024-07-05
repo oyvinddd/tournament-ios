@@ -7,12 +7,17 @@
 
 import SwiftUI
 
+private enum MissingTournamentState {
+    case search, register
+}
+
 struct HomeView: View {
     
     @ObservedObject var viewModel = TournamentViewModel()
     @State private var playerFilter = ""
     @State private var showProfile = false
     @State private var showMatchRegistration = false
+    @State private var missingState: MissingTournamentState = .search
     @State private var selectedPlayer: Player?
     
     var body: some View {
@@ -41,11 +46,10 @@ struct HomeView: View {
                     case .loading:
                         LoadingView("Please wait...", "Loading tournament data!")
                     case .success(let tournament):
-                        ScoreboardView(tournament.scoreboard, $selectedPlayer,
-                                       $showMatchRegistration)
-                        .refreshable { reloadTournament() }
+                        ScoreboardView(tournament.scoreboard, $selectedPlayer, $showMatchRegistration)
+                            .refreshable { reloadTournament() }
                     case .missingTournament:
-                        CreateTournamentView()
+                        TournamentSearchView()
                     case .failure(let error):
                         ErrorView(error, action: reloadTournament)
                     }

@@ -62,7 +62,7 @@ enum TournamentState {
                 }
                  */
                 
-                state = .failure(error)
+                //state = .failure(error)
             }
         }
     }
