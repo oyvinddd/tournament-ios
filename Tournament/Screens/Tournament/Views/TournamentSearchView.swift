@@ -23,9 +23,7 @@ struct TournamentSearchView: View {
             
             if idleState == .idle {
                 
-                SearchFieldView(query: $query)
-                
-                Spacer()
+                SearchFieldView(query: $query, searchAction: searchButtonTapped)
             }
             
             switch viewModel.state {
@@ -60,13 +58,15 @@ struct TournamentSearchView: View {
                 
             case .noMatchingTournaments:
                 
+                Spacer()
+                
                 Image(systemName: "exclamationmark.magnifyingglass")
                     .font(Font.system(size: 32))
                     .foregroundStyle(Color.Text.normal)
                     .padding(.bottom, 8)
                     .opacity(0.8)
                 
-                Text("No matches for the term \(query)")
+                Text("No matches for the term \"\(query)\"")
                     .frame(maxWidth: .infinity, alignment: .center)
                     .multilineTextAlignment(.center)
                     .font(Font.system(size: 18, weight: .semibold))
@@ -77,6 +77,11 @@ struct TournamentSearchView: View {
             }
         }
         .padding(.horizontal, 16)
+        .safeAreaPadding(.bottom)
+    }
+    
+    private func searchButtonTapped() {
+        viewModel.tournamentSearch(query: query)
     }
 }
 
@@ -85,6 +90,7 @@ struct TournamentSearchView: View {
 private struct SearchFieldView: View {
     
     @Binding var query: String
+    var searchAction: () -> Void
     
     var body: some View {
         
@@ -101,11 +107,13 @@ private struct SearchFieldView: View {
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled(true)
                 .keyboardType(.alphabet)
+                .submitLabel(.search)
                 .font(Font.system(size: 18, weight: .medium))
                 .foregroundStyle(Color.Text.normal)
                 .background(.clear)
                 .padding(.trailing, 16)
                 .padding(.vertical, 12)
+                .onSubmit { searchAction() }
         }
         .frame(maxWidth: .infinity)
         .background(RoundedRectangle(cornerRadius: 15).fill((Color(UIColor.systemGray6))))
@@ -140,30 +148,36 @@ private struct SearchIdleView: View {
     
     var body: some View {
         
-        Image(systemName: "binoculars")
-            .font(Font.system(size: 32))
-            .foregroundStyle(Color.Text.normal)
-            .padding(.bottom, 8)
-            .opacity(0.8)
-        
-        Text("Search for a tournament or create a new one by tapping the button below")
-            .frame(maxWidth: .infinity, alignment: .center)
-            .multilineTextAlignment(.center)
-            .font(Font.system(size: 18, weight: .semibold))
-            .foregroundStyle(Color.Text.subtitle)
-            .padding(.horizontal, 32)
-        
-        Spacer()
-        
-        Button(action: newTournamentButtonTapped) {
-            HStack {
-                Image(systemName: "plus.circle")
-                
-                Text("New Tournament")
-                    .font(Font.system(size: 18, weight: .bold))
+        VStack {
+            
+            Spacer()
+            
+            Image(systemName: "binoculars")
+                .font(Font.system(size: 32))
+                .foregroundStyle(Color.Text.normal)
+                .padding(.bottom, 8)
+                .opacity(0.8)
+            
+            Text("Search for a tournament or create a new one by tapping the button below")
+                .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
+                .font(Font.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color.Text.subtitle)
+                .padding(.horizontal, 32)
+            
+            Spacer()
+            
+            Button(action: newTournamentButtonTapped) {
+                HStack {
+                    Image(systemName: "plus.circle")
+                    
+                    Text("New Tournament")
+                        .font(Font.system(size: 18, weight: .bold))
+                }
             }
+            .buttonStyle(MainButtonStyle())
+            .padding(.bottom, 16)
         }
-        .buttonStyle(MainButtonStyle())
     }
     
     private func newTournamentButtonTapped() {
