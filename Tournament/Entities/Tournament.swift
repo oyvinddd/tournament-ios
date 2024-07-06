@@ -21,9 +21,12 @@ struct Tournament: Codable, Identifiable {
     
     var isActive: Bool
     
-    var tournamentAccounts: [Player]
+    var tournamentAccounts: [Player]?
     
     var scoreboard: [Player] {
-        return tournamentAccounts.sorted(by: { $0.score > $1.score })
+        guard let accounts = tournamentAccounts else {
+            return []
+        }
+        return accounts.sorted(by: { $0.score > $1.score })
     }
 }

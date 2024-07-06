@@ -57,9 +57,7 @@ final class LiveAccountService: AccountService, RequestFactoryInjectable, Networ
             account = credentials.account
             accessToken = credentials.token
             signedIn.send(true)
-            
-            print("✨ Signed in as \(credentials.account.userName)! 🤩")
-            print("✨ Current tournament: \("None")")
+            printAccountDetails(credentials)
             
         } catch let error {
             print("Error loading credentials: \(error)")
@@ -103,6 +101,12 @@ final class LiveAccountService: AccountService, RequestFactoryInjectable, Networ
         CredentialsManager.clear()
         signedIn.send(false)
         print("💥 Signing out! bye bye ... 😭")
+    }
+    
+    private func printAccountDetails(_ creds: Credentials) {
+        print("✨ Signed in as \(creds.account.userName)! 🤩")
+        print("✨ Current tournament: \("None")")
+        print("✨ Token: \(creds.token)")
     }
 }
 

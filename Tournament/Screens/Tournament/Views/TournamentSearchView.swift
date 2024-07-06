@@ -14,6 +14,7 @@ private enum IdleState {
 struct TournamentSearchView: View {
     
     @ObservedObject var viewModel = TournamentSearchViewModel()
+    @State private var selectedTournament: Tournament?
     @State private var idleState: IdleState = .idle
     @State private var query = ""
     
@@ -51,6 +52,9 @@ struct TournamentSearchView: View {
                         .listRowSeparator(.hidden)
                         .padding(.horizontal, 16)
                         .background(.white)
+                        .onTapGesture {
+                            selectedTournament = tournament
+                        }
                 }
                 .listStyle(.plain)
                 .listRowSpacing(20)
@@ -66,7 +70,7 @@ struct TournamentSearchView: View {
                     .padding(.bottom, 8)
                     .opacity(0.8)
                 
-                Text("No matches for the term \"\(query)\"")
+                Text("No matches for the search term \"\(query)\"")
                     .frame(maxWidth: .infinity, alignment: .center)
                     .multilineTextAlignment(.center)
                     .font(Font.system(size: 18, weight: .semibold))
@@ -78,6 +82,9 @@ struct TournamentSearchView: View {
         }
         .padding(.horizontal, 16)
         .safeAreaPadding(.bottom)
+        .sheet(item: $selectedTournament) { tournament in
+            JoinTournamentView()
+        }
     }
     
     private func searchButtonTapped() {
@@ -132,6 +139,7 @@ private struct SearchResultView: View {
     }
     
     var body: some View {
+        
         HStack {
             Text(tournament.title)
                 .font(Font.system(size: 18, weight: .bold))
@@ -181,6 +189,7 @@ private struct SearchIdleView: View {
     }
     
     private func newTournamentButtonTapped() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
         idleState = .newTournament
     }
 }
@@ -229,10 +238,10 @@ private struct CreateTournamentView: View {
             .padding(.top, 16)
             
             Button("Create", action: createButtonTapped)
-                .buttonStyle(MainButtonStyle())
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 64)
                 .padding(.top, 16)
+                .buttonStyle(MainButtonStyle())
             
             Spacer()
         }
@@ -240,6 +249,7 @@ private struct CreateTournamentView: View {
     }
     
     private func createButtonTapped() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
         viewModel.createTournament(title: title, resetInterval: .never)
     }
 }
