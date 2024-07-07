@@ -91,21 +91,23 @@ struct BasicSignInView: View {
     }
     
     private func missingAccountTapped() {
+        viewModel.state = .idle
         email = ""
         username = ""
         password = ""
-        withAnimation(.linear(duration: 0.5)) {
+        //withAnimation(.linear(duration: 0.5)) {
             showRegistration.toggle()
-        }
+        //}
     }
     
     private func backTapped() {
+        viewModel.state = .idle
         email = ""
         username = ""
         password = ""
-        withAnimation(.linear(duration: 0.5)) {
+        //withAnimation(.linear(duration: 0.5)) {
             showRegistration.toggle()
-        }
+        //}
     }
     
     private func userFacingErrorMessage(_ error: Error) -> String {

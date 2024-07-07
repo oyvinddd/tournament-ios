@@ -104,8 +104,13 @@ final class LiveAccountService: AccountService, RequestFactoryInjectable, Networ
     }
     
     private func printAccountDetails(_ creds: Credentials) {
-        print("✨ Signed in as \(creds.account.userName)! 🤩")
-        print("✨ Current tournament: \("None")")
+        let userName = creds.account.userName
+        let userId = creds.account.id
+        let tournament = creds.account.tournamentAccounts?.first
+        let tournamentId = tournament?.id.uuidString ?? "None"
+        
+        print("✨ Signed in as \(userName) / \(creds.account.email) (\(userId))")
+        print("✨ Tournament: \(tournamentId)")
         print("✨ Token: \(creds.token)")
     }
 }
